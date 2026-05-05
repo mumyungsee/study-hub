@@ -145,8 +145,10 @@ const { title, description, chapter, prev, next } = Astro.props;
       });
     });
 
-    // URL 자동 하이퍼링크 (코드 블록 제외, 일반 텍스트 안에서만)
+    // URL 자동 하이퍼링크
     const urlRegex = /https?:\/\/[^\s<>"'）)]+/g;
+
+    // 1. 일반 텍스트 노드 안의 URL (p, li 직접 자식 텍스트)
     document.querySelectorAll('.tutorial-body p, .tutorial-body li').forEach((el) => {
       el.childNodes.forEach((node) => {
         if (node.nodeType !== Node.TEXT_NODE) return;
@@ -159,6 +161,19 @@ const { title, description, chapter, prev, next } = Astro.props;
         );
         node.replaceWith(span);
       });
+    });
+
+    // 2. 인라인 코드(`url`) 안의 URL — pre 블록 제외
+    document.querySelectorAll('.tutorial-body :not(pre) > code').forEach((code) => {
+      const text = code.textContent ?? '';
+      if (!urlRegex.test(text)) return;
+      urlRegex.lastIndex = 0;
+      const a = document.createElement('a');
+      a.href = text.trim();
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.appendChild(code.cloneNode(true));
+      code.replaceWith(a);
     });
   </script>
 </Base>
