@@ -2,6 +2,7 @@
 title: "0장. 완성물 미리보기"
 chapter: 0
 order: 0
+track: 필수
 description: "이 튜토리얼을 끝내면 어떤 라이프 위키가 만들어지는지 먼저 살펴봅니다."
 status: 공개
 ---
