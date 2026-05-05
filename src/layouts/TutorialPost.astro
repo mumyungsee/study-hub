@@ -1,0 +1,50 @@
+---
+import Base from './Base.astro';
+import type { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'tutorial'>['data'];
+
+const { title, description, chapter } = Astro.props;
+---
+
+<Base title={title} description={description ?? title}>
+  <article>
+    <header class="tutorial-header">
+      <p class="chapter-label">{chapter}장</p>
+      <h1>{title}</h1>
+      {description && <p>{description}</p>}
+    </header>
+    <div class="tutorial-body">
+      <slot />
+    </div>
+    <footer class="tutorial-footer">
+      <a href="/tutorial/">← 튜토리얼 목록으로</a>
+    </footer>
+  </article>
+  <style>
+    .tutorial-header {
+      margin-bottom: 2rem;
+    }
+    .chapter-label {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+    .tutorial-header > p:last-child {
+      color: var(--muted);
+    }
+    .tutorial-body :global(p) {
+      line-height: 1.85;
+    }
+    .tutorial-body :global(ol),
+    .tutorial-body :global(ul) {
+      padding-left: 1.4rem;
+    }
+    .tutorial-footer {
+      border-top: 1px solid var(--line);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+    }
+  </style>
+</Base>

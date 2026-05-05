@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => post.data.status === '공개' || post.data.status === '책_챕터_후보')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const fmt = (d: Date) =>
+  new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }).format(d);
+---
+
+<Base title="기록과 발견">
+  <section class="intro">
+    <h1>기록과 발견</h1>
+    <p>매일의 회고에서 길어 올린 글들을 모아둡니다. 자립, 강의, 건강, 일상에서 발견한 작은 패턴들.</p>
+  </section>
+
+  <section class="post-list">
+    {posts.length === 0 && (
+      <p class="empty">아직 공개된 글이 없습니다. 곧 첫 글이 올라옵니다.</p>
+    )}
+    {posts.map((post) => (
+      <article class="post-card">
+        <p class="post-date">{fmt(post.data.date)}</p>
+        <h2>
+          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+        </h2>
+        {post.data.description && <p class="post-excerpt">{post.data.description}</p>}
+        {post.data.projects && post.data.projects.length > 0 && (
+          <div class="tags">
+            {post.data.projects.map((p) => <span class="tag">#{p}</span>)}
+          </div>
+        )}
+      </article>
+    ))}
+  </section>
+
+  <style>
+    .intro { margin-bottom: 3rem; }
+    .intro h1 { font-size: 2rem; margin-bottom: 0.75rem; }
+    .intro p { color: var(--muted); }
+    .post-card {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .post-card h2 {
+      margin: 0.25rem 0;
+      font-size: 1.3rem;
+    }
+    .post-card h2 a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .post-card h2 a:hover {
+      color: var(--accent);
+    }
+    .post-date {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+    .post-excerpt {
+      color: var(--muted);
+      margin: 0.5rem 0 0.75rem;
+    }
+    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.8rem;
+      padding: 0.1rem 0.55rem;
+      border-radius: 999px;
+      background: #e5dcce;
+      color: var(--accent);
+    }
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+      padding: 2rem 0;
+    }
+  </style>
+</Base>

@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const lessons = (await getCollection('tutorial'))
+  .filter((lesson) => lesson.data.status === '공개')
+  .sort((a, b) => a.data.chapter - b.data.chapter || a.data.order - b.data.order);
+---
+
+<Base title="라이프 위키 튜토리얼">
+  <section class="intro">
+    <h1>라이프 위키 튜토리얼</h1>
+    <p>AI 도구와 오픈소스 레포를 활용해 회고, 블로그, 배포가 이어지는 개인 라이프 위키를 만드는 과정입니다.</p>
+  </section>
+
+  <section class="lesson-list">
+    {lessons.length === 0 && (
+      <p class="empty">아직 공개된 튜토리얼이 없습니다.</p>
+    )}
+    {lessons.map((lesson) => (
+      <article class="lesson-card">
+        <p>{lesson.data.chapter}장</p>
+        <h2><a href={`/tutorial/${lesson.slug}/`}>{lesson.data.title}</a></h2>
+        {lesson.data.description && <span>{lesson.data.description}</span>}
+      </article>
+    ))}
+  </section>
+
+  <style>
+    .intro {
+      margin-bottom: 2.5rem;
+    }
+    .intro h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .intro p {
+      color: var(--muted);
+    }
+    .lesson-card {
+      border-bottom: 1px solid var(--line);
+      padding: 1.25rem 0;
+    }
+    .lesson-card p {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .lesson-card h2 {
+      font-size: 1.2rem;
+      margin: 0.25rem 0;
+    }
+    .lesson-card a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .lesson-card a:hover {
+      color: var(--accent);
+    }
+    .lesson-card span {
+      color: var(--muted);
+      display: block;
+    }
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+      padding: 2rem 0;
+    }
+  </style>
+</Base>

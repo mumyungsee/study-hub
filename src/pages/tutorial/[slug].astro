@@ -1,0 +1,21 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import TutorialPost from '../../layouts/TutorialPost.astro';
+
+export async function getStaticPaths() {
+  const lessons = (await getCollection('tutorial')).filter((lesson) => lesson.data.status === '공개');
+  return lessons.map((lesson) => ({
+    params: { slug: lesson.slug },
+    props: lesson,
+  }));
+}
+
+type Props = CollectionEntry<'tutorial'>;
+
+const lesson = Astro.props;
+const { Content } = await lesson.render();
+---
+
+<TutorialPost {...lesson.data}>
+  <Content />
+</TutorialPost>
