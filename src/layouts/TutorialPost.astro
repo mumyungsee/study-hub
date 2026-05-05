@@ -122,6 +122,51 @@ const { title, description, chapter, prev, next } = Astro.props;
       color: #0a7a40;
       opacity: 1;
     }
+
+    /* 용어 툴팁 */
+    .tutorial-body :global(.glossary-term) {
+      border-bottom: 1px dashed var(--muted);
+      cursor: help;
+      position: relative;
+    }
+    .tutorial-body :global(.glossary-term::before) {
+      content: '';
+      position: absolute;
+      bottom: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #1e1e1e;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 101;
+    }
+    .tutorial-body :global(.glossary-term::after) {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e1e1e;
+      color: #f0f0f0;
+      font-size: 0.72rem;
+      line-height: 1.5;
+      padding: 0.35rem 0.6rem;
+      border-radius: 5px;
+      width: max-content;
+      max-width: min(220px, 80vw);
+      white-space: normal;
+      text-align: center;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 100;
+    }
+    .tutorial-body :global(.glossary-term:hover::before),
+    .tutorial-body :global(.glossary-term:hover::after) {
+      opacity: 1;
+    }
   </style>
 
   <script>
@@ -175,5 +220,79 @@ const { title, description, chapter, prev, next } = Astro.props;
       a.appendChild(code.cloneNode(true));
       code.replaceWith(a);
     });
+
+    // 용어 툴팁
+    const glossaryTerms = [
+      { regex: /커밋/g, tip: '파일 변경 사항을 기록하는 것. 게임의 세이브포인트 같은 개념' },
+      { regex: /푸시/g, tip: '내 컴퓨터의 커밋을 GitHub에 올리는 것' },
+      { regex: /포크/g, tip: '남의 저장소를 내 계정으로 복사해 오는 것' },
+      { regex: /클론/g, tip: '저장소를 내 컴퓨터에 내려받는 것' },
+      { regex: /저장소/g, tip: '코드와 파일을 담아두는 공간. GitHub의 프로젝트 폴더' },
+      { regex: /배포/g, tip: '만든 사이트를 인터넷에 올려 누구나 볼 수 있게 하는 것' },
+      { regex: /빌드/g, tip: '소스 코드를 실제 사이트 파일로 변환하는 과정' },
+      { regex: /터미널/g, tip: '명령어를 입력해 컴퓨터를 조작하는 검은 화면' },
+      { regex: /\bFork\b/g, tip: '남의 저장소를 내 계정으로 복사해 오는 것' },
+      { regex: /\bClone\b/g, tip: '저장소를 내 컴퓨터에 내려받는 것' },
+      { regex: /\bPrivate\b/g, tip: '나만 볼 수 있는 저장소 설정' },
+      { regex: /\bPublic\b/g, tip: '누구나 볼 수 있는 저장소 설정' },
+    ];
+
+    function applyGlossary(container) {
+      const walker = document.createTreeWalker(
+        container,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode(node) {
+            const skip = node.parentElement?.closest('pre, code, a, .glossary-term, h1, h2, h3');
+            return skip ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+          }
+        }
+      );
+
+      const textNodes = [];
+      let n;
+      while ((n = walker.nextNode())) textNodes.push(n);
+
+      for (const textNode of textNodes) {
+        const text = textNode.textContent ?? '';
+
+        // 모든 용어의 매칭 위치 수집
+        const matches = [];
+        for (const { regex, tip } of glossaryTerms) {
+          regex.lastIndex = 0;
+          let m;
+          while ((m = regex.exec(text)) !== null) {
+            matches.push({ start: m.index, end: m.index + m[0].length, term: m[0], tip });
+          }
+        }
+        if (matches.length === 0) continue;
+
+        // 위치순 정렬, 겹치는 것 제거
+        matches.sort((a, b) => a.start - b.start);
+        const kept = [];
+        let cursor = 0;
+        for (const m of matches) {
+          if (m.start >= cursor) { kept.push(m); cursor = m.end; }
+        }
+
+        // 텍스트 노드를 분해해서 span으로 교체
+        const frag = document.createDocumentFragment();
+        let pos = 0;
+        for (const m of kept) {
+          if (m.start > pos) frag.appendChild(document.createTextNode(text.slice(pos, m.start)));
+          const span = document.createElement('span');
+          span.className = 'glossary-term';
+          span.dataset.tooltip = m.tip;
+          span.textContent = m.term;
+          frag.appendChild(span);
+          pos = m.end;
+        }
+        if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+        textNode.replaceWith(frag);
+      }
+    }
+
+    const tutorialBody = document.querySelector('.tutorial-body');
+    if (tutorialBody) applyGlossary(tutorialBody);
   </script>
 </Base>
