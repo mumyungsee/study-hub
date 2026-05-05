@@ -3,9 +3,15 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import TutorialPost from '../../layouts/TutorialPost.astro';
 
 export async function getStaticPaths() {
+  const trackOrder = { '필수': 0, '선택': 1, '부록': 2 };
   const lessons = (await getCollection('tutorial'))
     .filter((lesson) => lesson.data.status === '공개')
-    .sort((a, b) => a.data.chapter - b.data.chapter);
+    .sort((a, b) => {
+      const ta = trackOrder[a.data.track ?? '필수'] ?? 0;
+      const tb = trackOrder[b.data.track ?? '필수'] ?? 0;
+      if (ta !== tb) return ta - tb;
+      return a.data.chapter - b.data.chapter;
+    });
 
   return lessons.map((lesson, i) => ({
     params: { slug: lesson.slug },

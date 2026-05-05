@@ -1,6 +1,6 @@
 ---
 title: "부록 C. CLAUDE.md 잘 쓰는 법"
-chapter: 3
+chapter: 103
 order: 0
 track: 부록
 description: "CLAUDE.md 세 종류의 차이와 효과적으로 작성하는 방법을 정리합니다."

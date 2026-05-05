@@ -45,9 +45,9 @@ const appendix = allLessons.filter((l) => l.data.track === '부록');
     {appendix.length > 0 && (
       <>
         <h2 class="section-title">더 알아보기 — 부록</h2>
-        {appendix.map((lesson) => (
+        {appendix.map((lesson, i) => (
           <article class="lesson-card appendix-card">
-            <p>부록 {lesson.data.chapter}</p>
+            <p>부록 {String.fromCharCode(65 + i)}</p>
             <h3><a href={`/tutorial/${lesson.slug}/`}>{lesson.data.title}</a></h3>
             {lesson.data.description && <span>{lesson.data.description}</span>}
           </article>
