@@ -3,19 +3,30 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import TutorialPost from '../../layouts/TutorialPost.astro';
 
 export async function getStaticPaths() {
-  const lessons = (await getCollection('tutorial')).filter((lesson) => lesson.data.status === '공개');
-  return lessons.map((lesson) => ({
+  const lessons = (await getCollection('tutorial'))
+    .filter((lesson) => lesson.data.status === '공개')
+    .sort((a, b) => a.data.chapter - b.data.chapter);
+
+  return lessons.map((lesson, i) => ({
     params: { slug: lesson.slug },
-    props: lesson,
+    props: {
+      lesson,
+      prev: lessons[i - 1] ?? null,
+      next: lessons[i + 1] ?? null,
+    },
   }));
 }
 
-type Props = CollectionEntry<'tutorial'>;
+interface Props {
+  lesson: CollectionEntry<'tutorial'>;
+  prev: CollectionEntry<'tutorial'> | null;
+  next: CollectionEntry<'tutorial'> | null;
+}
 
-const lesson = Astro.props;
+const { lesson, prev, next } = Astro.props;
 const { Content } = await lesson.render();
 ---
 
-<TutorialPost {...lesson.data}>
+<TutorialPost {...lesson.data} prev={prev} next={next}>
   <Content />
 </TutorialPost>
