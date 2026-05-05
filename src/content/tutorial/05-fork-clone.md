@@ -123,6 +123,8 @@ git clone https://github.com/내-아이디/aaa-starter-kit.git
 | `.claude/commands/` | 슬래시 명령어 파일 보관소. |
 | `astro.config.mjs` | 사이트 기본 설정. Vercel URL을 나중에 여기 넣습니다. |
 
+이 저장소는 **Astro**로 만들어진 사이트입니다. Astro는 마크다운 파일(.md)을 자동으로 웹페이지로 변환해주는 도구입니다. `src/content/blog/` 안에 글 파일을 하나 만들면 사이트에 페이지 하나가 생기는 구조입니다. 직접 건드릴 일은 거의 없고, Claude Code가 대신 다뤄줍니다.
+
 ---
 
 ## 이번 장에서 확인한 것
