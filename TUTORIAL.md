@@ -131,37 +131,37 @@ export default defineConfig({
 
 이 저장소를 Claude Code로 열면 슬래시 명령어를 쓸 수 있습니다.
 
-### `/project:일간` — 오늘 회고 시작
+### `/project:daily` — 오늘 회고 시작
 
 ```
-/project:일간
+/project:daily
 ```
 
 Claude가 동행자 톤으로 오늘 하루 대화를 이끌어줍니다.
 대화가 끝나면 `journal/20_일간_YYYY-MM-DD.md` 파일로 자동 저장됩니다.
 
-### `/project:주간` — 주간 회고
+### `/project:weekly` — 주간 회고
 
 ```
-/project:주간
+/project:weekly
 ```
 
 최근 7일 일간 기록을 읽고 주간 회고를 생성합니다.
 `journal/30_주간_YYYY-Wnn.md`로 저장됩니다.
 
-### `/project:월간` — 월간 회고
+### `/project:monthly` — 월간 회고
 
 ```
-/project:월간
+/project:monthly
 ```
 
 한 달치 주간 회고를 종합합니다.
 `journal/40_월간_YYYY-MM.md`로 저장됩니다.
 
-### `/project:블로그초안` — 블로그 글 만들기
+### `/project:blog` — 블로그 글 만들기
 
 ```
-/project:블로그초안
+/project:blog
 ```
 
 인자 없이 실행하면 최근 일간 기록의 소재 후보 목록을 보여줍니다.
