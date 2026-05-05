@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// 사이트 URL — Vercel 배포 후 실제 URL로 교체
 export default defineConfig({
-  site: 'https://example.vercel.app',
+  site: 'https://life-wiki-nu.vercel.app',
   markdown: {
     shikiConfig: {
       theme: 'github-light',
