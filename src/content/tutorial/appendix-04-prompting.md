@@ -1,5 +1,5 @@
 ---
-title: "부록 D. 프롬프트 잘 쓰는 법"
+title: "부록 B. 프롬프트 잘 쓰는 법"
 chapter: 102
 order: 0
 track: 부록

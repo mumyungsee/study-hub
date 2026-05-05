@@ -1,5 +1,5 @@
 ---
-title: "부록 E. 나만의 스킬 만들기"
+title: "부록 D. 나만의 스킬 만들기"
 chapter: 104
 order: 0
 track: 부록

@@ -1,5 +1,5 @@
 ---
-title: "부록 A. bkit 심화 — 스킬과 개발 파이프라인"
+title: "부록 E. bkit 심화 — 스킬과 개발 파이프라인"
 chapter: 105
 order: 0
 track: 부록
