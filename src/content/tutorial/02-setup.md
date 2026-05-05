@@ -2,6 +2,7 @@
 title: "2장. 시작 전 준비"
 chapter: 2
 order: 0
+track: 필수
 description: "GitHub와 Vercel 계정을 준비하고, Antigravity에서 작업 폴더를 여는 흐름을 정리합니다."
 status: 공개
 ---

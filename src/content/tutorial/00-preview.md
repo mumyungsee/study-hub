@@ -1,6 +1,6 @@
 ---
-title: "0장. 시작하기 전에"
-chapter: 0
+title: "1장. 시작하기 전에"
+chapter: 1
 order: 0
 track: 필수
 description: "만들 것과 쓸 도구를 한눈에 정리합니다."

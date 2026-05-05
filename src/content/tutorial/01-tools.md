@@ -1,6 +1,6 @@
 ---
 title: "1장. 우리가 쓸 도구 5가지"
-chapter: 1
+chapter: 99
 order: 0
 track: 필수
 description: "Antigravity, Claude Code, bkit, GitHub, Vercel이 각각 어떤 역할을 하는지 한 줄로 정리합니다."
