@@ -1,0 +1,54 @@
+---
+import Base from './Base.astro';
+import type { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, date, projects, themes, description } = Astro.props;
+
+const dateFormatted = new Intl.DateTimeFormat('ko-KR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(new Date(date));
+---
+
+<Base title={title} description={description ?? title}>
+  <article>
+    <header class="post-header">
+      <p class="post-date">{dateFormatted}</p>
+      <h1>{title}</h1>
+      {projects && projects.length > 0 && (
+        <div class="tags">
+          {projects.map((p) => <span class="tag tag-project">#{p}</span>)}
+          {themes?.map((t) => <span class="tag tag-theme">{t}</span>)}
+        </div>
+      )}
+    </header>
+    <div class="post-body">
+      <slot />
+    </div>
+    <footer class="post-footer">
+      <a href="/">← 목록으로</a>
+    </footer>
+  </article>
+  <style>
+    .post-header { margin-bottom: 2rem; }
+    .post-date { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.5rem; }
+    .tags { margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.85rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #f0ede4;
+      color: var(--muted);
+    }
+    .tag-project { background: #e5dcce; color: var(--accent); }
+    .post-body :global(p) { line-height: 1.85; }
+    .post-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+  </style>
+</Base>

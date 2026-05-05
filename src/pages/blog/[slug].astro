@@ -1,0 +1,24 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+  // 공개/책_챕터_후보 상태인 글만 사이트에 빌드. 초안은 노출 안 됨.
+  const posts = (await getCollection('blog')).filter(
+    (post) => post.data.status === '공개' || post.data.status === '책_챕터_후보'
+  );
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BlogPost {...post.data}>
+  <Content />
+</BlogPost>
