@@ -4,7 +4,7 @@ chapter: 1
 order: 0
 track: 필수
 description: "Antigravity, Claude Code, bkit, GitHub, Vercel이 각각 어떤 역할을 하는지 한 줄로 정리합니다."
-status: 공개
+status: 초안
 ---
 
 이 튜토리얼에서는 도구를 다섯 가지 사용합니다. 지금 이름을 모두 외울 필요는 없습니다. 어느 순간에 어떤 도구가 등장하는지만 알면 됩니다.
