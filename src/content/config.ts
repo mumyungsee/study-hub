@@ -18,7 +18,7 @@ const tutorial = defineCollection({
     title: z.string(),
     chapter: z.number(),
     order: z.number(),
-    track: z.enum(['필수', '선택', '부록']).optional(),
+    track: z.enum(['필수', '심화', '부록']).optional(),
     description: z.string().optional(),
     status: z.enum(['초안', '공개']).default('초안'),
   }),

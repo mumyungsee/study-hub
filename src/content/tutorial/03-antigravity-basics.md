@@ -2,12 +2,12 @@
 title: "6장. 레포 써보기"
 chapter: 6
 order: 0
-track: 선택
+track: 심화
 description: "먼저 레포를 직접 써봅니다. 일간 회고를 쓰고 블로그 초안을 만들면서 Antigravity와 Claude 사용법을 익힙니다."
 status: 공개
 ---
 
-> **선택 1~2시간 코스 — 첫 번째**
+> **심화 코스 — 첫 번째**
 
 ## 이번 장에서 할 것
 

@@ -3,7 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import TutorialPost from '../../layouts/TutorialPost.astro';
 
 export async function getStaticPaths() {
-  const trackOrder = { '필수': 0, '선택': 1, '부록': 2 };
+  const trackOrder = { '필수': 0, '심화': 1, '부록': 2 };
   const lessons = (await getCollection('tutorial'))
     .filter((lesson) => lesson.data.status === '공개')
     .sort((a, b) => {

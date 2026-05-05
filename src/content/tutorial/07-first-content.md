@@ -2,12 +2,12 @@
 title: "8장. 수정하기 — Claude와 함께 바꾸기"
 chapter: 8
 order: 0
-track: 선택
+track: 심화
 description: "7장에서 만든 계획을 바탕으로 Claude와 함께 레포를 실제로 수정합니다."
 status: 공개
 ---
 
-> **선택 1~2시간 코스 — 세 번째**
+> **심화 코스 — 세 번째**
 
 ## 이번 장에서 할 것
 

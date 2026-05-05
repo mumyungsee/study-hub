@@ -2,12 +2,12 @@
 title: "10장. Act + 배포 — 마무리하고 사이트에 반영하기"
 chapter: 10
 order: 0
-track: 선택
+track: 심화
 description: "개선사항을 정리하고 GitHub에 Push해서 내 사이트에 반영합니다."
 status: 공개
 ---
 
-> **선택 1~2시간 코스 — 마지막**
+> **심화 코스 — 마지막**
 
 ## 이번 장에서 할 것
 

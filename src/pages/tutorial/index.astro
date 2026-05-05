@@ -7,7 +7,7 @@ const allLessons = (await getCollection('tutorial'))
   .sort((a, b) => a.data.chapter - b.data.chapter || a.data.order - b.data.order);
 
 const required = allLessons.filter((l) => l.data.track === '필수');
-const optional = allLessons.filter((l) => l.data.track === '선택');
+const optional = allLessons.filter((l) => l.data.track === '심화');
 const appendix = allLessons.filter((l) => l.data.track === '부록');
 ---
 
@@ -30,7 +30,7 @@ const appendix = allLessons.filter((l) => l.data.track === '부록');
       </article>
     ))}
 
-    <h2 class="section-title">선택 — 1~2시간</h2>
+    <h2 class="section-title">심화</h2>
     {optional.length === 0 && (
       <p class="empty">아직 공개된 튜토리얼이 없습니다.</p>
     )}

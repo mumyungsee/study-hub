@@ -2,12 +2,12 @@
 title: "9장. Check — 계획대로 됐는지 확인하기"
 chapter: 9
 order: 0
-track: 선택
+track: 심화
 description: "bkit /check 스킬로 계획 대비 구현 상태를 검증하고, 로컬 미리보기로 눈으로 확인합니다."
 status: 공개
 ---
 
-> **선택 1~2시간 코스 — 네 번째**
+> **심화 코스 — 네 번째**
 
 ## 이번 장에서 할 것
 

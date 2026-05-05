@@ -2,12 +2,12 @@
 title: "7장. 기획하기 — bkit /plan"
 chapter: 7
 order: 0
-track: 선택
+track: 심화
 description: "써보면서 바꾸고 싶은 것을 정리하고, bkit /plan 스킬로 계획 문서를 만듭니다."
 status: 공개
 ---
 
-> **선택 1~2시간 코스 — 두 번째**
+> **심화 코스 — 두 번째**
 
 ## 이번 장에서 할 것
 
