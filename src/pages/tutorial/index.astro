@@ -2,9 +2,13 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const lessons = (await getCollection('tutorial'))
+const allLessons = (await getCollection('tutorial'))
   .filter((lesson) => lesson.data.status === '공개')
   .sort((a, b) => a.data.chapter - b.data.chapter || a.data.order - b.data.order);
+
+const required = allLessons.filter((l) => l.data.track === '필수');
+const optional = allLessons.filter((l) => l.data.track === '선택');
+const appendix = allLessons.filter((l) => l.data.track === '부록');
 ---
 
 <Base title="라이프 위키 튜토리얼">
@@ -14,16 +18,42 @@ const lessons = (await getCollection('tutorial'))
   </section>
 
   <section class="lesson-list">
-    {lessons.length === 0 && (
+    <h2 class="section-title">필수 — 30분</h2>
+    {required.length === 0 && (
       <p class="empty">아직 공개된 튜토리얼이 없습니다.</p>
     )}
-    {lessons.map((lesson) => (
+    {required.map((lesson) => (
       <article class="lesson-card">
         <p>{lesson.data.chapter}장</p>
-        <h2><a href={`/tutorial/${lesson.slug}/`}>{lesson.data.title}</a></h2>
+        <h3><a href={`/tutorial/${lesson.slug}/`}>{lesson.data.title}</a></h3>
         {lesson.data.description && <span>{lesson.data.description}</span>}
       </article>
     ))}
+
+    <h2 class="section-title">선택 — 1~2시간</h2>
+    {optional.length === 0 && (
+      <p class="empty">아직 공개된 튜토리얼이 없습니다.</p>
+    )}
+    {optional.map((lesson) => (
+      <article class="lesson-card">
+        <p>{lesson.data.chapter}장</p>
+        <h3><a href={`/tutorial/${lesson.slug}/`}>{lesson.data.title}</a></h3>
+        {lesson.data.description && <span>{lesson.data.description}</span>}
+      </article>
+    ))}
+
+    {appendix.length > 0 && (
+      <>
+        <h2 class="section-title">더 알아보기 — 부록</h2>
+        {appendix.map((lesson) => (
+          <article class="lesson-card appendix-card">
+            <p>부록 {lesson.data.chapter}</p>
+            <h3><a href={`/tutorial/${lesson.slug}/`}>{lesson.data.title}</a></h3>
+            {lesson.data.description && <span>{lesson.data.description}</span>}
+          </article>
+        ))}
+      </>
+    )}
   </section>
 
   <style>
@@ -37,6 +67,16 @@ const lessons = (await getCollection('tutorial'))
     .intro p {
       color: var(--muted);
     }
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin: 2.5rem 0 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.5rem;
+    }
     .lesson-card {
       border-bottom: 1px solid var(--line);
       padding: 1.25rem 0;
@@ -47,7 +87,7 @@ const lessons = (await getCollection('tutorial'))
       font-weight: 700;
       margin: 0;
     }
-    .lesson-card h2 {
+    .lesson-card h3 {
       font-size: 1.2rem;
       margin: 0.25rem 0;
     }
@@ -61,6 +101,9 @@ const lessons = (await getCollection('tutorial'))
     .lesson-card span {
       color: var(--muted);
       display: block;
+    }
+    .appendix-card p {
+      color: var(--muted);
     }
     .empty {
       color: var(--muted);
