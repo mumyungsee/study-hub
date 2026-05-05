@@ -1,6 +1,6 @@
 ---
 title: "부록 F. 마크다운이란"
-chapter: 106
+chapter: 101
 order: 0
 track: 부록
 description: "마크다운이 무엇인지, 왜 쓰는지, 기본 문법과 활용법을 초보자 기준으로 설명합니다."

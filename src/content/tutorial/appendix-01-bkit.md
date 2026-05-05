@@ -1,6 +1,6 @@
 ---
 title: "부록 A. bkit 심화 — 스킬과 개발 파이프라인"
-chapter: 101
+chapter: 105
 order: 0
 track: 부록
 description: "bkit의 스킬, 9단계 개발 파이프라인, 프로젝트 레벨 구분을 정리합니다."

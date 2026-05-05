@@ -1,6 +1,6 @@
 ---
 title: "부록 D. 프롬프트 잘 쓰는 법"
-chapter: 104
+chapter: 102
 order: 0
 track: 부록
 description: "잘 되는 요청의 구조, 막혔을 때 대처법, 자주 쓰는 패턴을 정리합니다."
