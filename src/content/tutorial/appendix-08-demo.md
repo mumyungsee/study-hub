@@ -13,6 +13,8 @@ status: 공개
 
 - Antigravity 설치됨
 - bkit 설치됨
+- git 설치됨
+- GitHub CLI(`gh`) 설치됨, 로그인 상태
 - GitHub 계정 있음 (로그인 상태)
 - Vercel 계정 있음 (GitHub 연결됨)
 - 내 컴퓨터에 작업 폴더(`life-wiki`) 만들어져 있음
