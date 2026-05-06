@@ -62,7 +62,7 @@
 - [ ] 강사가 Q&A를 쌓는 방법 문서화
 
 ### 4단계: AI 분석 명령어
-- [ ] `.claude/commands/analyze.md` (제출물 분석)
+- [x] `.claude/commands/analyze.md` (제출물 분석 + 갤러리 등록 추천 + 피드백 초안)
 
 ---
 
@@ -93,6 +93,7 @@
 
 ### 3단계: Q&A 축적
 - [ ] `02_skill_insight/` 폴더 + README.md
+  → **보류**: 수강생 운영 후 반복 질문이 쌓이면 그때 추가
 
 ### 4단계: AI 분석 명령어
 - [ ] `.claude/commands/analyze.md`
