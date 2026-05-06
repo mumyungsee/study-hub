@@ -73,7 +73,7 @@
 | 2026-05-06 | Vercel 배포: v2 브랜치는 프리뷰 URL로 개발 진행 | v1(main) 배포에 영향 없이 독립 개발 가능 |
 | 2026-05-06 | v2 완성 후 Vercel에 별도 프로젝트로 분리 배포 | v1·v2를 각자 독립된 URL로 운영 |
 | 2026-05-06 | PDCA 문서 구조 없이 이 파일 하나로 관리 | v2 규모가 작아 bkit PDCA 오버헤드 불필요 |
-| 2026-05-06 | **[강의 오픈 전 결정 필요]** v2를 기본 브랜치로 전환 | 수강생이 Fork할 때 main 기준으로 Fork하므로, v2 기능(00_missions, /submit 등)을 쓰려면 v2가 default branch여야 함. 옵션: (1) v2를 main으로 승격 (2) Vercel에 v2 전용 프로젝트 분리 |
+| 2026-05-06 | **[강의 오픈 전 결정 필요]** v2를 기본 브랜치로 전환 | **왜 필요한가**: 수강생이 레포를 Fork할 때 GitHub은 자동으로 default branch(현재 main)를 기준으로 복사함. 즉 수강생 Fork에는 v2에서 만든 00_missions/, /submit, /mission, /gallery 명령어가 하나도 없음. 결국 미션 제출 기능 자체를 못 씀. **해결 옵션**: (1) v2 브랜치를 GitHub에서 default branch로 변경 → 이후 Fork하는 수강생은 v2 기준으로 받음 (2) Vercel에 v2 전용 프로젝트 따로 만들고 v2를 그 프로젝트의 main으로 운영 |
 
 ---
 
