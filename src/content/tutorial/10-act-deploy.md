@@ -103,7 +103,7 @@ Dynamic    — API 연동, 사용자 인증, 데이터베이스가 있는 서비
 Enterprise — 마이크로서비스, 보안, CI/CD, 대규모 팀 협업
 ```
 
-더 복잡한 것을 만들고 싶을 때는 bkit 9단계 개발 파이프라인(PM → Plan → Design → Do → Check → Act)으로 확장할 수 있습니다. [부록 E. bkit 심화](/tutorial/appendix-01-bkit/)에서 자세히 다룹니다.
+더 복잡한 것을 만들고 싶을 때는 bkit 9단계 개발 파이프라인(PM → Plan → Design → Do → Check → Act)으로 확장할 수 있습니다. [부록 F. bkit 심화](/tutorial/appendix-01-bkit/)에서 자세히 다룹니다.
 
 ---
 

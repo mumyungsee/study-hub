@@ -157,4 +157,4 @@ bkit `/check`로 계획한 것이 제대로 됐는지 검증합니다.
 
 ---
 
-> **더 알아보기:** 요청을 더 잘 쓰고 싶다면 → [부록 B. 프롬프트 잘 쓰는 법](/tutorial/appendix-04-prompting/)
+> **더 알아보기:** 요청을 더 잘 쓰고 싶다면 → [부록 C. 프롬프트 잘 쓰는 법](/tutorial/appendix-04-prompting/)

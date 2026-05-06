@@ -1,6 +1,6 @@
 ---
-title: "부록 F. Git으로 버전 관리하는 법"
-chapter: 106
+title: "부록 G. Git으로 버전 관리하는 법"
+chapter: 107
 order: 0
 track: 부록
 description: "Git이 어떻게 버전을 기록하는지, 브랜치가 뭔지, 실제로 어떻게 쓰는지 초보자 기준으로 설명합니다."

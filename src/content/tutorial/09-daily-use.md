@@ -97,4 +97,4 @@ bkit이 Plan 문서와 현재 구현 상태를 비교해서 보고합니다.
 
 ---
 
-> **더 알아보기:** bkit 스킬과 PDCA 파이프라인 전체가 궁금하다면 → [부록 E. bkit 심화](/tutorial/appendix-01-bkit/)
+> **더 알아보기:** bkit 스킬과 PDCA 파이프라인 전체가 궁금하다면 → [부록 F. bkit 심화](/tutorial/appendix-01-bkit/)

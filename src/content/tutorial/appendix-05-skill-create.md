@@ -1,6 +1,6 @@
 ---
-title: "부록 D. 나만의 스킬 만들기"
-chapter: 104
+title: "부록 E. 나만의 스킬 만들기"
+chapter: 105
 order: 0
 track: 부록
 description: "bkit 스킬 파일 구조를 이해하고, /skill-create로 프로젝트 전용 스킬을 직접 만드는 방법을 설명합니다."

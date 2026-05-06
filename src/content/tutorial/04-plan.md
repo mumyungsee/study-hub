@@ -133,4 +133,4 @@ do:   홈 제목 수정, 블로그 카드 스타일 변경   ← 다음 장
 
 ---
 
-> **더 알아보기:** bkit 스킬과 개발 파이프라인 전체가 궁금하다면 → [부록 E. bkit 심화](/tutorial/appendix-01-bkit/)
+> **더 알아보기:** bkit 스킬과 개발 파이프라인 전체가 궁금하다면 → [부록 F. bkit 심화](/tutorial/appendix-01-bkit/)
