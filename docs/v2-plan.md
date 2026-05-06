@@ -97,7 +97,7 @@
   → **보류**: 수강생 운영 후 반복 질문이 쌓이면 그때 추가
 
 ### 4단계: AI 분석 명령어
-- [ ] `.claude/commands/analyze.md`
+- [x] `.claude/commands/admin-analyze.md` (강사용, admin- 접두사)
 
 ---
 
