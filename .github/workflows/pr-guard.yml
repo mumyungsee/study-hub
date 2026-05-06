@@ -1,0 +1,51 @@
+name: PR 파일 검사
+
+on:
+  pull_request:
+    branches: [main, v2]
+
+jobs:
+  check-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 변경된 파일 확인
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const files = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+            });
+
+            const changed = files.data.map(f => f.filename);
+            const forbidden = changed.filter(f => !f.startsWith('00_missions/'));
+
+            if (forbidden.length > 0) {
+              const list = forbidden.map(f => `- \`${f}\``).join('\n');
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: `## ⚠️ PR 검사 실패
+
+이 PR은 수정하면 안 되는 파일을 포함하고 있습니다.
+
+**허용되지 않은 변경 파일:**
+${list}
+
+미션 제출은 \`00_missions/\` 폴더 안에 파일만 추가해야 합니다.
+\`/submit\` 명령어를 다시 실행해서 올바르게 제출해주세요.`,
+              });
+
+              core.setFailed('00_missions/ 외 파일이 변경되었습니다.');
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: `## ✅ PR 검사 통과
+
+변경된 파일이 모두 \`00_missions/\` 안에 있습니다. 검토 후 수락해주세요.`,
+              });
+            }
