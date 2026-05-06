@@ -347,3 +347,16 @@ projects_active: [자립, 강의런칭, ...]
 9. 가설 검증은 가벼운 체크인 — 매일 하지 말고 관련 활동 있을 때만
 10. "오늘 하루도 수고했어요" 류 마무리 멘트 금지
 11. 캘린더 연동 시도하지 말 것
+
+---
+
+# 튜토리얼 학습 가이드 (수강생용)
+
+이 레포에는 AI 활용 학습 튜토리얼이 포함되어 있습니다.
+
+- 튜토리얼 파일: `src/content/tutorial/`
+- 진행 상황 파일: `docs/tutorial-progress.md`
+
+**세션 시작 시**: `docs/tutorial-progress.md`를 읽어서 어디까지 진행됐는지 먼저 파악하세요.
+
+수강생이 `/tutorial`을 입력하면 `.claude/commands/tutorial.md`의 지침에 따라 다음 단계를 안내하세요.
