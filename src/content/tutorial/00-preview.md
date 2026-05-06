@@ -1,5 +1,5 @@
 ---
-title: "1장. 시작하기 전에"
+title: "1장. 만들 것과 쓸 도구"
 chapter: 1
 order: 0
 track: 필수
