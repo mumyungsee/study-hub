@@ -27,7 +27,7 @@ Vercel이 웹사이트 자동 배포
 |------|------|---------|
 | **Antigravity** | AI와 함께 작업하는 공간 | 파일 수정, 명령 실행할 때 |
 | **Claude Code** | 파일을 읽고 만들고 수정하는 AI | 채팅창에 요청할 때 |
-| **bkit** | 계획-실행-확인 흐름을 잡아주는 도구 | `/plan`, `/check` 명령을 쓸 때 |
+| **bkit** | 계획-실행-확인 흐름을 잡아주는 도구 | `/pdca plan`, `/pdca analyze` 명령을 쓸 때 |
 | **GitHub** | 오픈소스 레포를 가져오고 내 작업을 저장 | Fork, Clone, Push할 때 |
 | **Vercel** | GitHub 코드를 웹사이트로 배포 | Push하면 자동으로 동작 |
 
