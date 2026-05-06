@@ -11,7 +11,7 @@ status: 공개
 
 ## 이번 장에서 할 것
 
-1. `selfishclub/aaa-starter-kit` 레포를 내 GitHub 계정으로 Fork합니다.
+1. `mumyungsee/auto-llm-wiki` 레포를 내 GitHub 계정으로 Fork합니다.
 2. Fork한 레포를 내 컴퓨터 `life-wiki` 폴더로 Clone합니다.
 3. 가져온 파일 구조를 파악합니다.
 
@@ -22,7 +22,7 @@ status: 공개
 저장소 주소로 들어갑니다.
 
 ```txt
-https://github.com/selfishclub/aaa-starter-kit
+https://github.com/mumyungsee/auto-llm-wiki
 ```
 
 오른쪽 사이드바에서 라이센스 항목을 확인합니다. **MIT License**라고 표시되어 있으면 자유롭게 가져와서 수정할 수 있습니다.
@@ -54,7 +54,7 @@ https://github.com/selfishclub/aaa-starter-kit
 4. 주소가 바뀐 것을 확인합니다.
 
 ```txt
-Fork 전: github.com/selfishclub/aaa-starter-kit
+Fork 전: github.com/mumyungsee/auto-llm-wiki
 Fork 후: github.com/내-아이디/aaa-starter-kit
 ```
 
@@ -129,12 +129,35 @@ git clone https://github.com/내-아이디/aaa-starter-kit.git
 
 ---
 
+---
+
+## 5단계. AI 가이드 활성화하기
+
+Clone이 끝나면 Antigravity에서 레포 폴더를 엽니다.
+
+1. Antigravity 메뉴에서 `File → Open Folder...`를 선택합니다.
+2. Clone한 `내-아이디/auto-llm-wiki` 폴더를 선택합니다.
+3. 왼쪽 파일 탐색기에 파일들이 보이는지 확인합니다.
+
+폴더가 열리면 채팅창에 입력합니다.
+
+```txt
+/tutorial
+```
+
+AI가 현재 진행 상황을 파악하고 다음 단계를 안내합니다. 이제부터는 AI가 이끄는 대로 따라가면 됩니다.
+
+> 막히는 게 생기면 그냥 "이거 모르겠어" 또는 "왜 이렇게 해?" 하고 물어보면 됩니다.
+
+---
+
 ## 이번 장에서 확인한 것
 
 1. MIT 라이센스 확인 → Fork → Clone 순서로 진행했습니다.
 2. Fork한 내 저장소는 원본과 자동 동기화되지 않습니다.
 3. 파일 구조에서 `journal/`(비공개)과 `src/content/blog/`(공개)의 차이를 확인했습니다.
+4. Antigravity에서 레포를 열고 `/tutorial`로 AI 가이드를 활성화했습니다.
 
 ## 다음 장에서 할 것
 
-`CLAUDE.md`를 내 이름과 상황에 맞게 수정합니다.
+`CLAUDE.md`를 내 이름과 상황에 맞게 수정합니다. AI가 안내합니다.
