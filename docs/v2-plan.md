@@ -85,10 +85,11 @@
 - [x] `.claude/commands/submit.md`
 
 ### 2단계: 갤러리 구조
-- [ ] `01_gallery/template/` 양식 파일
-- [ ] `01_gallery/README.md`
-- [ ] Astro 갤러리 페이지 (`src/pages/gallery/`)
-- [ ] `.claude/commands/gallery.md`
+- [x] `01_gallery/README.md` (강사용 운영 안내)
+- [x] `src/content/gallery/` (콘텐츠 컬렉션 — 공개 사례)
+- [x] `src/content/config.ts` — gallery 컬렉션 추가
+- [x] `src/pages/gallery/index.astro` (갤러리 페이지)
+- [x] `.claude/commands/gallery.md` (강사용 등록 명령어)
 
 ### 3단계: Q&A 축적
 - [ ] `02_skill_insight/` 폴더 + README.md

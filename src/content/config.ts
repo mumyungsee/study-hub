@@ -24,4 +24,15 @@ const tutorial = defineCollection({
   }),
 });
 
-export const collections = { blog, tutorial };
+const gallery = defineCollection({
+  type: 'content',
+  schema: z.object({
+    mission: z.number(),
+    title: z.string(),
+    author: z.string(),
+    deployed_url: z.string().optional(),
+    date: z.coerce.date(),
+  }),
+});
+
+export const collections = { blog, tutorial, gallery };
