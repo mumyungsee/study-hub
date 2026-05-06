@@ -209,3 +209,4 @@ bkit은 프로젝트 규모에 따라 세 레벨로 구분합니다.
 |------|------|
 | Claude Code 공식 문서 | [docs.anthropic.com/claude-code](https://docs.anthropic.com/en/docs/claude-code/overview) |
 | bkit 공식 사이트 | [bkit.ai](https://www.bkit.ai/) |
+| bkit GitHub (오픈소스) | [github.com/popup-studio-ai/bkit-starter](https://github.com/popup-studio-ai/bkit-starter) |
