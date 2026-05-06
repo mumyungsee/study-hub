@@ -99,19 +99,37 @@ date: "[오늘 날짜]"
 
 ### 5. 저장 + PR 제출
 
-```
-파일 저장: 00_missions/mission-01-[student_github].md
-```
+사례글 파일을 현재 브랜치에 저장한 뒤, **강사 레포 기준 새 브랜치**를 만들어서 사례글만 딱 담아 PR을 생성합니다.
+수강생 fork에 다른 변경사항이 얼마나 많든 PR에는 사례글 파일 하나만 들어갑니다.
 
 ```bash
+# 1. 사례글 파일 현재 브랜치에 저장
+#    (인터뷰 완료 후 이미 저장됨)
+
+# 2. 강사 레포 최신 main을 기준으로 빈 브랜치 생성
+git fetch https://github.com/INSTRUCTOR_REPO.git main
+git checkout -b submit/mission-01-[student_github] FETCH_HEAD
+
+# 3. 사례글 파일만 가져오기
+git checkout [원래브랜치] -- 00_missions/mission-01-[student_github].md
+
+# 4. 사례글만 커밋
 git add 00_missions/mission-01-[student_github].md
 git commit -m "사례글 제출: mission-01-[student_github]"
-git push origin [현재브랜치]
+
+# 5. 수강생 fork에 push
+git push origin submit/mission-01-[student_github]
+
+# 6. 강사 레포로 PR 생성
 gh pr create \
   --repo INSTRUCTOR_REPO \
+  --head [student_github]:submit/mission-01-[student_github] \
+  --base main \
   --title "미션 1 사례글: [student_github]" \
-  --body "..." \
-  --base main
+  --body "..."
+
+# 7. 원래 브랜치로 복귀
+git checkout [원래브랜치]
 ```
 
 PR URL 전달: "강사가 확인하면 사이트 갤러리에 게시됩니다."
