@@ -145,3 +145,11 @@ bkit은 프로젝트 규모에 따라 세 레벨로 구분합니다.
 - "서버에 데이터를 저장하고 여러 기기에서 접근해야 한다"
 
 지금 만든 라이프 위키 수준에서는 Starter로 충분합니다.
+
+---
+
+## 공식 문서
+
+| 문서 | 링크 |
+|------|------|
+| Claude Code 공식 문서 | [docs.anthropic.com/claude-code](https://docs.anthropic.com/en/docs/claude-code/overview) |

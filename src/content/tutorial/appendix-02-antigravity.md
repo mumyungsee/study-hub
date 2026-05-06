@@ -127,6 +127,37 @@ AI가 `SKILL.md` 파일을 생성해줍니다.
 
 ---
 
+## 에이전트 승인 — Approve 버튼
+
+Antigravity 에이전트는 중요한 작업을 실행하기 전에 **먼저 계획을 보여주고 승인을 요청합니다.** 이게 에이전트가 마음대로 파일을 바꾸지 못하게 막는 안전장치입니다.
+
+### 흐름
+
+```
+에이전트에게 요청
+  ↓
+Artifacts 패널 — "이렇게 하려고 합니다" 계획 표시
+  ↓
+Approve 버튼 클릭 (승인)
+  ↓
+에이전트가 실제 작업 실행
+```
+
+**Approve 전에는 아무것도 바뀌지 않습니다.** 계획이 마음에 들지 않으면 승인하지 말고 다시 요청하면 됩니다.
+
+### 실제로 보이는 것
+
+- 파일 생성/수정 요청 → **"이 파일을 이렇게 수정할게요" + Approve/Cancel**
+- 터미널 명령 실행 → **"이 명령어를 실행할게요" + Approve/Cancel**
+
+처음에 이 창이 뜨면 당황하지 마세요. 읽어보고 맞으면 Approve, 아니면 Cancel하고 다시 말하면 됩니다.
+
+### Approve를 매번 눌러야 하나요
+
+기본은 매번 확인입니다. 익숙해지면 Rules에 "짧은 수정은 자동으로 실행해도 좋다"라고 써넣을 수 있습니다. 하지만 처음엔 일단 확인하는 게 안전합니다.
+
+---
+
 ## 인라인 명령 (Ctrl+I)
 
 에디터에서 특정 부분만 수정하고 싶을 때 씁니다.
@@ -153,3 +184,16 @@ AI가 `SKILL.md` 파일을 생성해줍니다.
 | `Ctrl+Shift+P` | 명령 팔레트 (기능 검색) |
 | `Ctrl+B` | 파일 탐색기 접기/펴기 |
 | `` Ctrl+` `` | 터미널 열기/닫기 |
+
+---
+
+## 공식 문서
+
+막히거나 더 깊이 알고 싶을 때 참고합니다.
+
+| 문서 | 링크 |
+|------|------|
+| Antigravity 공식 문서 홈 | [antigravity.google/docs](https://antigravity.google/docs) |
+| Rules & Workflows 설정 가이드 | [antigravity.google/docs/rules-workflows](https://antigravity.google/docs/rules-workflows) |
+| 처음 시작하기 (Getting Started) | [antigravity.google/docs/getting-started](https://antigravity.google/docs/getting-started) |
+| 단축키 전체 목록 | [antigravity.google/docs/shortcuts](https://antigravity.google/docs/shortcuts) |
