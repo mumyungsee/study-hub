@@ -66,6 +66,38 @@
 
 ---
 
+## 결정사항 로그
+
+| 날짜 | 결정 | 이유 |
+|------|------|------|
+| 2026-05-06 | Vercel 배포: v2 브랜치는 프리뷰 URL로 개발 진행 | v1(main) 배포에 영향 없이 독립 개발 가능 |
+| 2026-05-06 | v2 완성 후 Vercel에 별도 프로젝트로 분리 배포 | v1·v2를 각자 독립된 URL로 운영 |
+| 2026-05-06 | PDCA 문서 구조 없이 이 파일 하나로 관리 | v2 규모가 작아 bkit PDCA 오버헤드 불필요 |
+
+---
+
+## 진행 기록
+
+### 1단계: 미션 구조
+- [x] `00_missions/template/mission-01.md` 양식 파일
+- [x] `00_missions/README.md` (수강생용 제출 안내)
+- [x] `.claude/commands/mission.md`
+- [x] `.claude/commands/submit.md`
+
+### 2단계: 갤러리 구조
+- [ ] `01_gallery/template/` 양식 파일
+- [ ] `01_gallery/README.md`
+- [ ] Astro 갤러리 페이지 (`src/pages/gallery/`)
+- [ ] `.claude/commands/gallery.md`
+
+### 3단계: Q&A 축적
+- [ ] `02_skill_insight/` 폴더 + README.md
+
+### 4단계: AI 분석 명령어
+- [ ] `.claude/commands/analyze.md`
+
+---
+
 ## 참고: aaa-starter-kit 원본 구조
 원본 레포(mumyungsee/aaa-starter-kit)에 이미 위 구조의 레퍼런스 구현이 있습니다.
 필요할 때 참조해서 가져옵니다.
