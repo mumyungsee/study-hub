@@ -26,7 +26,7 @@ CLAUDE.md 에 간단히 메모로 추가해줘.
 
 길게 쓸 필요 없습니다. "다음엔 프로필 사진 추가하기" 한 줄이면 충분합니다.
 
-이 메모가 다음 번 `/plan` 실행할 때 출발점이 됩니다.
+이 메모가 다음 번 `/pdca plan` 실행할 때 출발점이 됩니다.
 
 <details>
 <summary>Act 단계가 왜 필요한가요?</summary>
@@ -79,11 +79,11 @@ https://vercel.com/dashboard
 ```txt
 레포 탐색 (6장)
   ↓
-Plan: /plan으로 기획 + 커밋 (7장)
+Plan: /pdca plan으로 기획 + 커밋 (7장)
   ↓
 Do: Claude와 수정 + 커밋 (8장)
   ↓
-Check: /check로 검증 + 로컬 미리보기 (9장)
+Check: /pdca analyze로 검증 + 로컬 미리보기 (9장)
   ↓
 Act: 개선사항 정리 + Push + 배포 (10장)
 ```
