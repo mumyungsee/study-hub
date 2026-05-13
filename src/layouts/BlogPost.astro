@@ -13,7 +13,7 @@ const dateFormatted = new Intl.DateTimeFormat('ko-KR', {
 }).format(new Date(date));
 ---
 
-<Base title={title} description={description ?? title}>
+<Base title={title} description={description ?? title} showTOC={true}>
   <article>
     <header class="post-header">
       <p class="post-date">{dateFormatted}</p>

@@ -1,0 +1,207 @@
+---
+import { getCollection } from 'astro:content';
+import { getSectionKey } from '../config/nav';
+
+const pathname = Astro.url.pathname;
+const activeSection = getSectionKey(pathname);
+
+// 튜토리얼 챕터 목록 (사이드바용)
+const tutorials = (await getCollection('tutorial'))
+  .filter((t) => t.data.status === '공개')
+  .sort((a, b) => a.data.chapter - b.data.chapter || a.data.order - b.data.order);
+
+const required = tutorials.filter((t) => t.data.track === '필수');
+const advanced = tutorials.filter((t) => t.data.track === '심화');
+const appendix = tutorials.filter((t) => t.data.track === '부록');
+
+// 블로그 목록
+const posts = (await getCollection('blog'))
+  .filter((p) => p.data.status === '공개' || p.data.status === '책_챕터_후보')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// 갤러리 목록
+const gallery = (await getCollection('gallery'))
+  .sort((a, b) => a.data.mission - b.data.mission);
+---
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-inner">
+
+    {/* 튜토리얼 섹션 */}
+    {(activeSection === 'tutorial' || activeSection === null) && (
+      <nav aria-label="튜토리얼 메뉴">
+        <div class="sidebar-group">
+          <p class="sidebar-label">스터디 소개</p>
+          <a href="/overview/" class:list={['sidebar-link', { active: pathname === '/overview/' }]}>
+            소개 보기
+          </a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-label">온보딩 가이드</p>
+          <a href="/onboarding/" class:list={['sidebar-link', { active: pathname === '/onboarding/' }]}>
+            온보딩 시작
+          </a>
+        </div>
+        {required.length > 0 && (
+          <div class="sidebar-group">
+            <p class="sidebar-label">필수</p>
+            {required.map((t) => (
+              <a
+                href={`/tutorial/${t.slug}/`}
+                class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
+              >
+                {t.data.title}
+              </a>
+            ))}
+          </div>
+        )}
+        {advanced.length > 0 && (
+          <div class="sidebar-group">
+            <p class="sidebar-label">심화</p>
+            {advanced.map((t) => (
+              <a
+                href={`/tutorial/${t.slug}/`}
+                class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
+              >
+                {t.data.title}
+              </a>
+            ))}
+          </div>
+        )}
+        {appendix.length > 0 && (
+          <div class="sidebar-group">
+            <p class="sidebar-label">부록</p>
+            {appendix.map((t, i) => (
+              <a
+                href={`/tutorial/${t.slug}/`}
+                class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
+              >
+                부록 {String.fromCharCode(65 + i)}. {t.data.title}
+              </a>
+            ))}
+          </div>
+        )}
+      </nav>
+    )}
+
+    {/* 블로그 섹션 */}
+    {activeSection === 'blog' && (
+      <nav aria-label="블로그 메뉴">
+        <div class="sidebar-group">
+          <p class="sidebar-label">글</p>
+          {posts.length === 0 && <p class="sidebar-empty">아직 공개된 글이 없습니다.</p>}
+          {posts.map((p) => (
+            <a
+              href={`/blog/${p.slug}/`}
+              class:list={['sidebar-link', { active: pathname === `/blog/${p.slug}/` }]}
+            >
+              {p.data.title}
+            </a>
+          ))}
+        </div>
+      </nav>
+    )}
+
+    {/* 갤러리 섹션 */}
+    {activeSection === 'gallery' && (
+      <nav aria-label="갤러리 메뉴">
+        <div class="sidebar-group">
+          <p class="sidebar-label">수강생 사례</p>
+          {gallery.length === 0 && <p class="sidebar-empty">아직 등록된 사례가 없습니다.</p>}
+          {gallery.map((g) => (
+            <a
+              href={`/gallery/#mission-${g.data.mission}`}
+              class="sidebar-link"
+            >
+              미션 {g.data.mission}. {g.data.title}
+            </a>
+          ))}
+        </div>
+      </nav>
+    )}
+
+  </div>
+</aside>
+
+<style>
+  .sidebar {
+    width: var(--sidebar-width, 260px);
+    height: calc(100vh - var(--header-height, 52px));
+    position: sticky;
+    top: var(--header-height, 52px);
+    overflow-y: auto;
+    border-right: 1px solid var(--line);
+    flex-shrink: 0;
+    transition: width 0.2s ease, opacity 0.2s ease;
+  }
+
+  .sidebar.closed {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    border-right: none;
+  }
+
+  .sidebar-inner {
+    padding: 1.25rem 0.75rem;
+    min-width: var(--sidebar-width, 260px);
+  }
+
+  .sidebar-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 0.4rem 0.5rem;
+  }
+
+  .sidebar-link {
+    display: block;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.88rem;
+    color: var(--fg);
+    text-decoration: none;
+    border-radius: 5px;
+    line-height: 1.45;
+  }
+  .sidebar-link:hover {
+    background: var(--line);
+  }
+  .sidebar-link.active {
+    background: #ede8df;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .sidebar-empty {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+    padding: 0.25rem 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      position: fixed;
+      top: var(--header-height, 52px);
+      left: 0;
+      width: var(--sidebar-width, 260px) !important;
+      height: calc(100vh - var(--header-height, 52px));
+      background: var(--bg);
+      z-index: 50;
+      transform: translateX(-100%);
+      transition: transform 0.22s ease;
+      border-right: 1px solid var(--line);
+      box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+      overflow-y: auto;
+    }
+    .sidebar.mobile-open {
+      transform: translateX(0);
+    }
+  }
+</style>

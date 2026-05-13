@@ -1,0 +1,142 @@
+---
+// 우측 TOC — 클라이언트 JS로 본문 h2/h3 자동 추출
+---
+
+<aside class="toc" id="toc">
+  <div class="toc-inner">
+    <p class="toc-label">이 페이지</p>
+    <nav class="toc-nav" id="toc-nav" aria-label="페이지 내 목차">
+      <p class="toc-empty">목차 불러오는 중...</p>
+    </nav>
+  </div>
+</aside>
+
+<style>
+  .toc {
+    width: var(--toc-width, 220px);
+    height: calc(100vh - var(--header-height, 52px));
+    position: sticky;
+    top: var(--header-height, 52px);
+    overflow-y: auto;
+    flex-shrink: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .toc-inner {
+    padding: 1.25rem 1rem;
+    min-width: var(--toc-width, 220px);
+  }
+
+  .toc-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 0.6rem 0;
+  }
+
+  .toc-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .toc-empty {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .toc-nav :global(a) {
+    display: block;
+    font-size: 0.83rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    line-height: 1.45;
+    border-left: 2px solid transparent;
+  }
+  .toc-nav :global(a:hover) { color: var(--fg); }
+  .toc-nav :global(a.active) {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: #f5f2eb;
+  }
+  .toc-nav :global(a.toc-h3) {
+    padding-left: 1rem;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 1100px) {
+    .toc { display: none; }
+  }
+</style>
+
+<script>
+  function buildTOC() {
+    const nav = document.getElementById('toc-nav');
+    if (!nav) return;
+
+    // 본문 영역에서 h2/h3 추출 (tutorial-body, post-body, main 등)
+    const content =
+      document.querySelector('.tutorial-body') ??
+      document.querySelector('.post-body') ??
+      document.querySelector('article') ??
+      document.querySelector('main');
+
+    if (!content) {
+      nav.innerHTML = '';
+      return;
+    }
+
+    const headings = Array.from(content.querySelectorAll('h2, h3'));
+
+    if (headings.length === 0) {
+      nav.innerHTML = '';
+      return;
+    }
+
+    // id 없는 헤딩에 자동 id 부여
+    headings.forEach((h, i) => {
+      if (!h.id) {
+        h.id = `heading-${i}`;
+      }
+    });
+
+    nav.innerHTML = headings
+      .map((h) => {
+        const isH3 = h.tagName === 'H3';
+        return `<a href="#${h.id}" class="${isH3 ? 'toc-h3' : ''}">${h.textContent}</a>`;
+      })
+      .join('');
+
+    // IntersectionObserver로 현재 섹션 하이라이트
+    const links = nav.querySelectorAll('a');
+    const headingEls = headings;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            links.forEach((link) => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+          }
+        });
+      },
+      { rootMargin: '-10% 0px -80% 0px' }
+    );
+
+    headingEls.forEach((h) => observer.observe(h));
+  }
+
+  // DOM 준비 후 실행
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildTOC);
+  } else {
+    buildTOC();
+  }
+</script>

@@ -22,15 +22,15 @@ const fmt = (d: Date) =>
   </section>
 
   <section class="section-grid" aria-label="주요 섹션">
-    <a class="section-link" href="/blog/">
-      <span class="section-kicker">Blog</span>
-      <strong>글</strong>
-      <span>회고에서 길어 올린 기록과 발견</span>
-    </a>
     <a class="section-link" href="/tutorial/">
       <span class="section-kicker">Tutorial</span>
       <strong>튜토리얼</strong>
       <span>AI 도구로 라이프 위키를 만드는 과정</span>
+    </a>
+    <a class="section-link" href="/blog/">
+      <span class="section-kicker">Blog</span>
+      <strong>글</strong>
+      <span>회고에서 길어 올린 기록과 발견</span>
     </a>
     <a class="section-link" href="/gallery/">
       <span class="section-kicker">Gallery</span>
@@ -75,6 +75,10 @@ const fmt = (d: Date) =>
       display: grid;
       gap: 1rem;
       margin: 2rem 0 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    @media (max-width: 480px) {
+      .section-grid { grid-template-columns: 1fr; }
     }
     .section-link {
       border: 1px solid var(--line);

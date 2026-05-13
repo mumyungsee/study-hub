@@ -1,0 +1,148 @@
+---
+import { SITE_TITLE, NAV_SECTIONS, getSectionKey } from '../config/nav';
+
+const pathname = Astro.url.pathname;
+const activeSection = getSectionKey(pathname);
+const hasSidebar = activeSection !== null;
+---
+
+<header class="site-header">
+  <div class="header-left">
+    {hasSidebar && (
+      <button class="menu-btn" id="mobile-menu-btn" aria-label="메뉴 열기/닫기">
+        <span></span><span></span><span></span>
+      </button>
+    )}
+    <a href="/" class="site-logo">{SITE_TITLE}</a>
+  </div>
+  <nav class="global-nav" aria-label="글로벌 메뉴">
+    {NAV_SECTIONS.map((section) => (
+      <a
+        href={section.href}
+        class:list={['nav-item', { active: activeSection === section.key }]}
+      >
+        {section.label}
+      </a>
+    ))}
+  </nav>
+</header>
+
+<!-- 모바일 사이드바 overlay 배경 -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height, 52px);
+    padding: 0 1.25rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .site-logo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--fg);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .site-logo:hover { color: var(--accent); }
+
+  .global-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-item {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+  .nav-item:hover { color: var(--fg); background: var(--line); }
+  .nav-item.active { color: var(--fg); font-weight: 600; }
+
+  /* 햄버거 버튼 — 데스크탑에선 숨김 */
+  .menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  .menu-btn span {
+    display: block;
+    height: 2px;
+    background: var(--fg);
+    border-radius: 2px;
+    transition: opacity 0.15s;
+  }
+  .menu-btn:hover { background: var(--line); }
+
+  /* overlay 배경 */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: var(--header-height, 52px);
+    background: rgba(0,0,0,0.3);
+    z-index: 49;
+  }
+  .sidebar-overlay.active { display: block; }
+
+  @media (max-width: 768px) {
+    .menu-btn { display: flex; }
+    .global-nav { display: none; }
+  }
+</style>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const overlay = document.getElementById('sidebar-overlay');
+  const sidebar = document.getElementById('sidebar');
+
+  function openSidebar() {
+    sidebar?.classList.add('mobile-open');
+    overlay?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSidebar() {
+    sidebar?.classList.remove('mobile-open');
+    overlay?.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn?.addEventListener('click', () => {
+    if (sidebar?.classList.contains('mobile-open')) closeSidebar();
+    else openSidebar();
+  });
+
+  overlay?.addEventListener('click', closeSidebar);
+
+  // 사이드바 내 링크 클릭 시 닫기
+  sidebar?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('a')) closeSidebar();
+  });
+</script>

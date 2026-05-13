@@ -6,109 +6,75 @@ const allLessons = (await getCollection('tutorial'))
   .filter((lesson) => lesson.data.status === '공개')
   .sort((a, b) => a.data.chapter - b.data.chapter || a.data.order - b.data.order);
 
-const required = allLessons.filter((l) => l.data.track === '필수');
-const optional = allLessons.filter((l) => l.data.track === '심화');
-const appendix = allLessons.filter((l) => l.data.track === '부록');
+const first = allLessons.find((l) => l.data.track === '필수') ?? allLessons[0];
 ---
 
 <Base title="라이프 위키 튜토리얼">
   <section class="intro">
+    <p class="eyebrow">Tutorial</p>
     <h1>라이프 위키 튜토리얼</h1>
-    <p>AI 도구와 오픈소스 레포를 활용해 회고, 블로그, 배포가 이어지는 개인 라이프 위키를 만드는 과정입니다.</p>
+    <p>
+      AI 도구와 오픈소스 레포를 활용해 회고, 블로그, 배포가 이어지는
+      개인 라이프 위키를 만드는 과정입니다.<br />
+      왼쪽 목차에서 원하는 챕터를 골라 시작하세요.
+    </p>
+    {first && (
+      <a href={`/tutorial/${first.slug}/`} class="cta-btn">
+        1장부터 시작하기 →
+      </a>
+    )}
   </section>
 
-  <section class="lesson-list">
-    <h2 class="section-title">필수</h2>
-    {required.length === 0 && (
-      <p class="empty">아직 공개된 튜토리얼이 없습니다.</p>
-    )}
-    {required.map((lesson) => (
-      <article class="lesson-card">
-        <p>{lesson.data.chapter}장</p>
-        <h3><a href={`/tutorial/${lesson.slug}/`}>{lesson.data.title}</a></h3>
-        {lesson.data.description && <span>{lesson.data.description}</span>}
-      </article>
-    ))}
-
-    <h2 class="section-title">심화</h2>
-    {optional.length === 0 && (
-      <p class="empty">아직 공개된 튜토리얼이 없습니다.</p>
-    )}
-    {optional.map((lesson) => (
-      <article class="lesson-card">
-        <p>{lesson.data.chapter}장</p>
-        <h3><a href={`/tutorial/${lesson.slug}/`}>{lesson.data.title}</a></h3>
-        {lesson.data.description && <span>{lesson.data.description}</span>}
-      </article>
-    ))}
-
-    {appendix.length > 0 && (
-      <>
-        <h2 class="section-title">더 알아보기 — 부록</h2>
-        {appendix.map((lesson, i) => (
-          <article class="lesson-card appendix-card">
-            <p>부록 {String.fromCharCode(65 + i)}</p>
-            <h3><a href={`/tutorial/${lesson.slug}/`}>{lesson.data.title}</a></h3>
-            {lesson.data.description && <span>{lesson.data.description}</span>}
-          </article>
-        ))}
-      </>
-    )}
+  <section class="overview">
+    <h2>무엇을 만드나요?</h2>
+    <ul>
+      <li>매일의 회고를 비공개로 쌓는 개인 작업 공간</li>
+      <li>공개할 만한 발견은 블로그 글로 다듬어 자동 배포</li>
+      <li>GitHub + Vercel로 무료 운영</li>
+    </ul>
+    <h2>어떻게 진행되나요?</h2>
+    <ul>
+      <li><strong>필수</strong> — 환경 세팅부터 첫 배포까지 단계별로</li>
+      <li><strong>심화</strong> — Claude Code, bkit 등 AI 도구 활용</li>
+      <li><strong>부록</strong> — Markdown, Git, 프롬프팅 등 참고 자료</li>
+    </ul>
+    <p>왼쪽 사이드바에서 전체 목차를 확인하고, 순서대로 따라오세요.</p>
   </section>
 
   <style>
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 0.4rem;
+    }
     .intro {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
     .intro h1 {
       font-size: 2rem;
-      margin-bottom: 0.75rem;
+      margin: 0.25rem 0 0.75rem;
     }
     .intro p {
       color: var(--muted);
+      margin: 0 0 1.5rem;
     }
-    .section-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--muted);
-      margin: 2.5rem 0 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 0.5rem;
-    }
-    .lesson-card {
-      border-bottom: 1px solid var(--line);
-      padding: 1.25rem 0;
-    }
-    .lesson-card p {
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin: 0;
-    }
-    .lesson-card h3 {
-      font-size: 1.2rem;
-      margin: 0.25rem 0;
-    }
-    .lesson-card a {
-      color: var(--fg);
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
     }
-    .lesson-card a:hover {
-      color: var(--accent);
-    }
-    .lesson-card span {
-      color: var(--muted);
-      display: block;
-    }
-    .appendix-card p {
-      color: var(--muted);
-    }
-    .empty {
-      color: var(--muted);
-      font-style: italic;
-      padding: 2rem 0;
-    }
+    .cta-btn:hover { opacity: 0.88; }
+    .overview h2 { margin-top: 2rem; }
+    .overview ul { padding-left: 1.4rem; }
+    .overview li { margin-bottom: 0.4rem; color: var(--muted); }
+    .overview li strong { color: var(--fg); }
+    .overview p { color: var(--muted); }
   </style>
 </Base>

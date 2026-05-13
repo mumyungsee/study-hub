@@ -3,99 +3,64 @@ import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
 const cases = (await getCollection('gallery'))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
-const fmt = (d: Date) =>
-  new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }).format(d);
+  .sort((a, b) => a.data.mission - b.data.mission);
 ---
 
 <Base title="수강생 사례 갤러리">
   <section class="intro">
-    <h1>수강생 사례 갤러리</h1>
+    <p class="eyebrow">Gallery</p>
+    <h1>수강생 사례</h1>
     <p>라이프 위키를 만든 수강생들의 실제 경험과 인사이트를 모아둡니다.</p>
   </section>
 
-  <section class="gallery-list">
-    {cases.length === 0 && (
-      <div class="empty">
-        <p>아직 등록된 사례가 없습니다.</p>
-        <p>첫 번째 사례를 기다리고 있어요.</p>
-      </div>
-    )}
-    {cases.map((c) => (
-      <article class="case-card">
-        <div class="case-meta">
-          <span class="mission-badge">미션 {c.data.mission}</span>
-          <span class="case-date">{fmt(c.data.date)}</span>
-        </div>
-        <h2>{c.data.title}</h2>
-        <p class="case-author">@{c.data.author}</p>
-        {c.data.deployed_url && (
-          <a class="site-link" href={c.data.deployed_url} target="_blank" rel="noopener">
-            사이트 보기 →
-          </a>
-        )}
-      </article>
-    ))}
-  </section>
+  {cases.length === 0 ? (
+    <p class="empty">아직 등록된 사례가 없습니다. 첫 번째 사례를 기다리고 있어요.</p>
+  ) : (
+    <section class="gallery-list">
+      {cases.map((c) => (
+        <article class="case-card" id={`mission-${c.data.mission}`}>
+          <div class="case-meta">
+            <span class="mission-badge">미션 {c.data.mission}</span>
+            <span class="case-date">
+              {new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }).format(c.data.date)}
+            </span>
+          </div>
+          <h2>{c.data.title}</h2>
+          <p class="case-author">@{c.data.author}</p>
+          {c.data.deployed_url && (
+            <a class="site-link" href={c.data.deployed_url} target="_blank" rel="noopener">
+              사이트 보기 →
+            </a>
+          )}
+        </article>
+      ))}
+    </section>
+  )}
 
   <style>
-    .intro { margin-bottom: 3rem; }
-    .intro h1 { font-size: 2rem; margin-bottom: 0.75rem; }
-    .intro p { color: var(--muted); }
-
-    .gallery-list { display: flex; flex-direction: column; gap: 1.5rem; }
-
-    .case-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 1.5rem;
-    }
-    .case-card:hover {
-      border-color: var(--accent);
-    }
-
-    .case-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.5rem;
-    }
-    .mission-badge {
-      background: #e5dcce;
-      border-radius: 999px;
+    .eyebrow {
       color: var(--accent);
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      padding: 0.1rem 0.6rem;
+      text-transform: uppercase;
+      margin: 0 0 0.4rem;
     }
-    .case-date {
-      color: var(--muted);
-      font-size: 0.85rem;
+    .intro { margin-bottom: 3rem; }
+    .intro h1 { font-size: 2rem; margin: 0.25rem 0 0.75rem; }
+    .intro p { color: var(--muted); margin: 0; }
+    .gallery-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .case-card { border: 1px solid var(--line); border-radius: 8px; padding: 1.5rem; }
+    .case-card:hover { border-color: var(--accent); }
+    .case-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+    .mission-badge {
+      background: #e5dcce; border-radius: 999px; color: var(--accent);
+      font-size: 0.78rem; font-weight: 700; padding: 0.1rem 0.6rem;
     }
-
-    .case-card h2 {
-      font-size: 1.2rem;
-      margin: 0 0 0.25rem;
-    }
-    .case-author {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin: 0 0 0.75rem;
-    }
-    .site-link {
-      color: var(--accent);
-      font-size: 0.9rem;
-      text-decoration: none;
-    }
+    .case-date { color: var(--muted); font-size: 0.85rem; }
+    .case-card h2 { font-size: 1.2rem; margin: 0 0 0.25rem; }
+    .case-author { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.75rem; }
+    .site-link { color: var(--accent); font-size: 0.9rem; text-decoration: none; }
     .site-link:hover { text-decoration: underline; }
-
-    .empty {
-      color: var(--muted);
-      font-style: italic;
-      padding: 3rem 0;
-      text-align: center;
-    }
-    .empty p { margin: 0.25rem 0; }
+    .empty { color: var(--muted); font-style: italic; padding: 3rem 0; }
   </style>
 </Base>

@@ -10,7 +10,7 @@ interface Props extends CollectionEntry<'tutorial'>['data'] {
 const { title, description, chapter, prev, next } = Astro.props;
 ---
 
-<Base title={title} description={description ?? title}>
+<Base title={title} description={description ?? title} showTOC={true}>
   <article>
     <header class="tutorial-header">
       <p class="chapter-label">{chapter}장</p>
