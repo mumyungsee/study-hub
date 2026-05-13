@@ -9,7 +9,7 @@ export const NAV_SECTIONS = [
 export type SectionKey = (typeof NAV_SECTIONS)[number]['key'];
 
 export function getSectionKey(pathname: string): SectionKey | null {
-  if (pathname.startsWith('/tutorial')) return 'tutorial';
+  if (pathname.startsWith('/tutorial') || pathname.startsWith('/onboarding') || pathname.startsWith('/setup')) return 'tutorial';
   if (pathname.startsWith('/blog')) return 'blog';
   if (pathname.startsWith('/gallery')) return 'gallery';
   return null;

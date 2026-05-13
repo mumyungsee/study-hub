@@ -5,7 +5,6 @@ import { getSectionKey } from '../config/nav';
 const pathname = Astro.url.pathname;
 const activeSection = getSectionKey(pathname);
 
-// 튜토리얼 챕터 목록 (사이드바용)
 const tutorials = (await getCollection('tutorial'))
   .filter((t) => t.data.status === '공개')
   .sort((a, b) => a.data.chapter - b.data.chapter || a.data.order - b.data.order);
@@ -14,109 +13,151 @@ const required = tutorials.filter((t) => t.data.track === '필수');
 const advanced = tutorials.filter((t) => t.data.track === '심화');
 const appendix = tutorials.filter((t) => t.data.track === '부록');
 
-// 블로그 목록
 const posts = (await getCollection('blog'))
   .filter((p) => p.data.status === '공개' || p.data.status === '책_챕터_후보')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-// 갤러리 목록
 const gallery = (await getCollection('gallery'))
   .sort((a, b) => a.data.mission - b.data.mission);
+
+// 현재 어떤 그룹에 속하는지 판단
+const isInRequired = required.some(t => pathname === `/tutorial/${t.slug}/`);
+const isInAdvanced = advanced.some(t => pathname === `/tutorial/${t.slug}/`);
+const isInAppendix = appendix.some(t => pathname === `/tutorial/${t.slug}/`);
+const isInTutorialIndex = pathname === '/tutorial/';
 ---
 
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-inner">
 
     {/* 튜토리얼 섹션 */}
-    {(activeSection === 'tutorial' || activeSection === null) && (
+    {activeSection === 'tutorial' && (
       <nav aria-label="튜토리얼 메뉴">
-        <div class="sidebar-group">
-          <p class="sidebar-label">스터디 소개</p>
-          <a href="/overview/" class:list={['sidebar-link', { active: pathname === '/overview/' }]}>
-            소개 보기
-          </a>
-        </div>
-        <div class="sidebar-group">
-          <p class="sidebar-label">온보딩 가이드</p>
-          <a href="/onboarding/" class:list={['sidebar-link', { active: pathname === '/onboarding/' }]}>
-            온보딩 시작
-          </a>
-        </div>
+
+        {/* 온보딩 */}
+        <details class="sidebar-group" open={pathname.startsWith('/onboarding/')}>
+          <summary class="sidebar-group-title">온보딩</summary>
+          <div class="sidebar-group-items">
+            <a href="/onboarding/intro/" class:list={['sidebar-link', 'sidebar-link--soon', { active: pathname === '/onboarding/intro/' }]}>
+              스터디 소개
+              <span class="soon-badge">준비 중</span>
+            </a>
+            <a href="/onboarding/how-to-use/" class:list={['sidebar-link', 'sidebar-link--soon', { active: pathname === '/onboarding/how-to-use/' }]}>
+              이 스터디 사용법
+              <span class="soon-badge">준비 중</span>
+            </a>
+            <a href="/onboarding/survey/" class:list={['sidebar-link', { active: pathname === '/onboarding/survey/' }]}>
+              사전 설문조사
+            </a>
+          </div>
+        </details>
+
+        {/* 환경 세팅 — placeholder */}
+        <details class="sidebar-group" open={pathname.startsWith('/setup/')}>
+          <summary class="sidebar-group-title">환경 세팅</summary>
+          <div class="sidebar-group-items">
+            <a href="/setup/antigravity/" class:list={['sidebar-link', 'sidebar-link--soon', { active: pathname === '/setup/antigravity/' }]}>
+              Antigravity 설치
+              <span class="soon-badge">준비 중</span>
+            </a>
+            <a href="/setup/claude-code/" class:list={['sidebar-link', 'sidebar-link--soon', { active: pathname === '/setup/claude-code/' }]}>
+              Claude Code 설치
+              <span class="soon-badge">준비 중</span>
+            </a>
+          </div>
+        </details>
+
+        {/* 라이프 위키 만들기 — 필수 */}
         {required.length > 0 && (
-          <div class="sidebar-group">
-            <p class="sidebar-label">필수</p>
-            {required.map((t) => (
-              <a
-                href={`/tutorial/${t.slug}/`}
-                class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
-              >
-                {t.data.title}
-              </a>
-            ))}
-          </div>
+          <details class="sidebar-group" open={isInRequired || isInTutorialIndex}>
+            <summary class="sidebar-group-title">라이프 위키 만들기</summary>
+            <div class="sidebar-group-items">
+              {required.map((t) => (
+                <a
+                  href={`/tutorial/${t.slug}/`}
+                  class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
+                >
+                  {t.data.title}
+                </a>
+              ))}
+            </div>
+          </details>
         )}
+
+        {/* 심화 */}
         {advanced.length > 0 && (
-          <div class="sidebar-group">
-            <p class="sidebar-label">심화</p>
-            {advanced.map((t) => (
-              <a
-                href={`/tutorial/${t.slug}/`}
-                class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
-              >
-                {t.data.title}
-              </a>
-            ))}
-          </div>
+          <details class="sidebar-group" open={isInAdvanced}>
+            <summary class="sidebar-group-title">심화</summary>
+            <div class="sidebar-group-items">
+              {advanced.map((t) => (
+                <a
+                  href={`/tutorial/${t.slug}/`}
+                  class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
+                >
+                  {t.data.title}
+                </a>
+              ))}
+            </div>
+          </details>
         )}
+
+        {/* 부록 */}
         {appendix.length > 0 && (
-          <div class="sidebar-group">
-            <p class="sidebar-label">부록</p>
-            {appendix.map((t, i) => (
-              <a
-                href={`/tutorial/${t.slug}/`}
-                class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
-              >
-                부록 {String.fromCharCode(65 + i)}. {t.data.title}
-              </a>
-            ))}
-          </div>
+          <details class="sidebar-group" open={isInAppendix}>
+            <summary class="sidebar-group-title">부록</summary>
+            <div class="sidebar-group-items">
+              {appendix.map((t, i) => (
+                <a
+                  href={`/tutorial/${t.slug}/`}
+                  class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
+                >
+                  {t.data.title}
+                </a>
+              ))}
+            </div>
+          </details>
         )}
+
       </nav>
     )}
 
     {/* 블로그 섹션 */}
     {activeSection === 'blog' && (
       <nav aria-label="블로그 메뉴">
-        <div class="sidebar-group">
-          <p class="sidebar-label">글</p>
-          {posts.length === 0 && <p class="sidebar-empty">아직 공개된 글이 없습니다.</p>}
-          {posts.map((p) => (
-            <a
-              href={`/blog/${p.slug}/`}
-              class:list={['sidebar-link', { active: pathname === `/blog/${p.slug}/` }]}
-            >
-              {p.data.title}
-            </a>
-          ))}
-        </div>
+        <details class="sidebar-group" open>
+          <summary class="sidebar-group-title">글</summary>
+          <div class="sidebar-group-items">
+            {posts.length === 0 && <p class="sidebar-empty">아직 공개된 글이 없습니다.</p>}
+            {posts.map((p) => (
+              <a
+                href={`/blog/${p.slug}/`}
+                class:list={['sidebar-link', { active: pathname === `/blog/${p.slug}/` }]}
+              >
+                {p.data.title}
+              </a>
+            ))}
+          </div>
+        </details>
       </nav>
     )}
 
     {/* 갤러리 섹션 */}
     {activeSection === 'gallery' && (
       <nav aria-label="갤러리 메뉴">
-        <div class="sidebar-group">
-          <p class="sidebar-label">수강생 사례</p>
-          {gallery.length === 0 && <p class="sidebar-empty">아직 등록된 사례가 없습니다.</p>}
-          {gallery.map((g) => (
-            <a
-              href={`/gallery/#mission-${g.data.mission}`}
-              class="sidebar-link"
-            >
-              미션 {g.data.mission}. {g.data.title}
-            </a>
-          ))}
-        </div>
+        <details class="sidebar-group" open>
+          <summary class="sidebar-group-title">수강생 사례</summary>
+          <div class="sidebar-group-items">
+            {gallery.length === 0 && <p class="sidebar-empty">아직 등록된 사례가 없습니다.</p>}
+            {gallery.map((g) => (
+              <a
+                href={`/gallery/#mission-${g.data.mission}`}
+                class="sidebar-link"
+              >
+                미션 {g.data.mission}. {g.data.title}
+              </a>
+            ))}
+          </div>
+        </details>
       </nav>
     )}
 
@@ -132,59 +173,98 @@ const gallery = (await getCollection('gallery'))
     overflow-y: auto;
     border-right: 1px solid var(--line);
     flex-shrink: 0;
-    transition: width 0.2s ease, opacity 0.2s ease;
-  }
-
-  .sidebar.closed {
-    width: 0;
-    opacity: 0;
-    overflow: hidden;
-    border-right: none;
   }
 
   .sidebar-inner {
-    padding: 1.25rem 0.75rem;
+    padding: 1rem 0.5rem 2rem;
     min-width: var(--sidebar-width, 260px);
   }
 
+  /* 접기/펼치기 그룹 */
   .sidebar-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.25rem;
   }
 
-  .sidebar-label {
-    font-size: 0.72rem;
+  .sidebar-group-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.78rem;
     font-weight: 700;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    margin: 0 0 0.4rem 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    list-style: none;
+    user-select: none;
+  }
+  .sidebar-group-title:hover { background: var(--line); color: var(--fg); }
+
+  /* 화살표 */
+  .sidebar-group-title::after {
+    content: '›';
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.15s;
+    color: var(--muted);
+  }
+  details[open] > .sidebar-group-title::after {
+    transform: rotate(90deg);
+  }
+
+  /* details 기본 삼각형 제거 */
+  .sidebar-group-title::-webkit-details-marker { display: none; }
+
+  .sidebar-group-items {
+    padding-top: 0.15rem;
+    padding-bottom: 0.5rem;
   }
 
   .sidebar-link {
-    display: block;
-    padding: 0.35rem 0.5rem;
-    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 0.5rem 0.3rem 0.75rem;
+    font-size: 0.87rem;
     color: var(--fg);
     text-decoration: none;
     border-radius: 5px;
     line-height: 1.45;
+    gap: 0.4rem;
   }
-  .sidebar-link:hover {
-    background: var(--line);
-  }
+  .sidebar-link:hover { background: var(--line); }
   .sidebar-link.active {
     background: #ede8df;
     color: var(--accent);
     font-weight: 600;
   }
 
+  /* 준비 중 링크 */
+  .sidebar-link--soon {
+    color: var(--muted);
+    cursor: default;
+    pointer-events: none;
+  }
+  .soon-badge {
+    font-size: 0.68rem;
+    padding: 0.1rem 0.4rem;
+    background: var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
   .sidebar-empty {
     font-size: 0.85rem;
     color: var(--muted);
     font-style: italic;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.75rem;
   }
 
+  /* 모바일 */
   @media (max-width: 768px) {
     .sidebar {
       position: fixed;

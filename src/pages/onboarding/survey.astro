@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="사전 설문조사 — 나만의 라이프 위키">
+  <h1>사전 설문조사</h1>
+  <p>
+    스터디를 시작하기 전에 간단한 설문에 응답해 주세요.
+    현재 수준과 목표를 파악해서 스터디를 더 잘 도와드릴 수 있어요.
+  </p>
+  <p style="color: var(--muted); font-size: 0.9rem;">
+    설문은 약 3–5분 정도 걸립니다. 솔직하게 답해 주실수록 도움이 됩니다.
+  </p>
+
+  <div class="form-wrap">
+    <p class="form-placeholder">
+      여기에 Google Form이 들어갑니다.<br />
+      강사가 설문지 링크를 공유하면 아래에 표시돼요.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .form-wrap {
+    margin-top: 2rem;
+    border: 2px dashed var(--line);
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .form-placeholder {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0;
+  }
+</style>
