@@ -10,7 +10,7 @@ export interface Props {
   showTOC?: boolean;
 }
 
-const { title, description = '나만의 라이프 위키', showTOC = false } = Astro.props;
+const { title, description = 'AI 스터디 허브', showTOC = false } = Astro.props;
 
 const pathname = Astro.url.pathname;
 const section = getSectionKey(pathname);

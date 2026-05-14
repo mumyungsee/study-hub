@@ -1,4 +1,4 @@
-export const SITE_TITLE = '나만의 라이프 위키';
+export const SITE_TITLE = 'AI 스터디 허브';
 
 export const NAV_SECTIONS = [
   { label: '튜토리얼', href: '/tutorial/', key: 'tutorial' },

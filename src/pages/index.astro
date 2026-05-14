@@ -11,31 +11,36 @@ const fmt = (d: Date) =>
   new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }).format(d);
 ---
 
-<Base title="나만의 라이프 위키">
+<Base title="AI 스터디 허브">
   <section class="hero">
-    <p class="eyebrow">Life Wiki</p>
-    <h1>회고에서 글과 도구가 자라는 개인 작업 공간</h1>
+    <p class="eyebrow">AI 온보딩</p>
+    <h1>챗봇 너머의 AI, 함께 시작합니다</h1>
     <p>
-      매일의 기록을 안전하게 쌓고, 공개할 만한 발견은 글과 튜토리얼로 다듬어 발행합니다.
-      지금은 글과 라이프 위키 튜토리얼을 중심으로 운영합니다.
+      AI 도구로 AI를 배우는 본격 온보딩. 안티그래비티부터 Claude Code까지,
+      도구가 아니라 학습법을 익히는 4주.
     </p>
   </section>
 
   <section class="section-grid" aria-label="주요 섹션">
+    <a class="section-link" href="/onboarding/intro/">
+      <span class="section-kicker">Onboarding</span>
+      <strong>온보딩</strong>
+      <span>스터디 소개·사용법·역할 배정</span>
+    </a>
+    <a class="section-link" href="/setup/antigravity/">
+      <span class="section-kicker">Setup</span>
+      <strong>환경 세팅</strong>
+      <span>Antigravity, Claude Code 설치</span>
+    </a>
     <a class="section-link" href="/tutorial/">
       <span class="section-kicker">Tutorial</span>
       <strong>튜토리얼</strong>
-      <span>AI 도구로 라이프 위키를 만드는 과정</span>
-    </a>
-    <a class="section-link" href="/blog/">
-      <span class="section-kicker">Blog</span>
-      <strong>글</strong>
-      <span>회고에서 길어 올린 기록과 발견</span>
+      <span>라이프 위키 만들기 실습</span>
     </a>
     <a class="section-link" href="/gallery/">
       <span class="section-kicker">Gallery</span>
       <strong>수강생 사례</strong>
-      <span>라이프 위키를 만든 수강생들의 실제 경험</span>
+      <span>다른 수강생들의 결과물</span>
     </a>
   </section>
 
