@@ -1,0 +1,327 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Claude Code 설치 — AI 스터디 허브" showTOC={true}>
+  <article class="page-body">
+    <h1>Claude Code 설치</h1>
+
+    <blockquote class="intro">
+      <p><strong>이 페이지의 목표</strong> — 이번엔 <strong>안티그래비티 AI를 가이드 삼아</strong> Claude Code를 설치합니다. 모르는 게 있을 때 AI에게 물어보면서 진행하는 흐름을 직접 경험해보세요.</p>
+      <p>Claude Code는 공식 문서가 잘 정리돼 있어서 AI가 정확하게 안내해줄 가능성이 높아요.</p>
+    </blockquote>
+
+    <h2>시작 전 준비물</h2>
+    <ul>
+      <li>안티그래비티 설치 완료 (아직이면 <a href="/setup/antigravity/">이전 페이지</a>부터)</li>
+      <li><strong>Claude 구독 계정 또는 Anthropic Console 계정</strong> — Claude Code 사용 인증에 필요</li>
+      <li>(선택) Git for Windows — 권장사항. 없어도 동작하지만 있으면 더 편함</li>
+    </ul>
+
+    <blockquote class="info">
+      <p><strong>Claude 계정이 없다면?</strong> <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a>에서 가입하세요. Pro 구독 또는 Anthropic Console(API)로 인증할 수 있어요.</p>
+    </blockquote>
+
+    <h2>STEP 1. 안티그래비티에서 터미널 열기</h2>
+    <p>Claude Code는 터미널에서 동작하는 CLI 도구예요. 먼저 안티그래비티 안에 있는 터미널 패널을 엽니다.</p>
+
+    <ol>
+      <li>안티그래비티가 실행된 상태에서 <code>Ctrl + `</code> (백틱) 단축키 누르기</li>
+      <li>화면 하단에 터미널 패널이 열림</li>
+      <li>현재 셸 종류 확인 — PowerShell(<code>PS C:\</code>) 또는 Git Bash 등</li>
+    </ol>
+
+    <p class="hint">터미널 패널이 안 보이면 메뉴에서 <strong>Terminal → New Terminal</strong> (또는 <strong>터미널 → 새 터미널</strong>)로 열 수도 있어요.</p>
+
+    <h2>STEP 2. Claude Code 설치</h2>
+    <p>이제 AI에게 물어보면서 설치를 진행해봅시다.</p>
+
+    <h3>먼저 안티그래비티 AI에게 물어보세요</h3>
+    <p>우측 <strong>에이전트 패널</strong>에 아래 프롬프트를 그대로 복사해서 붙여넣어 보세요.</p>
+
+    <div class="prompt-box">
+      <p class="prompt-label">복사용 프롬프트</p>
+      <pre><code>Claude Code(클로드 코드)를 설치하고 싶어. 나는 Windows를 쓰고 있어.
+
+공식 설치 문서를 먼저 참고해주세요:
+https://code.claude.com/docs/en/overview
+
+Native Installer 방식으로 설치하는 방법을 단계별로 알려주세요.
+각 단계마다 어떤 명령어를 어디(PowerShell/CMD/Git Bash)에 입력해야 하는지,
+설치가 잘 됐는지 어떻게 확인하는지도 함께 알려주세요.</code></pre>
+    </div>
+
+    <p>AI가 단계별로 안내해줄 거예요. 그 설명을 따라 안티그래비티 터미널에 명령어를 입력해보세요.</p>
+
+    <h3>왜 이렇게 물어봤을까요? (메타학습 설명)</h3>
+    <p>안티그래비티 때와 달리 이번엔 <strong>공식 문서 링크</strong>를 함께 줬어요. Claude Code 공식 문서(<code>code.claude.com</code>)는 잘 정리돼 있고 크롤링이 잘 되는 정적 페이지라서, AI가 이 링크를 참고해서 더 정확하게 답할 수 있어요.</p>
+
+    <div class="prompt-compare">
+      <div class="prompt-bad">
+        <p class="prompt-label">자료 없이 묻기 — 옛날 정보로 답할 수 있음</p>
+        <pre><code>Claude Code 설치하는 법 알려줘</code></pre>
+      </div>
+      <div class="prompt-good">
+        <p class="prompt-label">공식 문서와 함께 묻기 — 최신 정보로 답</p>
+        <pre><code>Claude Code 설치하는 법 알려줘.
+공식 문서: code.claude.com/docs/en/overview</code></pre>
+      </div>
+    </div>
+
+    <p class="hint">이 패턴은 <strong>도구의 공식 문서가 잘 정리된 경우</strong> 강력해요. 자료가 적은 신생 도구(안티그래비티)는 본질 일반화(VS Code 기반)로, 자료가 많은 도구는 공식 문서 링크로 — 상황에 맞게 골라 쓰면 됩니다.</p>
+
+    <h3>모범답안 (잘 안 되면 참고)</h3>
+    <blockquote class="info">
+      <p><strong>AI 답변이 아래 모범답안과 너무 다르거나 잘 안 된다면?</strong> 이 모범답안을 그대로 따라하시면 됩니다.</p>
+    </blockquote>
+
+    <p>안티그래비티 터미널이 <strong>PowerShell</strong>인지 확인하고 (프롬프트가 <code>PS C:\</code>로 시작하면 PowerShell), 아래 명령어를 복사해서 붙여넣고 엔터:</p>
+
+    <div class="prompt-box">
+      <p class="prompt-label">PowerShell 설치 명령어</p>
+      <pre><code>irm https://claude.ai/install.ps1 | iex</code></pre>
+    </div>
+
+    <p>설치가 끝나면 다음 명령어로 확인:</p>
+
+    <div class="prompt-box">
+      <p class="prompt-label">설치 확인</p>
+      <pre><code>claude --version</code></pre>
+    </div>
+
+    <p>버전 번호가 나오면 설치 성공! 안 나오면 안티그래비티를 한 번 종료했다가 다시 열어보세요 (PATH 갱신).</p>
+
+    <details class="os-alt">
+      <summary>다른 터미널/OS는 어떻게 하나요?</summary>
+      <ul>
+        <li><strong>Windows CMD</strong>: <code>curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd</code></li>
+        <li><strong>Mac / Linux / WSL</strong>: <code>curl -fsSL https://claude.ai/install.sh | bash</code></li>
+        <li><strong>WinGet 사용자</strong>: <code>winget install Anthropic.ClaudeCode</code></li>
+        <li><strong>Homebrew(Mac)</strong>: <code>brew install --cask claude-code</code></li>
+      </ul>
+    </details>
+
+    <h2>STEP 3. 첫 실행 & 로그인</h2>
+    <p>설치가 끝났으면 이제 실제로 실행해봅시다.</p>
+
+    <h3>먼저 AI에게 물어보세요</h3>
+
+    <div class="prompt-box">
+      <p class="prompt-label">복사용 프롬프트</p>
+      <pre><code>방금 Claude Code 설치를 끝냈어요.
+이제 어떻게 시작해야 하나요? 첫 실행과 로그인 방법을 알려주세요.
+
+저는 Claude 유료 구독 계정이 있어요.
+
+공식 문서 참고:
+https://code.claude.com/docs/en/overview</code></pre>
+    </div>
+
+    <h3>모범답안 (잘 안 되면 참고)</h3>
+    <ol>
+      <li>터미널에서 작업할 폴더로 이동 — 예: <code>cd C:\dev\my-project</code> (영문 경로 권장)</li>
+      <li>폴더가 없으면 새로 만들고 이동: <code>mkdir C:\dev\my-project; cd C:\dev\my-project</code></li>
+      <li><code>claude</code> 입력 후 엔터</li>
+      <li>처음 실행이면 <strong>로그인 안내</strong>가 뜸 → Chrome이 자동으로 열림</li>
+      <li>Claude 계정으로 로그인 → 권한 동의 → 터미널로 돌아옴</li>
+      <li>"Welcome to Claude Code" 메시지가 나오면 성공!</li>
+    </ol>
+
+    <h2>STEP 4. (보너스) VS Code 확장 설치 — 시간이 남으면</h2>
+    <p>Claude Code는 <strong>VS Code 확장</strong> 형태로도 제공돼요. 안티그래비티는 VS Code 기반이라 여기서도 작동합니다. 터미널과 함께 쓰면 더 편해요.</p>
+
+    <h3>먼저 AI에게 물어보세요</h3>
+
+    <div class="prompt-box">
+      <p class="prompt-label">복사용 프롬프트</p>
+      <pre><code>Claude Code의 VS Code 확장 버전도 설치하고 싶어요.
+
+안티그래비티는 VS Code 기반 IDE라서 같은 확장이 작동할 거예요.
+Extensions 탭에서 어떻게 찾고 설치하는지 알려주세요.
+
+설치 후에는 어떻게 열어서 사용하는지도 알려주세요.</code></pre>
+    </div>
+
+    <h3>모범답안 (잘 안 되면 참고)</h3>
+    <ol>
+      <li>좌측 사이드바 <strong>Extensions 아이콘</strong> 클릭 (또는 <code>Ctrl + Shift + X</code>)</li>
+      <li>검색창에 <strong>Claude Code</strong> 입력</li>
+      <li>제작자가 <strong>Anthropic</strong>인 확장 찾아서 [Install] 클릭</li>
+      <li>설치 후 <code>Ctrl + Shift + P</code> → <strong>Claude Code: Open in New Tab</strong> 검색해서 실행</li>
+      <li>이미 터미널 CLI로 로그인했다면 확장도 자동 인증됨</li>
+    </ol>
+
+    <h2>다음 단계</h2>
+    <p>축하해요! 이제 <strong>안티그래비티 + Claude Code</strong> 환경이 다 갖춰졌어요. 이 둘로 바이브코딩을 시작할 준비가 끝났습니다.</p>
+    <p>다음 시간부터는 실제로 <strong>"나만의 라이프 위키"</strong>를 만들어보면서 두 도구를 활용하는 법을 익혀나갈 거예요.</p>
+  </article>
+</Base>
+
+<style>
+  /* 섹션 구분선 — 각 h2 위에 */
+  .page-body h2 {
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+    margin-top: 3rem;
+  }
+  .page-body h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 2rem;
+  }
+
+  .page-body h3 {
+    margin-top: 1.8rem;
+    color: var(--accent);
+  }
+
+  /* blockquote 변형 — Base 글로벌 blockquote 스타일 상속 + 색만 변경 */
+  blockquote.intro,
+  blockquote.warning,
+  blockquote.info,
+  blockquote.success {
+    padding: 0.8rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    color: var(--fg);
+  }
+  blockquote.intro {
+    background: #f5f0e8;
+    border-left-color: var(--accent);
+  }
+  blockquote.warning {
+    background: #fef6e7;
+    border-left-color: #d6a13a;
+  }
+  blockquote.info {
+    background: #f0f4f7;
+    border-left-color: #6b8aa3;
+    font-size: 0.94rem;
+  }
+  blockquote.success {
+    background: #eaf3ea;
+    border-left-color: #5a8a5a;
+  }
+
+  /* OS 분기 — details */
+  .os-alt {
+    background: #faf8f2;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .os-alt > summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.95rem;
+  }
+  .os-alt[open] > summary { margin-bottom: 0.6rem; }
+
+  /* 복사용 프롬프트 박스 */
+  .prompt-box {
+    background: #f5f0e8;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+  }
+  .prompt-box pre {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  /* 프롬프트 비교 박스 */
+  .prompt-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin: 1rem 0;
+  }
+  .prompt-bad,
+  .prompt-good {
+    padding: 0.8rem;
+    border-radius: 6px;
+  }
+  .prompt-bad { background: #fbeded; border-left: 3px solid #c97070; }
+  .prompt-good { background: #eaf3ea; border-left: 3px solid #5a8a5a; }
+  .prompt-bad pre,
+  .prompt-good pre {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 0.88rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .prompt-label {
+    margin: 0 0 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  /* 보조 텍스트 */
+  .hint {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+  .muted {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  /* 코드 블록 복사 버튼 — TutorialPost와 동일 패턴 */
+  .page-body pre {
+    position: relative;
+  }
+  .page-body :global(.copy-btn) {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+    background: rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s;
+    color: inherit;
+    font-family: inherit;
+  }
+  .page-body :global(pre:hover .copy-btn) {
+    opacity: 1;
+  }
+  .page-body :global(.copy-btn.copied) {
+    background: rgba(0, 160, 80, 0.12);
+    border-color: rgba(0, 160, 80, 0.3);
+    color: #0a7a40;
+    opacity: 1;
+  }
+
+  @media (max-width: 600px) {
+    .prompt-compare { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  // 코드 블록 복사 버튼 — TutorialPost와 동일 패턴
+  document.querySelectorAll('.page-body pre').forEach((pre) => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = '복사';
+    pre.appendChild(btn);
+
+    btn.addEventListener('click', async () => {
+      const code = pre.querySelector('code');
+      const text = code ? (code as HTMLElement).innerText : (pre as HTMLElement).innerText;
+      await navigator.clipboard.writeText(text);
+      btn.textContent = '복사됨';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = '복사';
+        btn.classList.remove('copied');
+      }, 1500);
+    });
+  });
+</script>

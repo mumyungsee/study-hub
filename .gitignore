@@ -25,3 +25,6 @@ yarn-error.log*
 
 # bkit internal state
 .bkit/
+
+# 외부 학습자료 (저작권 보호 — 로컬에서만 참고)
+docs/안티그래비티 설치자료/

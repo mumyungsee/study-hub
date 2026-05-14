@@ -58,13 +58,11 @@ const isInTutorialIndex = pathname === '/tutorial/';
         <details class="sidebar-group" open={pathname.startsWith('/setup/')}>
           <summary class="sidebar-group-title">환경 세팅</summary>
           <div class="sidebar-group-items">
-            <a href="/setup/antigravity/" class:list={['sidebar-link', 'sidebar-link--soon', { active: pathname === '/setup/antigravity/' }]}>
+            <a href="/setup/antigravity/" class:list={['sidebar-link', { active: pathname === '/setup/antigravity/' }]}>
               Antigravity 설치
-              <span class="soon-badge">준비 중</span>
             </a>
-            <a href="/setup/claude-code/" class:list={['sidebar-link', 'sidebar-link--soon', { active: pathname === '/setup/claude-code/' }]}>
+            <a href="/setup/claude-code/" class:list={['sidebar-link', { active: pathname === '/setup/claude-code/' }]}>
               Claude Code 설치
-              <span class="soon-badge">준비 중</span>
             </a>
           </div>
         </details>
