@@ -4,5 +4,96 @@ import Base from '../../layouts/Base.astro';
 
 <Base title="이 스터디 사용법 — 나만의 라이프 위키">
   <h1>이 스터디 사용법</h1>
-  <p style="color: var(--muted);">이 페이지는 준비 중입니다.</p>
+
+  <section class="part">
+    <h2>파트 1. 마인드셋: 혼자 하면 공부, 같이 하면 '병렬 로그인'</h2>
+
+    <div class="item">
+      <h3>1. 강의는 '정체'되지만, 시연은 '생존'합니다</h3>
+      <p>강사가 떠먹여 주는 지식은 내일이면 낡은 지식이 됩니다.</p>
+      <p>변화가 빠른 AI 시대, 가장 중요한 건 지식 그 자체가 아니라 <strong>'스스로 학습하는 법'</strong>을 익히는 것입니다.</p>
+    </div>
+
+    <div class="item">
+      <h3>2. 아웃풋은 최고의 메타인지 도구입니다</h3>
+      <p>남에게 설명할 수 있을 때 진짜 내 것이 됩니다.</p>
+      <p>발표와 공유는 복습을 넘어, 내가 무엇을 모르는지 깨닫게 하는 가장 강력한 공부법입니다.</p>
+    </div>
+
+    <div class="item">
+      <h3>3. 우리는 지식을 '병렬'로 습득합니다 (Peer Learning)</h3>
+      <p>혼자서 모든 AI 뉴스를 쫓는 건 불가능합니다.</p>
+      <p>내가 A를 공부하고 동료가 B를 공부해서 서로 공유하면, 우리는 최소한의 노력으로 지식을 병렬로 확장하게 됩니다.</p>
+    </div>
+
+    <div class="item">
+      <h3>4. 당신의 '삽질'은 모두의 '데이터'입니다</h3>
+      <p>성공 사례만큼 귀한 것이 시행착오 과정입니다.</p>
+      <p>나의 삽질을 기록하는 것만으로도 동료들의 시간을 아껴주는 엄청난 기여가 되며, 서로가 서로의 스승이 되는 지피터스만의 문화를 만듭니다.</p>
+    </div>
+  </section>
+
+  <section class="part">
+    <h2>파트 2. 실전 전략: 한 달 야무지게 뽑아먹기</h2>
+
+    <div class="item">
+      <h3>1. 첫 주에 '몰입' 하세요 (가장 중요!)</h3>
+      <p>지피터스의 모든 핵심 소스는 1주차 시연에 몰려 있습니다.</p>
+      <p>1주차에 재료를 다 모으고, 남은 3주는 나만의 사례로 숙성시키는 시간입니다.</p>
+    </div>
+
+    <div class="item">
+      <h3>2. 타 스터디 다시보기: "30분 시연만 2배속으로!"</h3>
+      <p>15분의 마법: 긴 영상 다 보지 마세요. 시연 파트만 골라 2배속으로 보면, 15분 만에 다른 스터디 핵심 기술을 내 것으로 만듭니다.</p>
+    </div>
+
+    <div class="item">
+      <h3>3. 월요일 '베스트 발표'는 필수 요약본</h3>
+      <p>20여 개 스터디의 정수만 모았습니다. 직접 듣지 못한 스터디의 핵심 트렌드를 한 번에 흡수하세요.</p>
+    </div>
+  </section>
+
+  <blockquote class="closing">
+    "혼자 가면 지치지만, 병렬로 연결되면 누구보다 빠르게 멀리 갑니다."
+  </blockquote>
 </Base>
+
+<style>
+  .part {
+    margin-bottom: 3rem;
+  }
+
+  .part h2 {
+    font-size: 1.15rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .item {
+    margin-bottom: 1.75rem;
+  }
+
+  .item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--accent);
+  }
+
+  .item p {
+    margin: 0.3rem 0;
+    color: var(--fg);
+  }
+
+  .closing {
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: center;
+    border-left: none;
+    color: var(--accent);
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f5f0e8;
+    border-radius: 8px;
+  }
+</style>
