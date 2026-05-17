@@ -5,8 +5,9 @@ import Base from '../../layouts/Base.astro';
 <Base title="스터디 소개 — AI 스터디 허브">
 
   <section class="opening">
-    <p class="kicker">챗봇만 써본 당신에게</p>
-    <h1>"AI한테 시켰는데<br/>진짜로 해버렸어요"</h1>
+    <p class="kicker">챗봇만 써본 당신을 위한</p>
+    <h1>본격적인 AI 세계로<br/>온보딩 스터디</h1>
+    <p class="catchphrase">"AI한테 시켰는데, 진짜로 해버렸어요"</p>
   </section>
 
   <!-- 모르는 단어 안내 배너 -->
@@ -382,10 +383,18 @@ import Base from '../../layouts/Base.astro';
     letter-spacing: 0.03em;
   }
   .opening h1 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     line-height: 1.35;
-    margin: 0;
+    margin: 0 0 1.1rem;
     border: none;
+  }
+  .opening .catchphrase {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
   }
 
   /* === Glossary banner === */
