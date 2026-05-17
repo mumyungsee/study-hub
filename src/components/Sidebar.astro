@@ -38,9 +38,8 @@ const isInTutorialIndex = pathname === '/tutorial/';
         <details class="sidebar-group" open={pathname.startsWith('/onboarding/')}>
           <summary class="sidebar-group-title">온보딩</summary>
           <div class="sidebar-group-items">
-            <a href="/onboarding/intro/" class:list={['sidebar-link', 'sidebar-link--soon', { active: pathname === '/onboarding/intro/' }]}>
+            <a href="/onboarding/intro/" class:list={['sidebar-link', { active: pathname === '/onboarding/intro/' }]}>
               스터디 소개
-              <span class="soon-badge">준비 중</span>
             </a>
             <a href="/onboarding/how-to-use/" class:list={['sidebar-link', { active: pathname === '/onboarding/how-to-use/' }]}>
               이 스터디 사용법
