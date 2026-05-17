@@ -1,0 +1,314 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="단어 풀이 — AI 스터디 허브">
+
+  <section class="opening">
+    <p class="kicker">챗봇만 써본 분들을 위한</p>
+    <h1>단어 풀이</h1>
+    <p class="lead">
+      스터디에서 나올 단어들을 미리 한 번 훑어봐요.<br/>
+      "아 그런 거구나" 정도면 충분해요.
+    </p>
+  </section>
+
+  <!-- 도구 5개 -->
+  <section>
+    <h2>우리가 쓸 도구 (5개)</h2>
+
+    <div class="term">
+      <div class="term-icon">🛰️</div>
+      <div class="term-body">
+        <h3>Antigravity <span class="pron">앤티그래비티</span></h3>
+        <p class="oneline">AI랑 같이 일하는 무료 작업 공간</p>
+        <p class="detail">
+          챗봇은 웹 브라우저 안에 갇혀 있죠? Antigravity는 내 컴퓨터에 깔아두는 거예요.
+          그러면 AI가 내 파일, 내 폴더를 직접 보고 조작할 수 있어요. 구글이 만들었고, 무료예요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term">
+      <div class="term-icon">⚔️</div>
+      <div class="term-body">
+        <h3>Claude Code <span class="pron">클로드 코드</span></h3>
+        <p class="oneline">지금 가장 똑똑한 AI 작업 동료</p>
+        <p class="detail">
+          앤트로픽(Anthropic)이라는 회사가 만든 AI. "이거 해줘" 하면 진짜로 내 컴퓨터를 조작해서 해줘요.
+          유료지만, 비개발자도 이거 하나면 코딩이 필요한 일을 말로 시킬 수 있어요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term">
+      <div class="term-icon">🛡️</div>
+      <div class="term-body">
+        <h3>bkit <span class="pron">비킷</span></h3>
+        <p class="oneline">Claude Code를 더 똑똑하게 만드는 확장팩</p>
+        <p class="detail">
+          작업한 내용이 자동으로 정리·저장되고, 최신 AI 기능을 따로 공부 안 하고 바로 쓸 수 있게 해줘요.
+          한국 분이 만들었어요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term">
+      <div class="term-icon">🕰️</div>
+      <div class="term-body">
+        <h3>Git <span class="pron">깃</span></h3>
+        <p class="oneline">실수해도 되돌릴 수 있는 타임머신</p>
+        <p class="detail">
+          작업할 때마다 저장 포인트가 쌓여요. AI한테 시켰다가 망쳐도, 1초 만에 원하는 시점으로 돌아갈 수 있어요.
+          비개발자한테 진짜 안전망 같은 존재.
+        </p>
+      </div>
+    </div>
+
+    <div class="term">
+      <div class="term-icon">📂</div>
+      <div class="term-body">
+        <h3>GitHub <span class="pron">깃허브</span></h3>
+        <p class="oneline">전 세계 코드 보물창고 + 내 작업 백업소</p>
+        <p class="detail">
+          전 세계 사람들이 만든 코드가 다 여기 있어요. 가져다가 내 것처럼 쓸 수 있어요.
+          내 작업도 여기 자동으로 백업되니까, 컴퓨터가 망가져도 안전해요.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 자주 나올 용어 -->
+  <section>
+    <h2>스터디에서 자주 나올 단어</h2>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>오픈소스 <span class="pron">Open Source</span></h3>
+        <p class="oneline">다른 사람이 만들어서 무료로 공유한 코드</p>
+        <p class="detail">
+          전 세계 개발자들이 자기가 만든 걸 GitHub에 무료로 풀어놨어요. 누구든 가져다 쓸 수 있어요.
+          이걸 활용할 줄 알게 되면, 혼자선 못 만들 것도 만들 수 있어요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>레포 <span class="pron">Repository, 리포지터리</span></h3>
+        <p class="oneline">GitHub에 있는 코드 한 묶음 (= 프로젝트 하나)</p>
+        <p class="detail">
+          GitHub에선 코드 하나하나가 "레포"라는 단위로 묶여 있어요. "이 레포 가져와줘" = "이 프로젝트 가져와줘".
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>포크 <span class="pron">Fork</span></h3>
+        <p class="oneline">GitHub의 코드를 "내 계정으로 복사"하는 것</p>
+        <p class="detail">
+          남의 레포를 그냥 고치면 안 되니까, 내 계정으로 복사부터 해요. 그 행위가 "포크".
+          포크하면 그때부터 그건 내 거예요. 마음대로 고쳐도 돼요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>CLAUDE.md <span class="pron">클로드 점 엠디</span></h3>
+        <p class="oneline">Claude Code한테 미리 알려주는 "설명서" 파일</p>
+        <p class="detail">
+          "내 정보는 이래, 이런 방식으로 일해줘"를 적어두는 파일이에요.
+          Claude Code가 작업할 때 이걸 먼저 읽고 시작해요. 그래서 이걸 잘 써두면 같은 말을 매번 안 해도 돼요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>배포 <span class="pron">Deploy, 디플로이</span></h3>
+        <p class="oneline">내가 만든 걸 인터넷에 올리는 것</p>
+        <p class="detail">
+          내 컴퓨터에서만 돌아가던 걸 인터넷에 올려서, 다른 사람도 볼 수 있게 하는 거예요.
+          "사이트 배포했어" = "내 사이트 인터넷에 올렸어".
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>커밋 <span class="pron">Commit</span></h3>
+        <p class="oneline">Git의 "저장 포인트"</p>
+        <p class="detail">
+          게임에서 세이브 누르는 거랑 똑같아요. 작업 중간에 "여기까지 됐다" 하고 커밋을 누르면,
+          나중에 망해도 그 시점으로 돌아갈 수 있어요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>바이브코딩 <span class="pron">Vibe Coding</span></h3>
+        <p class="oneline">AI한테 말로 시켜서 코딩하는 것</p>
+        <p class="detail">
+          이름은 코딩인데, 실제론 코드를 안 짜요. 그냥 AI한테 "이거 해줘" 하면 AI가 짜요.
+          "분위기로(vibe) 코딩한다" 해서 바이브코딩.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>IDE <span class="pron">아이디이</span></h3>
+        <p class="oneline">개발자들이 코드 작업하는 프로그램</p>
+        <p class="detail">
+          Antigravity가 IDE의 한 종류예요. 메모장에서 코드 짜는 게 아니라, IDE라는 전용 작업실에서 짜요.
+          AI 기능까지 통합돼 있어서 챗봇보다 훨씬 강력해요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>터미널 <span class="pron">Terminal</span></h3>
+        <p class="oneline">컴퓨터에 명령어로 일 시키는 검은 창</p>
+        <p class="detail">
+          해커 영화에서 보던 그 검은 창 맞아요. 마우스 클릭 대신 글자로 명령을 내리는 곳.
+          예전엔 무서웠는데, 이젠 AI가 대신 써줘서 우리는 그냥 한국어로 시키면 돼요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>노코드 <span class="pron">No-code</span></h3>
+        <p class="oneline">코드 안 짜고 마우스 클릭으로 만드는 도구들</p>
+        <p class="detail">
+          예전에 코딩이 너무 어려우니까, 클릭으로만 만들 수 있게 해주는 도구들이 나왔어요.
+          근데 이게 의외로 어렵고, 도구마다 다 다르고, 할 수 있는 게 한정돼 있어요.
+          이제는 바이브코딩이 더 쉬워서, 굳이 노코드 안 배워도 돼요.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <a href="/onboarding/intro" class="back">
+    ← 스터디 소개로 돌아가기
+  </a>
+
+</Base>
+
+<style>
+  .opening {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    margin-bottom: 2rem;
+  }
+  .opening .kicker {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .opening h1 {
+    font-size: 1.8rem;
+    margin: 0 0 0.7rem;
+    border: none;
+  }
+  .opening .lead {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.35rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* === Term card === */
+  .term {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.7rem;
+    background: var(--bg-soft, #f7f7f5);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+  }
+  .term.simple {
+    border-left-width: 3px;
+  }
+  .term-icon {
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .term-body {
+    flex: 1;
+  }
+  .term-body h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.02rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .term-body .pron {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  .term-body .oneline {
+    margin: 0 0 0.5rem;
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.4;
+  }
+  .term-body .detail {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text, #444);
+  }
+
+  /* === Back link === */
+  .back {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem;
+    background: var(--bg-soft, #f7f7f5);
+    border: 1px solid var(--border, #ddd);
+    border-radius: 6px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: background 0.15s;
+  }
+  .back:hover {
+    background: #fff7ed;
+    border-color: var(--accent);
+  }
+
+  /* === 반응형 === */
+  @media (max-width: 640px) {
+    .opening h1 {
+      font-size: 1.4rem;
+    }
+    .term {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>
