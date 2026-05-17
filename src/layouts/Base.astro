@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import TOC from '../components/TOC.astro';
-import { getSectionKey } from '../config/nav';
+import { hasSidebar as checkHasSidebar } from '../config/nav';
 
 export interface Props {
   title: string;
@@ -13,8 +13,7 @@ export interface Props {
 const { title, description = 'AI 스터디 허브', showTOC = false } = Astro.props;
 
 const pathname = Astro.url.pathname;
-const section = getSectionKey(pathname);
-const hasSidebar = section !== null;
+const hasSidebar = checkHasSidebar(pathname);
 ---
 
 <!doctype html>

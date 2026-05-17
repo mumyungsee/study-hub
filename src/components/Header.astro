@@ -1,14 +1,14 @@
 ---
-import { SITE_TITLE, NAV_SECTIONS, getSectionKey } from '../config/nav';
+import { SITE_TITLE, NAV_SECTIONS, getSectionKey, hasSidebar } from '../config/nav';
 
 const pathname = Astro.url.pathname;
 const activeSection = getSectionKey(pathname);
-const hasSidebar = activeSection !== null;
+const showSidebar = hasSidebar(pathname);
 ---
 
 <header class="site-header">
   <div class="header-left">
-    {hasSidebar && (
+    {showSidebar && (
       <button class="menu-btn" id="mobile-menu-btn" aria-label="메뉴 열기/닫기">
         <span></span><span></span><span></span>
       </button>

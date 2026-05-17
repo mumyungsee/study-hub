@@ -1,9 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import { getSectionKey } from '../config/nav';
 
 const pathname = Astro.url.pathname;
-const activeSection = getSectionKey(pathname);
 
 const tutorials = (await getCollection('tutorial'))
   .filter((t) => t.data.status === '공개')
@@ -13,156 +11,112 @@ const required = tutorials.filter((t) => t.data.track === '필수');
 const advanced = tutorials.filter((t) => t.data.track === '심화');
 const appendix = tutorials.filter((t) => t.data.track === '부록');
 
-const posts = (await getCollection('blog'))
-  .filter((p) => p.data.status === '공개' || p.data.status === '책_챕터_후보')
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
-const gallery = (await getCollection('gallery'))
-  .sort((a, b) => a.data.mission - b.data.mission);
-
-// 현재 어떤 그룹에 속하는지 판단
+// 트랙별 펼침 여부 (현재 보고 있는 강의가 속한 트랙만 열기)
 const isInRequired = required.some(t => pathname === `/tutorial/${t.slug}/`);
 const isInAdvanced = advanced.some(t => pathname === `/tutorial/${t.slug}/`);
 const isInAppendix = appendix.some(t => pathname === `/tutorial/${t.slug}/`);
 const isInTutorialIndex = pathname === '/tutorial/';
+const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
 ---
 
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-inner">
+    <nav aria-label="학습 메뉴">
 
-    {/* 튜토리얼 섹션 */}
-    {activeSection === 'tutorial' && (
-      <nav aria-label="튜토리얼 메뉴">
+      {/* 온보딩 — 항상 펼침 */}
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">온보딩</div>
+        <div class="sidebar-group-items">
+          <a href="/onboarding/glossary/" class:list={['sidebar-link', { active: pathname === '/onboarding/glossary/' }]}>
+            용어 정리
+          </a>
+          <a href="/onboarding/intro/" class:list={['sidebar-link', { active: pathname === '/onboarding/intro/' }]}>
+            스터디 소개
+          </a>
+          <a href="/onboarding/how-to-use/" class:list={['sidebar-link', { active: pathname === '/onboarding/how-to-use/' }]}>
+            이 스터디 사용법
+          </a>
+          <a href="/onboarding/survey/" class:list={['sidebar-link', { active: pathname === '/onboarding/survey/' }]}>
+            사전 설문조사
+          </a>
+          <a href="/onboarding/roles/" class:list={['sidebar-link', { active: pathname === '/onboarding/roles/' }]}>
+            역할 배정
+          </a>
+        </div>
+      </div>
 
-        {/* 온보딩 */}
-        <details class="sidebar-group" open={pathname.startsWith('/onboarding/')}>
-          <summary class="sidebar-group-title">온보딩</summary>
+      {/* 환경 세팅 — 항상 펼침 */}
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">환경 세팅</div>
+        <div class="sidebar-group-items">
+          <a href="/setup/antigravity/" class:list={['sidebar-link', { active: pathname === '/setup/antigravity/' }]}>
+            Antigravity 설치
+          </a>
+          <a href="/setup/claude-code/" class:list={['sidebar-link', { active: pathname === '/setup/claude-code/' }]}>
+            Claude Code 설치
+          </a>
+        </div>
+      </div>
+
+      {/* 튜토리얼 — 트랙별 접고 펼치기 */}
+      {(required.length > 0 || advanced.length > 0 || appendix.length > 0) && (
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">튜토리얼</div>
           <div class="sidebar-group-items">
-            <a href="/onboarding/glossary/" class:list={['sidebar-link', { active: pathname === '/onboarding/glossary/' }]}>
-              용어 정리
-            </a>
-            <a href="/onboarding/intro/" class:list={['sidebar-link', { active: pathname === '/onboarding/intro/' }]}>
-              스터디 소개
-            </a>
-            <a href="/onboarding/how-to-use/" class:list={['sidebar-link', { active: pathname === '/onboarding/how-to-use/' }]}>
-              이 스터디 사용법
-            </a>
-            <a href="/onboarding/survey/" class:list={['sidebar-link', { active: pathname === '/onboarding/survey/' }]}>
-              사전 설문조사
-            </a>
-            <a href="/onboarding/roles/" class:list={['sidebar-link', { active: pathname === '/onboarding/roles/' }]}>
-              역할 배정
-            </a>
+
+            {required.length > 0 && (
+              <details class="sidebar-subgroup" open={isInRequired || isInTutorialIndex || noneOpen}>
+                <summary class="sidebar-subgroup-title">필수 강의</summary>
+                <div class="sidebar-subgroup-items">
+                  {required.map((t) => (
+                    <a
+                      href={`/tutorial/${t.slug}/`}
+                      class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
+                    >
+                      {t.data.title}
+                    </a>
+                  ))}
+                </div>
+              </details>
+            )}
+
+            {advanced.length > 0 && (
+              <details class="sidebar-subgroup" open={isInAdvanced}>
+                <summary class="sidebar-subgroup-title">심화 강의</summary>
+                <div class="sidebar-subgroup-items">
+                  {advanced.map((t) => (
+                    <a
+                      href={`/tutorial/${t.slug}/`}
+                      class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
+                    >
+                      {t.data.title}
+                    </a>
+                  ))}
+                </div>
+              </details>
+            )}
+
+            {appendix.length > 0 && (
+              <details class="sidebar-subgroup" open={isInAppendix}>
+                <summary class="sidebar-subgroup-title">부록</summary>
+                <div class="sidebar-subgroup-items">
+                  {appendix.map((t) => (
+                    <a
+                      href={`/tutorial/${t.slug}/`}
+                      class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
+                    >
+                      {t.data.title}
+                    </a>
+                  ))}
+                </div>
+              </details>
+            )}
+
           </div>
-        </details>
+        </div>
+      )}
 
-        {/* 환경 세팅 — placeholder */}
-        <details class="sidebar-group" open={pathname.startsWith('/setup/')}>
-          <summary class="sidebar-group-title">환경 세팅</summary>
-          <div class="sidebar-group-items">
-            <a href="/setup/antigravity/" class:list={['sidebar-link', { active: pathname === '/setup/antigravity/' }]}>
-              Antigravity 설치
-            </a>
-            <a href="/setup/claude-code/" class:list={['sidebar-link', { active: pathname === '/setup/claude-code/' }]}>
-              Claude Code 설치
-            </a>
-          </div>
-        </details>
-
-        {/* 라이프 위키 만들기 — 필수 */}
-        {required.length > 0 && (
-          <details class="sidebar-group" open={isInRequired || isInTutorialIndex}>
-            <summary class="sidebar-group-title">라이프 위키 만들기</summary>
-            <div class="sidebar-group-items">
-              {required.map((t) => (
-                <a
-                  href={`/tutorial/${t.slug}/`}
-                  class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
-                >
-                  {t.data.title}
-                </a>
-              ))}
-            </div>
-          </details>
-        )}
-
-        {/* 심화 */}
-        {advanced.length > 0 && (
-          <details class="sidebar-group" open={isInAdvanced}>
-            <summary class="sidebar-group-title">심화</summary>
-            <div class="sidebar-group-items">
-              {advanced.map((t) => (
-                <a
-                  href={`/tutorial/${t.slug}/`}
-                  class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
-                >
-                  {t.data.title}
-                </a>
-              ))}
-            </div>
-          </details>
-        )}
-
-        {/* 부록 */}
-        {appendix.length > 0 && (
-          <details class="sidebar-group" open={isInAppendix}>
-            <summary class="sidebar-group-title">부록</summary>
-            <div class="sidebar-group-items">
-              {appendix.map((t, i) => (
-                <a
-                  href={`/tutorial/${t.slug}/`}
-                  class:list={['sidebar-link', { active: pathname === `/tutorial/${t.slug}/` }]}
-                >
-                  {t.data.title}
-                </a>
-              ))}
-            </div>
-          </details>
-        )}
-
-      </nav>
-    )}
-
-    {/* 블로그 섹션 */}
-    {activeSection === 'blog' && (
-      <nav aria-label="블로그 메뉴">
-        <details class="sidebar-group" open>
-          <summary class="sidebar-group-title">글</summary>
-          <div class="sidebar-group-items">
-            {posts.length === 0 && <p class="sidebar-empty">아직 공개된 글이 없습니다.</p>}
-            {posts.map((p) => (
-              <a
-                href={`/blog/${p.slug}/`}
-                class:list={['sidebar-link', { active: pathname === `/blog/${p.slug}/` }]}
-              >
-                {p.data.title}
-              </a>
-            ))}
-          </div>
-        </details>
-      </nav>
-    )}
-
-    {/* 갤러리 섹션 */}
-    {activeSection === 'gallery' && (
-      <nav aria-label="갤러리 메뉴">
-        <details class="sidebar-group" open>
-          <summary class="sidebar-group-title">수강생 사례</summary>
-          <div class="sidebar-group-items">
-            {gallery.length === 0 && <p class="sidebar-empty">아직 등록된 사례가 없습니다.</p>}
-            {gallery.map((g) => (
-              <a
-                href={`/gallery/#mission-${g.data.mission}`}
-                class="sidebar-link"
-              >
-                미션 {g.data.mission}. {g.data.title}
-              </a>
-            ))}
-          </div>
-        </details>
-      </nav>
-    )}
-
+    </nav>
   </div>
 </aside>
 
@@ -182,88 +136,75 @@ const isInTutorialIndex = pathname === '/tutorial/';
     min-width: var(--sidebar-width, 260px);
   }
 
-  /* 접기/펼치기 그룹 */
+  /* === 최상위 그룹 (온보딩 / 환경 세팅 / 튜토리얼) === */
   .sidebar-group {
-    margin-bottom: 0.25rem;
+    margin-bottom: 1.1rem;
   }
-
   .sidebar-group-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0.35rem 0.5rem;
     font-size: 0.78rem;
     font-weight: 700;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    margin-bottom: 0.1rem;
+  }
+  .sidebar-group-items {
+    /* 들여쓰기 없음 — 위키 스타일 */
+  }
+
+  /* === 서브 그룹 (필수/심화/부록) — 접고 펼치기 === */
+  .sidebar-subgroup {
+    margin-bottom: 0.2rem;
+  }
+  .sidebar-subgroup-title {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--fg);
     cursor: pointer;
     border-radius: 5px;
     list-style: none;
     user-select: none;
   }
-  .sidebar-group-title:hover { background: var(--line); color: var(--fg); }
+  .sidebar-subgroup-title:hover { background: var(--line); }
 
   /* 화살표 */
-  .sidebar-group-title::after {
+  .sidebar-subgroup-title::before {
     content: '›';
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1;
     transition: transform 0.15s;
     color: var(--muted);
+    width: 0.7rem;
   }
-  details[open] > .sidebar-group-title::after {
+  details[open] > .sidebar-subgroup-title::before {
     transform: rotate(90deg);
   }
+  .sidebar-subgroup-title::-webkit-details-marker { display: none; }
 
-  /* details 기본 삼각형 제거 */
-  .sidebar-group-title::-webkit-details-marker { display: none; }
-
-  .sidebar-group-items {
-    padding-top: 0.15rem;
-    padding-bottom: 0.5rem;
+  .sidebar-subgroup-items {
+    padding: 0.15rem 0 0.3rem 0.95rem;
   }
 
+  /* === 링크 공통 === */
   .sidebar-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: block;
     padding: 0.3rem 0.5rem 0.3rem 0.75rem;
     font-size: 0.87rem;
     color: var(--fg);
     text-decoration: none;
     border-radius: 5px;
     line-height: 1.45;
-    gap: 0.4rem;
   }
   .sidebar-link:hover { background: var(--line); }
   .sidebar-link.active {
     background: #ede8df;
     color: var(--accent);
     font-weight: 600;
-  }
-
-  /* 준비 중 링크 */
-  .sidebar-link--soon {
-    color: var(--muted);
-    cursor: default;
-    pointer-events: none;
-  }
-  .soon-badge {
-    font-size: 0.68rem;
-    padding: 0.1rem 0.4rem;
-    background: var(--line);
-    border-radius: 999px;
-    color: var(--muted);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .sidebar-empty {
-    font-size: 0.85rem;
-    color: var(--muted);
-    font-style: italic;
-    padding: 0.25rem 0.75rem;
   }
 
   /* 모바일 */
