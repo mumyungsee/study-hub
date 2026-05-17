@@ -101,7 +101,7 @@ import Base from '../../layouts/Base.astro';
     <p><strong>4주 안에 그 세계로 넘어가게</strong> 도와드려요.</p>
   </section>
 
-  <!-- 노코드 vs 바이브코딩 -->
+  {/* 일시 감춤 — 확인 후 결정 (삭제 X)
   <section>
     <h2>왜 이게 그렇게 큰 차이냐면</h2>
 
@@ -124,8 +124,192 @@ import Base from '../../layouts/Base.astro';
       </li>
     </ol>
   </section>
+  */}
 
-  <!-- Before / After -->
+  <!-- 셀링 포인트: 다른 스터디랑 뭐가 달라요? -->
+  <section>
+    <h2>다른 스터디랑 뭐가 달라요?</h2>
+
+    <div class="strengths">
+      <div class="strength">
+        <div class="strength-icon">🎯</div>
+        <div class="strength-body">
+          <h3>1. 단단한 기초</h3>
+          <p>다른 재밌는 스터디들도 같이 따라갈 수 있게, 선수지식부터 채워요.</p>
+        </div>
+      </div>
+
+      <div class="strength">
+        <div class="strength-icon">⏰</div>
+        <div class="strength-body">
+          <h3>2. 안전망이 있는 도전</h3>
+          <p>망쳐도 1초 만에 되돌릴 수 있어요. 그래서 겁 없이 도전 가능.</p>
+        </div>
+      </div>
+
+      <div class="strength">
+        <div class="strength-icon">🍯</div>
+        <div class="strength-body">
+          <h3>3. 회사급 노하우</h3>
+          <p>20년 차 개발자가 정리한 시스템을 그대로. 초보자도 곧바로 활용.</p>
+        </div>
+      </div>
+
+      <div class="strength">
+        <div class="strength-icon">🏔</div>
+        <div class="strength-body">
+          <h3>4. 거인의 어깨</h3>
+          <p>바닥부터 안 만들어요. 천재들이 만든 걸 가져와서 내 입맛대로.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="conclusion-box">
+      <p class="c-title">🌟 그래서 결국 —</p>
+      <ul>
+        <li>✅ 좋은 거 가져다 → <strong>내 손으로 쓸 수 있어요</strong></li>
+        <li>✅ 신박한 게 나와도 → <strong>혼자서 시도해볼 수 있어요</strong></li>
+        <li>✅ 즉, <strong>스스로 AI를 다룰 수 있게 돼요</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Q&A: 저도 따라갈 수 있을까요? -->
+  <section>
+    <h2>저도 따라갈 수 있을까요?</h2>
+    <dl class="who">
+      <dt>"챗봇만 써봤어요"</dt>
+      <dd>정확히 그분들 위한 코스예요.</dd>
+
+      <dt>"중급 스터디 조건이 안 돼요"</dt>
+      <dd>여기서 다지면 다음 스터디 따라갈 수 있어요.</dd>
+
+      <dt>"유튜브 보다 막혀서 포기한 적 있어요"</dt>
+      <dd>막혔을 때 AI한테 물어보는 법을 배워요.</dd>
+
+      <dt>"AI한테 시켰다가 망치면요?"</dt>
+      <dd>Git이 안전망. 1초 만에 되돌려요.</dd>
+
+      <dt>"만들고 싶은 건 큰데 실력이 부족해요"</dt>
+      <dd>4주차 오픈소스 활용으로 레버리지 가능.</dd>
+    </dl>
+  </section>
+
+  <!-- 4주 커리큘럼 -->
+  <section>
+    <h2>4주 계획</h2>
+
+    <div class="cur-card week1">
+      <div class="cur-head">
+        <span class="cur-week">1주차</span>
+        <h3>작업 환경 세팅 끝장내기</h3>
+      </div>
+      <p class="cur-note">첫 시간에 정면돌파로 바이브코딩 환경 세팅을 끝내요. 그러면서 동시에, <strong>다른 청강도 들을 수 있는 상태</strong>로 만들어드려요.</p>
+      <p class="cur-tools-line">Antigravity · Claude Code · bkit <span class="cur-tools-role">(설치)</span></p>
+    </div>
+
+    <div class="cur-divider"><span>2~4주차 · "라이프 위키 만들기" 한 사례</span></div>
+
+    <div class="cur-intro">
+      <p class="lw-catch">
+        단순한 블록 하나로 시작해서,<br/>
+        세상 모든 블록을 다룰 수 있게.
+      </p>
+
+      <p class="lw-context">
+        <strong>이번 스터디에서 우리가 함께 만들 사례예요.</strong><br/>
+        일기 한 줄만 써도 <em>정리 · 콘텐츠 · 웹사이트</em>로 자동 변환되는 도구.<br/>
+        이걸 가져가서, 마음껏 고치고, 더 멋진 걸 만들어볼 첫 블록.
+      </p>
+
+      <div class="lw-divider"></div>
+
+      <h4 class="lw-section-title">🧱 라이프 위키</h4>
+      <ul class="lw-flow">
+        <li><span class="lw-icon">📝</span> 일기 쓰면 <span class="lw-arrow">→</span> <strong>하루 보고서</strong></li>
+        <li><span class="lw-icon">💡</span> AI 대화하면 <span class="lw-arrow">→</span> <strong>글감 추천 · 게시글 자동 작성</strong></li>
+        <li><span class="lw-icon">✍️</span> 글만 쓰면 <span class="lw-arrow">→</span> <strong>자동으로 웹사이트로 변환</strong></li>
+      </ul>
+
+      <div class="lw-divider"></div>
+
+      <p class="lw-process">
+        이 작은 블록을 내 입맛에 맞게 수정하면서,<br/>
+        <em>Git · GitHub · bkit · 오픈소스</em>가 손에 익습니다.
+      </p>
+      <p class="lw-finale">
+        그리고 4주 후 — <strong>세상의 모든 오픈소스가, 여러분의 블록이 됩니다.</strong>
+      </p>
+    </div>
+
+    <div class="cur-card essential">
+      <div class="cur-head">
+        <span class="cur-tag">필수</span>
+        <h3>내 라이프 위키 만들기</h3>
+      </div>
+      <p class="cur-note">스터디장이 만든 라이프 위키를 내 컴퓨터로 가져와서, 내 정보 넣기.</p>
+      <p class="cur-tools-line">추가: Git · GitHub <span class="cur-tools-role">(라이프 위키 가져오기)</span></p>
+    </div>
+
+    <div class="cur-card advanced">
+      <div class="cur-head">
+        <span class="cur-tag adv">심화</span>
+        <h3>내 입맛대로 고치고, 인터넷에 올리기</h3>
+      </div>
+      <p class="cur-note">회고 방식·디자인·메뉴를 내 마음대로. 사이트 주소가 생겨서 누구나 볼 수 있어요.</p>
+      <p class="cur-tools-line">추가: bkit <span class="cur-tools-role">(작업 기획·플로우)</span> · Vercel <span class="cur-tools-role">(인터넷 배포)</span></p>
+    </div>
+
+    <div class="cur-card advanced">
+      <div class="cur-head">
+        <span class="cur-tag adv">심화+</span>
+        <h3>다른 좋은 거 가져와서 더 멋지게</h3>
+      </div>
+      <p class="cur-note">마음에 드는 다른 사람 작품을 가져와서 내 것에 합쳐요. <em>(시간 되면 4주차)</em></p>
+      <p class="cur-tools-line">지금까지 배운 모든 도구 활용</p>
+    </div>
+
+    <p class="cur-bonus">＋ 사이사이 배경지식은 <strong>부록</strong>으로 챙겨드려요.</p>
+  </section>
+
+  <!-- 다루는 도구 -->
+  <section>
+    <h2>이 스터디에서 다루는 도구</h2>
+
+    <ul class="tools-list">
+      <li>
+        <span class="t-icon">🛰️</span>
+        <span class="t-name">Antigravity</span>
+        <span class="t-desc">AI랑 같이 일하는 무료 작업 공간</span>
+      </li>
+      <li>
+        <span class="t-icon">⚔️</span>
+        <span class="t-name">Claude Code</span>
+        <span class="t-desc">말로 시키면 진짜 일하는 AI 동료</span>
+      </li>
+      <li>
+        <span class="t-icon">🛡️</span>
+        <span class="t-name">bkit</span>
+        <span class="t-desc">Claude Code를 더 똑똑하게 만드는 확장팩</span>
+      </li>
+      <li>
+        <span class="t-icon">🕰️</span>
+        <span class="t-name">Git</span>
+        <span class="t-desc">실수해도 되돌리는 타임머신</span>
+      </li>
+      <li>
+        <span class="t-icon">📂</span>
+        <span class="t-name">GitHub</span>
+        <span class="t-desc">전 세계 코드 보물창고 + 백업소</span>
+      </li>
+    </ul>
+
+    <a href="/onboarding/glossary" class="tools-link">
+      처음 보는 이름이라도 괜찮아요 → 단어 풀이 페이지에서 자세히 보기
+    </a>
+  </section>
+
+  {/* 일시 감춤 — 확인 후 결정 (삭제 X)
   <section>
     <h2>4주 후</h2>
     <div class="ba-grid">
@@ -151,130 +335,7 @@ import Base from '../../layouts/Base.astro';
       </div>
     </div>
   </section>
-
-  <!-- 큰 흐름: 이 스터디는 이렇게 흘러갑니다 -->
-  <section>
-    <h2>이 스터디는 이렇게 흘러갑니다</h2>
-
-    <div class="flow">
-      <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-body">
-          <h3>기초 선수지식부터 채워드려요</h3>
-          <p>→ 다른 재밌는 스터디도 같이 따라갈 수 있게</p>
-        </div>
-      </div>
-
-      <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-body">
-          <h3>Git으로 "타임머신" 세팅 ⏰</h3>
-          <p>→ 망해도 되돌릴 수 있으니 겁 없이 도전 → 빨리 성장</p>
-        </div>
-      </div>
-
-      <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-body">
-          <h3>bkit으로 큰 서비스 만들기 🍯</h3>
-          <p>→ 20년 차 개발자 레시피로, 초보자도 회사급 서비스 OK</p>
-        </div>
-      </div>
-
-      <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-body">
-          <h3>GitHub로 천재들 작품 가져오기 🏔</h3>
-          <p>→ 바닥부터 X, 거인의 어깨 위에서 시작</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="conclusion-box">
-      <p class="c-title">🌟 그래서 결국 —</p>
-      <ul>
-        <li>✅ 이 스터디 들으면 → <strong>오픈소스 직접 가져다 쓸 수 있어요</strong></li>
-        <li>✅ 더 신박한 게 나와도 → <strong>혼자서 다 가능해요</strong></li>
-        <li>✅ 즉, <strong>스스로 AI를 다룰 수 있게 돼요</strong></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 4주 커리큘럼 -->
-  <section>
-    <h2>4주 계획</h2>
-
-    <div class="cur-card week1">
-      <div class="cur-head">
-        <span class="cur-week">1주차</span>
-        <h3>작업 환경 세팅 끝장내기</h3>
-      </div>
-      <p class="cur-note">첫 시간에 정면돌파로 바이브코딩 환경 세팅을 끝내요. 그러면서 동시에, <strong>다른 청강도 들을 수 있는 상태</strong>로 만들어드려요.</p>
-    </div>
-
-    <div class="cur-divider"><span>2~4주차 · "라이프 위키 만들기" 한 사례</span></div>
-
-    <div class="cur-intro">
-      <h3 class="lw-title">라이프 위키 = 일기가 콘텐츠가 되는 곳</h3>
-      <ul class="lw-flow">
-        <li><span class="lw-icon">📝</span> 일기 쓰면 <span class="lw-arrow">→</span> <strong>하루 보고서 자동 정리</strong></li>
-        <li><span class="lw-icon">💡</span> AI 대화하면 <span class="lw-arrow">→</span> <strong>글감 자동 추천 · 사례 게시글 자동 작성</strong></li>
-        <li><span class="lw-icon">✍️</span> 글만 쓰면 <span class="lw-arrow">→</span> <strong>웹사이트 자동 변환</strong></li>
-      </ul>
-      <p class="lw-tag">단순하게 만들어 놨어요. <strong>마음껏 고치세요.</strong></p>
-    </div>
-
-    <div class="cur-tools">
-      🛠️ <strong>이 사례 하나로 Git · GitHub · bkit · 오픈소스를 한 번에 다뤄요.</strong>
-    </div>
-
-    <div class="cur-card essential">
-      <div class="cur-head">
-        <span class="cur-tag">필수</span>
-        <h3>내 라이프 위키 만들기</h3>
-      </div>
-      <p class="cur-note">스터디장이 만든 라이프 위키를 내 컴퓨터로 가져와서, 내 정보 넣기. 여기까진 모두 같이 해요.</p>
-    </div>
-
-    <div class="cur-card advanced">
-      <div class="cur-head">
-        <span class="cur-tag adv">심화</span>
-        <h3>내 입맛대로 고치고, 인터넷에 올리기</h3>
-      </div>
-      <p class="cur-note">회고 방식·디자인·메뉴를 내 마음대로. 사이트 주소가 생겨서 누구나 볼 수 있어요.</p>
-    </div>
-
-    <div class="cur-card advanced">
-      <div class="cur-head">
-        <span class="cur-tag adv">심화+</span>
-        <h3>다른 좋은 거 가져와서 더 멋지게</h3>
-      </div>
-      <p class="cur-note">마음에 드는 다른 사람 작품을 가져와서 내 것에 합쳐요. <em>(시간 되면 4주차)</em></p>
-    </div>
-
-    <p class="cur-bonus">＋ 사이사이 배경지식은 <strong>부록</strong>으로 챙겨드려요.</p>
-  </section>
-
-  <!-- Q&A -->
-  <section>
-    <h2>저도 따라갈 수 있을까요?</h2>
-    <dl class="who">
-      <dt>"챗봇만 써봤어요"</dt>
-      <dd>정확히 그분들 위한 코스예요.</dd>
-
-      <dt>"중급 스터디 조건이 안 돼요"</dt>
-      <dd>여기서 다지면 다음 스터디 따라갈 수 있어요.</dd>
-
-      <dt>"유튜브 보다 막혀서 포기한 적 있어요"</dt>
-      <dd>막혔을 때 AI한테 물어보는 법을 배워요.</dd>
-
-      <dt>"AI한테 시켰다가 망치면요?"</dt>
-      <dd>Git이 안전망. 1초 만에 되돌려요.</dd>
-
-      <dt>"만들고 싶은 건 큰데 실력이 부족해요"</dt>
-      <dd>4주차 오픈소스 활용으로 레버리지 가능.</dd>
-    </dl>
-  </section>
+  */}
 
   <!-- 스터디장 -->
   <section class="leader">
@@ -835,9 +896,9 @@ import Base from '../../layouts/Base.astro';
   }
   .cur-note {
     margin: 0.5rem 0 0;
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.5;
+    font-size: 0.93rem;
+    color: #333;
+    line-height: 1.6;
   }
   .cur-why, .cur-after {
     margin: 0.35rem 0 0;
@@ -884,19 +945,70 @@ import Base from '../../layouts/Base.astro';
     border-radius: 8px;
     border-left: 3px solid var(--accent);
   }
-  .lw-title {
-    margin: 0 0 0.7rem;
-    font-size: 0.97rem;
+  /* Headline + Catchphrase */
+  .lw-headline {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
     color: var(--accent);
-    line-height: 1.4;
+    line-height: 1.3;
   }
+  .lw-catch {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.45;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: -0.01em;
+  }
+  .lw-what {
+    margin: 0.7rem 0 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #555;
+  }
+  .lw-what strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Divider */
+  .lw-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 1rem 0;
+    opacity: 0.6;
+  }
+
+  /* Context */
+  .lw-context {
+    margin: 0.9rem 0 0;
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: #444;
+  }
+  .lw-context strong {
+    color: #222;
+  }
+  .lw-context em {
+    font-style: normal;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .lw-section-title {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Flow (3 features) */
   .lw-flow {
     list-style: none;
-    margin: 0 0 0.7rem;
+    margin: 0;
     padding: 0;
   }
   .lw-flow li {
-    padding: 0.3rem 0;
+    padding: 0.35rem 0;
     font-size: 0.92rem;
     line-height: 1.55;
     display: flex;
@@ -913,27 +1025,136 @@ import Base from '../../layouts/Base.astro';
     font-weight: 700;
     margin: 0 0.1rem;
   }
-  .lw-tag {
-    margin: 0.6rem 0 0;
-    padding-top: 0.6rem;
-    border-top: 1px dashed var(--accent);
+
+  /* Process line */
+  .lw-process {
+    margin: 0 0 0.6rem;
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.6;
+    color: #555;
   }
-  .cur-tools {
-    margin: 0 0 0.8rem;
+  .lw-process em {
+    font-style: normal;
+    font-weight: 600;
+    color: #333;
+  }
+
+  /* Finale */
+  .lw-finale {
+    margin: 0;
     padding: 0.8rem 1rem;
     background: #fff;
-    border: 1.5px solid var(--accent);
-    border-radius: 8px;
-    text-align: center;
-    font-size: 0.93rem;
-    line-height: 1.5;
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    font-size: 0.97rem;
+    line-height: 1.55;
+    color: #333;
+  }
+  .lw-finale strong {
+    color: var(--accent);
   }
   .cur-bonus {
     margin-top: 0.9rem;
     font-size: 0.85rem;
     color: var(--muted);
+  }
+  /* === Tools List (도구 5개 세로) === */
+  .tools-list {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+  .tools-list li {
+    display: grid;
+    grid-template-columns: 1.8rem 7rem 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--border, #eee);
+  }
+  .tools-list li:last-child {
+    border-bottom: none;
+  }
+  .t-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    text-align: center;
+  }
+  .t-name {
+    font-weight: 700;
+    color: #222;
+    font-size: 0.95rem;
+  }
+  .t-desc {
+    color: #555;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .tools-link {
+    display: block;
+    text-align: center;
+    padding: 0.7rem 1rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    background: #fff7ed;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  .tools-link:hover {
+    background: #ffeacc;
+  }
+
+  .cur-tools-line {
+    margin: 0.7rem 0 0;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--border, #ddd);
+    font-size: 0.83rem;
+    color: #888;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  .cur-tools-role {
+    color: #888;
+    font-weight: 400;
+    font-size: 0.77rem;
+  }
+
+  /* === Strengths (셀링포인트 카드) === */
+  .strengths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .strength {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    padding: 1rem 1.1rem;
+    background: #fff7ed;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+  }
+  .strength-icon {
+    flex-shrink: 0;
+    font-size: 1.6rem;
+    line-height: 1;
+    padding-top: 0.1rem;
+  }
+  .strength-body h3 {
+    margin: 0 0 0.35rem;
+    font-size: 0.97rem;
+    line-height: 1.35;
+    color: var(--accent);
+  }
+  .strength-body p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #444;
   }
 
   /* === Flow (스터디 흐름) === */
@@ -1100,8 +1321,19 @@ import Base from '../../layouts/Base.astro';
     .opening h1 {
       font-size: 1.4rem;
     }
-    .scene-pair, .ba-grid {
+    .scene-pair, .ba-grid, .strengths {
       grid-template-columns: 1fr;
+    }
+    .tools-list li {
+      grid-template-columns: 1.5rem 1fr;
+      grid-template-rows: auto auto;
+    }
+    .t-icon {
+      grid-row: 1 / 3;
+    }
+    .t-desc {
+      grid-column: 2;
+      font-size: 0.83rem;
     }
     .cur-head {
       flex-wrap: wrap;
