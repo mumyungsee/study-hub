@@ -4,7 +4,19 @@ import Base from '../../layouts/Base.astro';
 
 <Base title="사전 설문조사 — AI 스터디 허브">
   <h1>사전 설문조사</h1>
-  <p>스터디를 시작하기 전에 간단한 설문에 응답해 주세요. 약 3~5분 정도 걸립니다.</p>
+
+  <div class="intro-box">
+    <p class="why"><strong>왜 이걸 묻나요?</strong></p>
+    <p>
+      여러분이 어디까지 해보셨고, 어디서 어려움을 느끼시는지 미리 알면
+      <strong>제가 그 부분을 더 잘 챙겨드릴 수 있어요.</strong>
+    </p>
+    <p>
+      정답이 있는 게 아니에요. <strong>"잘 모른다"고 답하셔도 전혀 괜찮습니다.</strong>
+      오히려 솔직하게 답해주실수록 1주차 때 그분을 더 신경 써서 도와드릴 수 있어요.
+    </p>
+    <p class="time">5분 정도 걸려요.</p>
+  </div>
 
   <div class="form-wrap">
     <iframe
@@ -21,6 +33,27 @@ import Base from '../../layouts/Base.astro';
 </Base>
 
 <style>
+  .intro-box {
+    margin: 1rem 0 1.5rem;
+    padding: 1.1rem 1.3rem;
+    background: #fff7ed;
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+  }
+  .intro-box p {
+    margin: 0.4rem 0;
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+  .intro-box .why {
+    margin-top: 0;
+    color: var(--accent);
+  }
+  .intro-box .time {
+    margin-top: 0.8rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
   .form-wrap {
     margin-top: 1.5rem;
     border-radius: 8px;
