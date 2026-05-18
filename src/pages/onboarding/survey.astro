@@ -6,16 +6,8 @@ import Base from '../../layouts/Base.astro';
   <h1>사전 설문조사</h1>
 
   <div class="intro-box">
-    <p class="why"><strong>왜 이걸 묻나요?</strong></p>
-    <p>
-      여러분이 어디까지 해보셨고, 어디서 어려움을 느끼시는지 미리 알면
-      <strong>제가 그 부분을 더 잘 챙겨드릴 수 있어요.</strong>
-    </p>
-    <p>
-      정답이 있는 게 아니에요. <strong>"잘 모른다"고 답하셔도 전혀 괜찮습니다.</strong>
-      오히려 솔직하게 답해주실수록 1주차 때 그분을 더 신경 써서 도와드릴 수 있어요.
-    </p>
-    <p class="time">5분 정도 걸려요.</p>
+    <p>미리 알면, 그만큼 더 잘 챙겨드릴 수 있어요.</p>
+    <p>"잘 모른다"고 답하셔도 괜찮습니다. <strong>솔직하게 답해주세요.</strong></p>
   </div>
 
   <div class="form-wrap">
@@ -35,25 +27,18 @@ import Base from '../../layouts/Base.astro';
 <style>
   .intro-box {
     margin: 1rem 0 1.5rem;
-    padding: 1.1rem 1.3rem;
+    padding: 1rem 1.2rem;
     background: #fff7ed;
     border-left: 4px solid var(--accent);
     border-radius: 4px;
   }
   .intro-box p {
-    margin: 0.4rem 0;
+    margin: 0.3rem 0;
     line-height: 1.65;
     font-size: 0.95rem;
   }
-  .intro-box .why {
-    margin-top: 0;
-    color: var(--accent);
-  }
-  .intro-box .time {
-    margin-top: 0.8rem;
-    color: var(--muted);
-    font-size: 0.88rem;
-  }
+  .intro-box p:first-child { margin-top: 0; }
+  .intro-box p:last-child { margin-bottom: 0; }
   .form-wrap {
     margin-top: 1.5rem;
     border-radius: 8px;
