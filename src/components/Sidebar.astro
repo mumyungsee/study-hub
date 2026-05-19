@@ -34,7 +34,7 @@ const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
             스터디 소개
           </a>
           <a href="/onboarding/how-to-use/" class:list={['sidebar-link', { active: pathname === '/onboarding/how-to-use/' }]}>
-            이 스터디 사용법
+            지피터스 커뮤니티 활용하기
           </a>
           <a href="/onboarding/survey/" class:list={['sidebar-link', { active: pathname === '/onboarding/survey/' }]}>
             사전 설문조사
@@ -127,13 +127,15 @@ const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
     position: sticky;
     top: var(--header-height, 52px);
     overflow-y: auto;
+    overflow-x: hidden;
     border-right: 1px solid var(--line);
     flex-shrink: 0;
   }
 
   .sidebar-inner {
     padding: 1rem 0.5rem 2rem;
-    min-width: var(--sidebar-width, 260px);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* === 최상위 그룹 (온보딩 / 환경 세팅 / 튜토리얼) === */
@@ -199,6 +201,8 @@ const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
     text-decoration: none;
     border-radius: 5px;
     line-height: 1.45;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
   .sidebar-link:hover { background: var(--line); }
   .sidebar-link.active {

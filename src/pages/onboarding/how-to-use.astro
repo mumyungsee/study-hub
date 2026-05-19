@@ -2,87 +2,289 @@
 import Base from '../../layouts/Base.astro';
 ---
 
-<Base title="이 스터디 사용법 — AI 스터디 허브">
-  <h1>이 스터디 사용법</h1>
+<Base title="지피터스 커뮤니티 야무지게 활용하기 — AI 스터디 허브">
+  <h1>지피터스 커뮤니티 야무지게 활용하기</h1>
 
-  <section class="part">
-    <h2>파트 1. 마인드셋: 혼자 하면 공부, 같이 하면 '병렬 로그인'</h2>
+  <p class="lead">
+    혼자 가면 빨리, 같이 가면 멀리라고 하지만, <strong>우리는 같이 가는데 빨리 갑니다.</strong><br />
+    병렬 피어 러닝(Peer Learning) 방식으로요.
+  </p>
 
-    <div class="item">
-      <h3>1. 강의는 '정체'되지만, 시연은 '생존'합니다</h3>
-      <p>강사가 떠먹여 주는 지식은 내일이면 낡은 지식이 됩니다.</p>
-      <p>변화가 빠른 AI 시대, 가장 중요한 건 지식 그 자체가 아니라 <strong>'스스로 학습하는 법'</strong>을 익히는 것입니다.</p>
-    </div>
+  <section class="cycle-visual" aria-label="학습 사이클 다이어그램">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cycle-title">
+      <title id="cycle-title">학습 사이클 — 다섯 단계가 돌아가고 가운데에 엔진 역할</title>
 
-    <div class="item">
-      <h3>2. 아웃풋은 최고의 메타인지 도구입니다</h3>
-      <p>남에게 설명할 수 있을 때 진짜 내 것이 됩니다.</p>
-      <p>발표와 공유는 복습을 넘어, 내가 무엇을 모르는지 깨닫게 하는 가장 강력한 공부법입니다.</p>
-    </div>
+      <!-- 외곽 순환 원 (끊김 없이 한 줄로) -->
+      <circle cx="250" cy="250" r="180" fill="none" stroke="#6b4f3a" stroke-width="1.5" opacity="0.35" />
 
-    <div class="item">
-      <h3>3. 우리는 지식을 '병렬'로 습득합니다 (Peer Learning)</h3>
-      <p>혼자서 모든 AI 뉴스를 쫓는 건 불가능합니다.</p>
-      <p>내가 A를 공부하고 동료가 B를 공부해서 서로 공유하면, 우리는 최소한의 노력으로 지식을 병렬로 확장하게 됩니다.</p>
-    </div>
+      <!-- 5단계 노드: 중심(250,250)에서 반지름 180, 5각형 -90도부터 시계방향 -->
+      <!--
+        ① ( 250,  70 )   각도 -90°
+        ② ( 421, 194 )   각도 -18°
+        ③ ( 356, 421 )   각도  54°
+        ④ ( 144, 421 )   각도 126°
+        ⑤ (  79, 194 )   각도 198°
+      -->
 
-    <div class="item">
-      <h3>4. 당신의 '삽질'은 모두의 '데이터'입니다</h3>
-      <p>성공 사례만큼 귀한 것이 시행착오 과정입니다.</p>
-      <p>나의 삽질을 기록하는 것만으로도 동료들의 시간을 아껴주는 엄청난 기여가 되며, 서로가 서로의 스승이 되는 지피터스만의 문화를 만듭니다.</p>
-    </div>
+      <!-- ① 자발적 학습 (12시) -->
+      <g>
+        <circle cx="250" cy="70" r="58" fill="#faf7f1" stroke="#6b4f3a" stroke-width="2" />
+        <circle cx="250" cy="44" r="14" fill="#6b4f3a" />
+        <text x="250" y="49" text-anchor="middle" fill="white" font-size="14" font-weight="700" font-family="system-ui, sans-serif">1</text>
+        <text x="250" y="82" text-anchor="middle" fill="#6b4f3a" font-size="13" font-weight="700" font-family="system-ui, sans-serif">자발적 학습</text>
+        <text x="250" y="100" text-anchor="middle" fill="#555" font-size="11" font-family="system-ui, sans-serif">내가 풀고 싶은 문제</text>
+      </g>
+
+      <!-- ② 아웃풋 학습 (우상) -->
+      <g>
+        <circle cx="421" cy="194" r="58" fill="#faf7f1" stroke="#6b4f3a" stroke-width="2" />
+        <circle cx="421" cy="168" r="14" fill="#6b4f3a" />
+        <text x="421" y="173" text-anchor="middle" fill="white" font-size="14" font-weight="700" font-family="system-ui, sans-serif">2</text>
+        <text x="421" y="206" text-anchor="middle" fill="#6b4f3a" font-size="13" font-weight="700" font-family="system-ui, sans-serif">아웃풋 학습</text>
+        <text x="421" y="224" text-anchor="middle" fill="#555" font-size="11" font-family="system-ui, sans-serif">사례글 쓰기</text>
+      </g>
+
+      <!-- ③ 병렬 학습 (우하) -->
+      <g>
+        <circle cx="356" cy="421" r="58" fill="#faf7f1" stroke="#6b4f3a" stroke-width="2" />
+        <circle cx="356" cy="395" r="14" fill="#6b4f3a" />
+        <text x="356" y="400" text-anchor="middle" fill="white" font-size="14" font-weight="700" font-family="system-ui, sans-serif">3</text>
+        <text x="356" y="433" text-anchor="middle" fill="#6b4f3a" font-size="13" font-weight="700" font-family="system-ui, sans-serif">병렬 학습</text>
+        <text x="356" y="451" text-anchor="middle" fill="#555" font-size="11" font-family="system-ui, sans-serif">읽기·댓글·공유</text>
+      </g>
+
+      <!-- ④ 정제 학습 (좌하) -->
+      <g>
+        <circle cx="144" cy="421" r="58" fill="#faf7f1" stroke="#6b4f3a" stroke-width="2" />
+        <circle cx="144" cy="395" r="14" fill="#6b4f3a" />
+        <text x="144" y="400" text-anchor="middle" fill="white" font-size="14" font-weight="700" font-family="system-ui, sans-serif">4</text>
+        <text x="144" y="433" text-anchor="middle" fill="#6b4f3a" font-size="13" font-weight="700" font-family="system-ui, sans-serif">정제 학습</text>
+        <text x="144" y="451" text-anchor="middle" fill="#555" font-size="11" font-family="system-ui, sans-serif">발표로 압축</text>
+      </g>
+
+      <!-- ⑤ 자산 학습 (좌상) -->
+      <g>
+        <circle cx="79" cy="194" r="58" fill="#faf7f1" stroke="#6b4f3a" stroke-width="2" />
+        <circle cx="79" cy="168" r="14" fill="#6b4f3a" />
+        <text x="79" y="173" text-anchor="middle" fill="white" font-size="14" font-weight="700" font-family="system-ui, sans-serif">5</text>
+        <text x="79" y="206" text-anchor="middle" fill="#6b4f3a" font-size="13" font-weight="700" font-family="system-ui, sans-serif">자산 학습</text>
+        <text x="79" y="224" text-anchor="middle" fill="#555" font-size="11" font-family="system-ui, sans-serif">학습이 자산으로</text>
+      </g>
+
+      <!-- 시계방향 화살표 (5개 — 각 노드와 노드 중간에) -->
+      <g fill="#6b4f3a" opacity="0.55">
+        <!-- ①→② 중간 (각도 -54°): 위치 ( 250+180·cos(-54°), 250+180·sin(-54°) ) = (356, 104) -->
+        <polygon points="0,-7 12,0 0,7" transform="translate(356 104) rotate(36)" />
+        <!-- ②→③ 중간 (각도 18°): (421, 306) -->
+        <polygon points="0,-7 12,0 0,7" transform="translate(421 306) rotate(108)" />
+        <!-- ③→④ 중간 (각도 90°): (250, 430) -->
+        <polygon points="0,-7 12,0 0,7" transform="translate(250 430) rotate(180)" />
+        <!-- ④→⑤ 중간 (각도 162°): (79, 306) -->
+        <polygon points="0,-7 12,0 0,7" transform="translate(79 306) rotate(252)" />
+        <!-- ⑤→① 중간 (각도 -126°, 즉 234°): (144, 104) -->
+        <polygon points="0,-7 12,0 0,7" transform="translate(144 104) rotate(324)" />
+      </g>
+
+      <!-- 가운데 엔진 -->
+      <g>
+        <circle cx="250" cy="250" r="72" fill="#6b4f3a" />
+        <circle cx="250" cy="250" r="80" fill="none" stroke="#6b4f3a" stroke-width="2" opacity="0.3" stroke-dasharray="4 6">
+          <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="20s" repeatCount="indefinite" />
+        </circle>
+        <text x="250" y="240" text-anchor="middle" fill="#f5f0e8" font-size="13" font-weight="600" font-family="system-ui, sans-serif" letter-spacing="2">ENGINE</text>
+        <text x="250" y="266" text-anchor="middle" fill="white" font-size="20" font-weight="800" font-family="system-ui, sans-serif">역할</text>
+      </g>
+    </svg>
+    <p class="cycle-caption">엔진(역할)이 사이클 전체를 돌립니다.</p>
   </section>
 
-  <section class="part">
-    <h2>파트 2. 실전 전략: 한 달 야무지게 뽑아먹기</h2>
+  <h2>학습 사이클 한눈에</h2>
 
-    <div class="item">
-      <h3>1. 첫 주에 '몰입' 하세요 (가장 중요!)</h3>
-      <p>지피터스의 모든 핵심 소스는 1주차 시연에 몰려 있습니다.</p>
-      <p>1주차에 재료를 다 모으고, 남은 3주는 나만의 사례로 숙성시키는 시간입니다.</p>
+  <div class="cycle-layout">
+    <div class="card card-frame">
+      <div class="card-tag">엔진</div>
+      <h3>역할 — 사이클을 멈추지 않게 하는 힘</h3>
+      <p>역할을 맡으면 내 자리가 생기고, 같이 가는 동료가 생겨요. 그 힘이 의지력보다 훨씬 강력합니다.</p>
     </div>
 
-    <div class="item">
-      <h3>2. 타 스터디 다시보기: "30분 시연만 2배속으로!"</h3>
-      <p>15분의 마법: 긴 영상 다 보지 마세요. 시연 파트만 골라 2배속으로 보면, 15분 만에 다른 스터디 핵심 기술을 내 것으로 만듭니다.</p>
+    <div class="flow-note">↓ 그 힘이 아래 네 단계를 굴립니다</div>
+
+    <div class="stages-row">
+      <div class="card stage">
+        <div class="stage-num">1</div>
+        <h3>자발적 학습</h3>
+        <p>내가 풀고 싶은 문제에서 시작.<br />자발적 동기로 학습이 굴러간다.</p>
+      </div>
+
+      <div class="card stage">
+        <div class="stage-num">2</div>
+        <h3>아웃풋 학습</h3>
+        <p>사례글을 쓰는 행위 자체가 가장 강력한 학습.</p>
+      </div>
+
+      <div class="card stage">
+        <div class="stage-num">3</div>
+        <h3>병렬 학습</h3>
+        <p>다른 사람 사례글에서 집단지성의 답을 얻는다.<br />댓글로 요약하면서 복습.<br />질문 답변하면서 적극 학습.</p>
+      </div>
+
+      <div class="card stage">
+        <div class="stage-num">4</div>
+        <h3>정제 학습</h3>
+        <p>발표로 한 번 더 압축.<br />내가 뭘 알고 뭘 모르는지 드러난다. 스피치는 덤.</p>
+      </div>
     </div>
 
-    <div class="item">
-      <h3>3. 월요일 '베스트 발표'는 필수 요약본</h3>
-      <p>20여 개 스터디의 정수만 모았습니다. 직접 듣지 못한 스터디의 핵심 트렌드를 한 번에 흡수하세요.</p>
+    <div class="flow-note">↓ 그 결과가 자산으로 쌓이고</div>
+
+    <div class="card card-frame">
+      <div class="card-tag">자산</div>
+      <h3>⑤ 자산 학습 — 학습이 자산으로 쌓입니다</h3>
+      <p>매일의 학습 기록이 그대로 빌드 인 퍼블릭이자 내 퍼널·브랜딩 자산이 됩니다.</p>
     </div>
-  </section>
+
+    <div class="flow-note">↓ 오프라인까지 가면 한 단계 더</div>
+
+    <div class="card card-frame booster">
+      <div class="card-tag">부스터</div>
+      <h3>오프라인까지 가면</h3>
+      <p>시간과 장소가 강제로 세팅돼요. 그 시간에 그 자리에 가면 할 수밖에 없어요. 옆 사람들도 다 하고 있고, 딴짓할 데도 없거든요.</p>
+    </div>
+  </div>
 
   <blockquote class="closing">
-    "혼자 가면 지치지만, 병렬로 연결되면 누구보다 빠르게 멀리 갑니다."
+    혼자 가면 지치지만, 같이 가는데 빨리 갑니다.
   </blockquote>
+
+  <p class="note">
+    구체적으로 사례글은 어떻게 쓰고, 댓글은 어떻게 달고, 발표는 어떻게 준비하는지는 다음 페이지들에서 다뤄요.
+  </p>
 </Base>
 
 <style>
-  .part {
-    margin-bottom: 3rem;
+  .lead {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    padding: 1.4rem 1.6rem;
+    background: #f5f0e8;
+    border-radius: 8px;
+    margin: 1.5rem 0 2rem;
+    color: var(--fg);
   }
 
-  .part h2 {
+  .cycle-visual {
+    margin: 2rem 0 2.5rem;
+    text-align: center;
+  }
+
+  .cycle-visual svg {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .cycle-caption {
+    margin-top: 0.75rem;
+    font-size: 0.88rem;
+    color: #888;
+    font-style: italic;
+  }
+
+  h2 {
     font-size: 1.15rem;
     border-bottom: 2px solid var(--accent);
     padding-bottom: 0.4rem;
-    margin-bottom: 1.5rem;
+    margin: 2.5rem 0 1.5rem;
   }
 
-  .item {
-    margin-bottom: 1.75rem;
+  .cycle-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2.5rem;
   }
 
-  .item h3 {
+  .card {
+    background: #faf7f1;
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+    position: relative;
+  }
+
+  .card h3 {
     font-size: 1rem;
-    margin-bottom: 0.4rem;
+    margin: 0 0 0.5rem;
     color: var(--accent);
   }
 
-  .item p {
-    margin: 0.3rem 0;
+  .card p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
     color: var(--fg);
+  }
+
+  /* 엔진·자산·부스터 — 강조 카드 */
+  .card-frame {
+    background: #f5f0e8;
+    border-left: 4px solid var(--accent);
+    padding-top: 1.3rem;
+  }
+
+  .card-frame.booster {
+    border-left-color: #c8956d;
+  }
+
+  .card-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    margin-bottom: 0.55rem;
+  }
+
+  .card-frame.booster .card-tag {
+    background: #c8956d;
+  }
+
+  /* 4단계 그리드 */
+  .stages-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
+
+  .stage {
+    border-top: 3px solid var(--accent);
+  }
+
+  .stage-num {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* 흐름 안내 — 카드 사이 화살표 */
+  .flow-note {
+    text-align: center;
+    color: #999;
+    font-size: 0.85rem;
+    padding: 0.75rem 0;
+    font-style: italic;
   }
 
   .closing {
@@ -96,4 +298,49 @@ import Base from '../../layouts/Base.astro';
     background: #f5f0e8;
     border-radius: 8px;
   }
+
+  .note {
+    margin-top: 1.5rem;
+    font-size: 0.88rem;
+    color: var(--muted, #888);
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* 모바일: 4칸 → 세로 전환 */
+  @media (max-width: 720px) {
+    .stages-row {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+
+    .stage {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 0.9rem;
+      row-gap: 0.3rem;
+      padding: 0.9rem 1rem;
+      border-top: none;
+      border-left: 3px solid var(--accent);
+    }
+
+    .stage-num {
+      grid-row: 1 / span 2;
+      margin-bottom: 0;
+    }
+
+    .stage h3 {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 0.1rem 0 0;
+    }
+
+    .stage p {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
 </style>
+</content>
+</invoke>
