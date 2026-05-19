@@ -18,13 +18,15 @@
     position: sticky;
     top: var(--header-height, 52px);
     overflow-y: auto;
+    overflow-x: hidden;
     flex-shrink: 0;
     border-left: 1px solid var(--line);
   }
 
   .toc-inner {
     padding: 1.25rem 1rem;
-    min-width: var(--toc-width, 220px);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .toc-label {
@@ -57,6 +59,8 @@
     border-radius: 4px;
     line-height: 1.45;
     border-left: 2px solid transparent;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
   .toc-nav :global(a:hover) { color: var(--fg); }
   .toc-nav :global(a.active) {
