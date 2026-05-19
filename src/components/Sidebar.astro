@@ -27,6 +27,9 @@ const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
       <div class="sidebar-group">
         <div class="sidebar-group-title">온보딩</div>
         <div class="sidebar-group-items">
+          <a href="/onboarding/survey/" class:list={['sidebar-link', { active: pathname === '/onboarding/survey/' }]}>
+            사전 설문조사
+          </a>
           <a href="/onboarding/glossary/" class:list={['sidebar-link', { active: pathname === '/onboarding/glossary/' }]}>
             용어 정리
           </a>
@@ -36,12 +39,13 @@ const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
           <a href="/onboarding/how-to-use/" class:list={['sidebar-link', { active: pathname === '/onboarding/how-to-use/' }]}>
             지피터스 커뮤니티 활용하기
           </a>
-          <a href="/onboarding/survey/" class:list={['sidebar-link', { active: pathname === '/onboarding/survey/' }]}>
-            사전 설문조사
-          </a>
           <a href="/onboarding/roles/" class:list={['sidebar-link', { active: pathname === '/onboarding/roles/' }]}>
             역할 배정
           </a>
+          <span class="sidebar-link sidebar-link-disabled" aria-disabled="true">
+            우리 스터디 학습법
+            <span class="sidebar-badge">준비 중</span>
+          </span>
         </div>
       </div>
 
@@ -209,6 +213,28 @@ const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
     background: #ede8df;
     color: var(--accent);
     font-weight: 600;
+  }
+
+  /* 준비 중 항목 — 비활성 */
+  .sidebar-link-disabled {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  .sidebar-link-disabled:hover { background: transparent; }
+
+  .sidebar-badge {
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: #999;
+    background: #f0ebe2;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
   }
 
   /* 모바일 */
