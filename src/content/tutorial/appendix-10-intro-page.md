@@ -1,6 +1,6 @@
 ---
-title: "부록 J. 보너스 실습 — 나만의 미니 링크트리 만들기"
-chapter: 110
+title: "부록 E. 보너스 실습 — 나만의 미니 링크트리 만들기"
+chapter: 105
 order: 0
 track: 부록
 description: "VS Code와 Claude Code가 이미 설치된 분들을 위한 45분 보너스 실습. CLAUDE.md를 학습 가이드로 만들고, AI와 인터뷰로 미니 링크트리를 제작한 뒤, 그 흐름을 스킬로 저장합니다."

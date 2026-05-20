@@ -1,6 +1,6 @@
 ---
-title: "부록 H. 시연 가이드 — 45분 실습"
-chapter: 108
+title: "부록 F. 시연 가이드 — 45분 실습"
+chapter: 106
 order: 0
 track: 부록
 description: "환경 설정이 완료된 상태에서 레포를 내 것으로 만드는 전 과정을 45분 안에 실습합니다."

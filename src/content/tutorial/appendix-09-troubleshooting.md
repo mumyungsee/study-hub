@@ -1,6 +1,6 @@
 ---
-title: "부록 I. 막힐 때 보는 페이지"
-chapter: 109
+title: "부록 J. 막힐 때 보는 페이지"
+chapter: 110
 order: 0
 track: 부록
 description: "환경 세팅이나 실습 중 자주 막히는 지점과 화면에서 찾아야 할 메뉴명을 모아둔 페이지입니다."

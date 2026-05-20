@@ -1,6 +1,6 @@
 ---
-title: "부록 B. Antigravity 심화 — Rules, Skills, Agent Manager"
-chapter: 102
+title: "부록 G. Antigravity 심화 — Rules, Skills, Agent Manager"
+chapter: 107
 order: 0
 track: 부록
 description: "Global Rules 설정, Agent Skills 구조, Agent Manager 활용법 등 Antigravity의 덜 알려진 기능들을 정리합니다."
