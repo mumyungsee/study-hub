@@ -17,15 +17,20 @@ VS Code와 Claude Code가 이미 깔려 있는 분들을 위한 보너스 실습
 2. AI가 인터뷰로 정보를 끌어내면서 **미니 링크트리(자기소개 페이지)**를 같이 만들고
 3. 그 흐름을 **스킬로 저장**해서 다음에 한 줄로 재사용 가능하게 합니다
 
-## 준비 — 작업 폴더 만들기
+## 준비 — VS Code에서 작업 폴더 열고 Claude Code 실행
 
-Claude Code 첫 실행 때 만든 폴더가 있으면 그걸 써도 되고, 새 폴더로 시작해도 좋습니다.
+1. **작업 폴더 만들기** — 컴퓨터 아무 곳에나 새 폴더를 하나 만드세요. (예: 바탕화면에 `my-intro` 같은 이름으로)
+2. **VS Code에서 그 폴더 열기** — VS Code 실행 → 메뉴 `File > Open Folder...` → 방금 만든 폴더 선택
+3. **터미널 열기** — VS Code 메뉴 `Terminal > New Terminal` (또는 단축키 `` Ctrl + ` ``)
+4. **Claude Code 실행** — 터미널에 아래 명령어 입력 후 엔터
 
-새 폴더로 시작하는 경우 (PowerShell):
-
-```powershell
-mkdir C:\dev\my-intro; cd C:\dev\my-intro; claude
+```text
+claude
 ```
+
+처음 실행이면 로그인 안내가 뜨고 브라우저가 자동으로 열립니다. 로그인 끝나면 터미널로 돌아와서 `Welcome to Claude Code` 메시지가 나오면 준비 완료입니다.
+
+> **에러가 난다면?** `claude` 명령어가 안 먹히면 Claude Code가 제대로 설치 안 됐을 수 있어요. [Claude Code 설치 페이지](/setup/claude-code/)로 돌아가서 설치 확인부터 해주세요.
 
 ## STEP 1. CLAUDE.md를 학습 가이드로 만들기
 
