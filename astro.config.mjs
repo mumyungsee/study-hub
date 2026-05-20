@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://life-wiki-nu.vercel.app',
+  site: 'https://study-hub-eta-olive.vercel.app',
   markdown: {
     shikiConfig: {
       theme: 'github-light',
