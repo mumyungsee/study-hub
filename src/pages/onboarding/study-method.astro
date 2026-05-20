@@ -1,0 +1,407 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="우리 스터디 학습법 — AI 스터디 허브">
+  <h1>우리 스터디 학습법</h1>
+
+  <p class="lead">
+    우리 스터디는 <strong>"프로그램 사용법"을 가르치는 곳이 아니에요.</strong><br />
+    <strong>"AI와 같이 학습하는 법" 자체를 배우는 곳입니다.</strong>
+  </p>
+
+  <section class="alert">
+    <p class="alert-title">처음엔 이렇게 느낄 수 있어요</p>
+    <p class="alert-body">
+      "어? 일반 강의처럼 '이 버튼을 누르세요' 식으로 떠먹여주지 않네?"<br />
+      네, 맞아요. 그렇게 안 만들었어요. <strong>이유가 있어요.</strong>
+    </p>
+  </section>
+
+  <h2>1. 매뉴얼 학습은 더 이상 통하지 않는 시대</h2>
+
+  <div class="story-card">
+    <p class="story-tag">실제로 있었던 일</p>
+    <p>
+      어제까지 수강생들이 며칠에 걸쳐 열심히 깔던 <strong>안티그래비티(Antigravity)</strong>가
+      오늘 아침에 UI가 통째로 바뀌었어요. 거의 다른 프로그램이라고 봐도 될 정도로요.
+    </p>
+    <p>
+      구글에서 어제 발표 몇 개 했더니, 영상 만드는 SaaS들이 줄줄이 위기라는 뉴스가
+      오늘 쏟아져요. 며칠 밤새 익혀둔 도구가 하루아침에 무용지물이 되는 시대예요.
+    </p>
+  </div>
+
+  <p>
+    이런 시대에 <strong>특정 프로그램의 버튼 위치를 외우는 학습</strong>은
+    어떻게 될까요?
+  </p>
+
+  <ul class="consequence-list">
+    <li>다음 달이면 새 프로그램이 그걸 대체할 수 있어요</li>
+    <li>UI 자체가 통째로 바뀔 수 있어요 (오늘 안티그래비티처럼)</li>
+    <li>프로그램 자체가 필요 없어질 수 있어요 (AI가 그 기능을 흡수해서)</li>
+  </ul>
+
+  <p>
+    한때 포토샵 한 번 익히려고 돈 주고 몇 달씩 배우던 시절이 있었어요.
+    프로그램이 크고 복잡했으니까요. 근데 지금은? AI가 같은 일을 더 빨리, 더 쉽게 해요.
+    <strong>매뉴얼 학습에 투자한 시간이 자산이 되지 못하는 시대</strong>예요.
+  </p>
+
+  <h2>2. 그래서 우리가 배우는 건 "메타학습"</h2>
+
+  <div class="concept-card">
+    <p class="concept-label">메타학습이란</p>
+    <p class="concept-body">
+      <strong>학습하는 방법 자체를 학습하는 것.</strong><br />
+      도구가 바뀌고 UI가 바뀌어도 통하는 학습이에요.
+    </p>
+  </div>
+
+  <div class="comparison">
+    <div class="comparison-col bad">
+      <div class="comparison-tag">기존 매뉴얼 학습</div>
+      <p>"이 버튼을 누르세요"</p>
+      <p>"이 화면에서 이거 클릭하세요"</p>
+      <p class="result">→ 프로그램 바뀌면 끝</p>
+    </div>
+    <div class="comparison-col good">
+      <div class="comparison-tag">메타학습 (우리 방식)</div>
+      <p>"AI에게 어떻게 물어볼 것인가"</p>
+      <p>"막힐 때 어떤 식으로 풀어갈 것인가"</p>
+      <p class="result">→ 도구가 바뀌어도 평생 통함</p>
+    </div>
+  </div>
+
+  <p class="emphasis">
+    프로그램 지식이 아니라 <strong>문제 해결 패턴</strong>을 배우는 거예요.
+  </p>
+
+  <h2>3. AI를 잘 쓰는 사람들의 실제 방식</h2>
+
+  <p>
+    지금 AI를 가장 빠르게 학습하는 사람들이 처음 다루는 도구·기술 앞에서
+    실제로 하는 방식이에요.
+  </p>
+
+  <ol class="method-steps">
+    <li>
+      <span class="step-num">1</span>
+      <div class="step-content">
+        <p class="step-title">공식 문서를 AI에게 먹인다</p>
+        <p class="step-desc">매뉴얼을 사람이 외우는 게 아니라, AI가 읽게 해요.</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">2</span>
+      <div class="step-content">
+        <p class="step-title">"어떻게 하는지 알려줘" 하고 묻는다</p>
+        <p class="step-desc">AI를 검색창이 아니라 학습 메이트로 써요.</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">3</span>
+      <div class="step-content">
+        <p class="step-title">AI가 만들어준 투두리스트를 따라 한다</p>
+        <p class="step-desc">하나씩 해보면서 진행해요.</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">4</span>
+      <div class="step-content">
+        <p class="step-title">막히면 다시 묻는다</p>
+        <p class="step-desc">"여기서 막혔어. 어떻게 해야 해?" 물어보고 같이 풀어요.</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">5</span>
+      <div class="step-content">
+        <p class="step-title">다시 진행, 또 막히면 또 묻고…</p>
+        <p class="step-desc">이 과정을 반복하면서 문제를 해결해 나가요.</p>
+      </div>
+    </li>
+  </ol>
+
+  <p>
+    이건 <strong>매뉴얼 학습이 아니라 AI와 협업하는 문제 해결 학습</strong>이에요.
+    이게 새로운 시대의 학습 방법론입니다.
+  </p>
+
+  <h2>그래서 우리 스터디 커리큘럼은</h2>
+
+  <div class="closing-card">
+    <p>
+      수업이 <strong>"이 프로그램의 이 버튼을 눌러라"</strong> 같은 매뉴얼이 아니라
+      <strong>"AI에게 이 문제를 어떻게 풀게 할 것인가"</strong>를 다루는 이유가
+      여기에 있어요.
+    </p>
+    <p>
+      지금 AI를 가장 빠르게 학습하는 사람들의 방식을 그대로,
+      간단한 실습을 통해 여러분이 직접 익힐 수 있게 구성했어요.
+    </p>
+  </div>
+
+  <blockquote class="final-quote">
+    매뉴얼은 곧 낡지만,<br />
+    <strong>문제 해결 방식은 평생 갑니다.</strong>
+  </blockquote>
+
+  <p class="note">
+    그럼 이 방식을 어떻게 같이 굴리는지는
+    <a href="/onboarding/how-to-use/">"지피터스 커뮤니티 활용하기"</a> 페이지에서 이어집니다.
+  </p>
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    padding: 1.4rem 1.6rem;
+    background: #f5f0e8;
+    border-radius: 8px;
+    margin: 1.5rem 0 2rem;
+    color: var(--fg);
+  }
+
+  h2 {
+    font-size: 1.15rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin: 2.5rem 0 1.2rem;
+  }
+
+  p {
+    line-height: 1.75;
+    margin: 0.8rem 0;
+  }
+
+  .alert {
+    background: #fff8e8;
+    border-left: 4px solid #d4a04a;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+
+  .alert-title {
+    font-weight: 700;
+    color: #8a6420;
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .alert-body {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .story-card {
+    background: #faf7f1;
+    border-left: 4px solid var(--accent);
+    padding: 1.1rem 1.3rem;
+    border-radius: 6px;
+    margin: 1.2rem 0;
+  }
+
+  .story-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    margin: 0 0 0.7rem;
+  }
+
+  .consequence-list {
+    background: #faf7f1;
+    padding: 1rem 1.5rem 1rem 2.2rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+  }
+
+  .consequence-list li {
+    margin: 0.5rem 0;
+    line-height: 1.7;
+  }
+
+  .concept-card {
+    background: var(--accent);
+    color: white;
+    padding: 1.3rem 1.4rem;
+    border-radius: 8px;
+    margin: 1.3rem 0;
+    text-align: center;
+  }
+
+  .concept-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    opacity: 0.85;
+    margin: 0 0 0.5rem;
+  }
+
+  .concept-body {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.2rem 0;
+  }
+
+  .comparison-col {
+    padding: 1.1rem 1.2rem;
+    border-radius: 8px;
+  }
+
+  .comparison-col.bad {
+    background: #f5f0e8;
+    color: #8a7560;
+  }
+
+  .comparison-col.good {
+    background: #faf7f1;
+    border: 2px solid var(--accent);
+  }
+
+  .comparison-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    margin-bottom: 0.7rem;
+  }
+
+  .comparison-col.bad .comparison-tag {
+    background: #b8a994;
+    color: white;
+  }
+
+  .comparison-col.good .comparison-tag {
+    background: var(--accent);
+    color: white;
+  }
+
+  .comparison-col p {
+    margin: 0.35rem 0;
+    font-size: 0.93rem;
+  }
+
+  .comparison-col .result {
+    margin-top: 0.7rem;
+    font-weight: 700;
+  }
+
+  .emphasis {
+    text-align: center;
+    font-size: 1.02rem;
+    padding: 0.8rem;
+    color: var(--accent);
+  }
+
+  .method-steps {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    counter-reset: none;
+  }
+
+  .method-steps li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    background: #faf7f1;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 0.7rem;
+    align-items: start;
+  }
+
+  .step-num {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .step-content {
+    min-width: 0;
+  }
+
+  .step-title {
+    margin: 0.15rem 0 0.3rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.98rem;
+  }
+
+  .step-desc {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--fg);
+  }
+
+  .closing-card {
+    background: #f5f0e8;
+    border-left: 4px solid var(--accent);
+    padding: 1.2rem 1.4rem;
+    border-radius: 6px;
+    margin: 1.2rem 0;
+  }
+
+  .closing-card p {
+    margin: 0.6rem 0;
+  }
+
+  .final-quote {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    border-left: none;
+    color: var(--accent);
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f5f0e8;
+    border-radius: 8px;
+    line-height: 1.7;
+  }
+
+  .note {
+    margin-top: 1.5rem;
+    font-size: 0.88rem;
+    color: var(--muted, #888);
+    font-style: italic;
+    text-align: center;
+  }
+
+  .note a {
+    color: var(--accent);
+  }
+
+  /* 모바일 */
+  @media (max-width: 720px) {
+    .comparison {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

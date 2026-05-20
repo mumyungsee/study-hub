@@ -46,10 +46,9 @@ const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
             역할 배정
           </a>
           */}
-          <span class="sidebar-link sidebar-link-disabled" aria-disabled="true">
+          <a href="/onboarding/study-method/" class:list={['sidebar-link', { active: pathname === '/onboarding/study-method/' }]}>
             우리 스터디 학습법
-            <span class="sidebar-badge">준비 중</span>
-          </span>
+          </a>
         </div>
       </div>
 
