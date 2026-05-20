@@ -27,9 +27,11 @@ const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
       <div class="sidebar-group">
         <div class="sidebar-group-title">온보딩</div>
         <div class="sidebar-group-items">
+          {/* 사전 설문조사 — 수강생 확정 후 활성화 예정
           <a href="/onboarding/survey/" class:list={['sidebar-link', { active: pathname === '/onboarding/survey/' }]}>
             사전 설문조사
           </a>
+          */}
           <a href="/onboarding/glossary/" class:list={['sidebar-link', { active: pathname === '/onboarding/glossary/' }]}>
             용어 정리
           </a>
@@ -39,9 +41,11 @@ const noneOpen = !isInRequired && !isInAdvanced && !isInAppendix;
           <a href="/onboarding/how-to-use/" class:list={['sidebar-link', { active: pathname === '/onboarding/how-to-use/' }]}>
             지피터스 커뮤니티 활용하기
           </a>
+          {/* 역할 배정 — 수강생 확정 후 활성화 예정
           <a href="/onboarding/roles/" class:list={['sidebar-link', { active: pathname === '/onboarding/roles/' }]}>
             역할 배정
           </a>
+          */}
           <span class="sidebar-link sidebar-link-disabled" aria-disabled="true">
             우리 스터디 학습법
             <span class="sidebar-badge">준비 중</span>
