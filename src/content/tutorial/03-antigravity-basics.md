@@ -3,7 +3,7 @@ title: "6장. 레포 써보기"
 chapter: 6
 order: 0
 track: 심화
-description: "먼저 레포를 직접 써봅니다. 일간 회고를 쓰고 블로그 초안을 만들면서 Antigravity와 Claude 사용법을 익힙니다."
+description: "먼저 레포를 직접 써봅니다. 일간 회고를 쓰고 블로그 초안을 만들면서 VS Code와 Claude 사용법을 익힙니다."
 status: 공개
 ---
 
@@ -57,14 +57,14 @@ journal/2026-05-05.md
 </details>
 
 <details>
-<summary>Antigravity 화면이 낯설다면</summary>
+<summary>VS Code 화면이 낯설다면</summary>
 
-Antigravity 화면은 네 영역으로 나뉩니다.
+VS Code 화면은 네 영역으로 나뉩니다.
 
 - **파일 탐색기** (왼쪽): 열어놓은 폴더의 파일 목록
 - **에디터** (가운데): 파일 내용을 직접 보고 수정하는 공간
-- **채팅창** (오른쪽): Claude와 대화하는 곳 (`Ctrl+L`로 열기)
-- **터미널** (아래): Claude가 명령어를 실행할 때 결과가 표시되는 곳
+- **Claude 채팅창** (오른쪽): 좌측 사이드바의 Claude 아이콘을 누르면 열림
+- **터미널** (아래): `Ctrl + `` (백틱)로 열기. Claude Code CLI를 실행하거나 명령어 결과가 표시됨
 
 일반 챗봇과 다른 점은, Claude가 답변만 하는 게 아니라 실제로 파일을 만들고 수정한다는 것입니다. 채팅창에서 요청하면 파일 탐색기에 결과가 바로 반영됩니다.
 

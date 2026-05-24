@@ -159,4 +159,4 @@ CLAUDE.md 내용 보여줘.
 src/content/tutorial/ 폴더 안에 있는 파일 목록 보여줘.
 ```
 
-Antigravity 왼쪽 파일 탐색기에서 `.md` 파일을 클릭하면 바로 내용을 볼 수 있습니다.
+VS Code 왼쪽 파일 탐색기에서 `.md` 파일을 클릭하면 바로 내용을 볼 수 있습니다.

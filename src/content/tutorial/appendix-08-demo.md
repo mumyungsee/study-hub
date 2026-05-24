@@ -11,14 +11,14 @@ status: 공개
 
 아래가 준비된 상태에서 시작합니다.
 
-- Antigravity 설치됨
+- VS Code 설치됨
 - bkit 설치됨
 - git 설치됨
 - GitHub CLI(`gh`) 설치됨, 로그인 상태
 - GitHub 계정 있음 (로그인 상태)
 - Vercel 계정 있음 (GitHub 연결됨)
 - 내 컴퓨터에 작업 폴더(`life-wiki`) 만들어져 있음
-- Antigravity에서 그 폴더가 열려 있음
+- VS Code에서 그 폴더가 열려 있음
 
 ---
 
@@ -57,7 +57,7 @@ Fork 후: github.com/내-아이디/레포이름
 
 ### Clone — 내 컴퓨터로 내려받기
 
-Antigravity 채팅창에 입력합니다.
+VS Code 채팅창에 입력합니다.
 
 ```txt
 내 GitHub에 있는 [레포이름] 저장소를

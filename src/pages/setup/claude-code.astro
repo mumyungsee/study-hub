@@ -122,10 +122,12 @@ https://code.claude.com/docs/en/overview</code></pre>
     </div>
 
     <h3>모범답안 (잘 안 되면 참고)</h3>
+    <p>VS Code에서 작업할 폴더를 이미 열어둔 상태라면 <strong>STEP 1에서 연 터미널이 이미 그 폴더에 들어가 있어요</strong>. <code>cd</code> 없이 바로 4번부터 진행하면 됩니다.</p>
     <ol>
-      <li>터미널에서 작업할 폴더로 이동 — 예: <code>cd C:\dev\my-project</code> (영문 경로 권장)</li>
-      <li>폴더가 없으면 새로 만들고 이동: <code>mkdir C:\dev\my-project; cd C:\dev\my-project</code></li>
-      <li><code>claude</code> 입력 후 엔터</li>
+      <li>(폴더가 열려있지 않다면) VS Code 메뉴 <strong>파일 → 폴더 열기</strong>로 작업 폴더 먼저 열기</li>
+      <li>(또는 새 폴더부터 만들고 싶다면 터미널에서) <code>mkdir C:\dev\my-project; cd C:\dev\my-project</code> — <strong>경로는 예시</strong>, 본인이 원하는 위치·이름으로 바꿔서 쓰기 (영문 경로 권장)</li>
+      <li>터미널 프롬프트가 작업할 폴더 경로로 시작하는지 확인</li>
+      <li>터미널에 <code>claude</code> 입력 후 엔터</li>
       <li>처음 실행이면 <strong>로그인 안내</strong>가 뜸 → Chrome이 자동으로 열림</li>
       <li>Claude 계정으로 로그인 → 권한 동의 → 터미널로 돌아옴</li>
       <li>"Welcome to Claude Code" 메시지가 나오면 성공!</li>

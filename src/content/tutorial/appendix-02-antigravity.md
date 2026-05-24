@@ -3,9 +3,13 @@ title: "부록 G. Antigravity 심화 — Rules, Skills, Agent Manager"
 chapter: 107
 order: 0
 track: 부록
-description: "Global Rules 설정, Agent Skills 구조, Agent Manager 활용법 등 Antigravity의 덜 알려진 기능들을 정리합니다."
-status: 공개
+description: "(참고용 보관) Global Rules, Agent Skills, Agent Manager 등 Antigravity 고유 기능 정리. 현재 스터디는 VS Code로 진행하므로 사이드바에서는 숨김."
+status: 초안
 ---
+
+> ⚠️ **이 페이지는 현재 사용하지 않습니다**
+>
+> Antigravity의 대규모 UI 업데이트 이후, 우리 스터디는 **VS Code로 진행**합니다. 이 페이지는 이전에 Antigravity로 작업했던 분들을 위한 참고용 보관본이고, 사이드바 메뉴에서는 보이지 않습니다 (직접 URL로 들어오신 분만 볼 수 있어요).
 
 ## Antigravity가 다른 이유
 

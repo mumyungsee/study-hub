@@ -3,7 +3,7 @@ title: "1장. 우리가 쓸 도구 5가지"
 chapter: 99
 order: 0
 track: 필수
-description: "Antigravity, Claude Code, bkit, GitHub, Vercel이 각각 어떤 역할을 하는지 한 줄로 정리합니다."
+description: "VS Code, Claude Code, bkit, GitHub, Vercel이 각각 어떤 역할을 하는지 한 줄로 정리합니다."
 status: 초안
 ---
 
@@ -13,7 +13,7 @@ status: 초안
 
 | 도구 | 역할 | 언제 쓰나 |
 |------|------|---------|
-| **Antigravity** | AI와 함께 작업하는 공간 | 파일 수정, 명령 실행할 때 |
+| **VS Code** | AI와 함께 작업하는 공간 (코드 에디터) | 파일 수정, 명령 실행할 때 |
 | **Claude Code** | 파일을 읽고 만들고 수정하는 AI | 채팅창에 요청할 때 |
 | **bkit** | 계획-실행-확인 흐름을 잡아주는 도구 | `/pdca plan`, `/pdca analyze` 같은 명령을 쓸 때 |
 | **GitHub** | 오픈소스 레포를 가져오고 내 작업을 저장하는 곳 | Fork, Push, Clone할 때 |
@@ -24,7 +24,7 @@ status: 초안
 ```
 GitHub에서 오픈소스 레포 가져오기 (Fork + Clone)
   ↓
-Antigravity에서 Claude Code에게 수정 요청
+VS Code에서 Claude Code에게 수정 요청
   ↓
 bkit으로 계획하고 점검
   ↓
@@ -37,4 +37,4 @@ Vercel이 웹사이트로 자동 배포
 
 ## 다음 장에서 할 것
 
-GitHub와 Vercel 계정을 만들고 Antigravity에서 작업 폴더를 여는 준비를 합니다.
+GitHub와 Vercel 계정을 만들고 VS Code에서 작업 폴더를 여는 준비를 합니다.
