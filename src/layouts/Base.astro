@@ -128,6 +128,51 @@ const hasSidebar = checkHasSidebar(pathname);
       @media (max-width: 768px) {
         .content-inner { padding: 1.5rem 1rem 3rem; }
       }
+
+      /* === 용어 툴팁 (공용 — 튜토리얼·환경 세팅 페이지 등) === */
+      .glossary-term {
+        border-bottom: 1px dashed var(--muted);
+        cursor: help;
+        position: relative;
+      }
+      .glossary-term::before {
+        content: '';
+        position: absolute;
+        bottom: calc(100% + 2px);
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: #1e1e1e;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.15s;
+        z-index: 101;
+      }
+      .glossary-term::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1e1e1e;
+        color: #f0f0f0;
+        font-size: 0.72rem;
+        line-height: 1.5;
+        padding: 0.35rem 0.6rem;
+        border-radius: 5px;
+        width: max-content;
+        max-width: min(220px, 80vw);
+        white-space: normal;
+        text-align: center;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.15s;
+        z-index: 100;
+      }
+      .glossary-term:hover::before,
+      .glossary-term:hover::after {
+        opacity: 1;
+      }
     </style>
   </body>
 </html>

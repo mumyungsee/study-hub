@@ -477,6 +477,113 @@ import Base from '../../layouts/Base.astro';
     </div>
   </section>
 
+  <!-- 하드웨어 / 설치 관련 -->
+  <section>
+    <h2>내 컴퓨터 칩 종류 (설치할 때 필요)</h2>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>x64 <span class="pron">엑스 식스티포</span></h3>
+        <p class="oneline">일반 노트북·데스크탑이 쓰는 칩 종류</p>
+        <p class="detail">
+          국내에서 파는 PC의 <strong>99%가 x64</strong>예요. 도구 설치할 때 "x64냐 ARM64냐" 묻는 게 나오면 거의 항상 x64를 고르면 돼요.
+          확인하려면 Windows 설정 → 시스템 → 정보에서 "시스템 종류"를 보면 나와요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>ARM / ARM64 <span class="pron">암 / 암 식스티포</span></h3>
+        <p class="oneline">스마트폰·일부 노트북이 쓰는 다른 칩 종류</p>
+        <p class="detail">
+          전력을 적게 쓰는 칩 계열이에요. <strong>Surface Pro X, Galaxy Book 일부 모델, 일부 가벼운 노트북</strong>이 ARM64를 써요.
+          일반 PC면 x64라 신경 안 써도 되는데, 본인 기기가 ARM이면 설치 파일도 ARM용을 받아야 해요.
+          잘못 받으면 설치는 되는데 느리거나 안 돌아갈 수 있어요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>Apple Silicon <span class="pron">애플 실리콘</span></h3>
+        <p class="oneline">Mac의 M1·M2·M3·M4 칩 통칭</p>
+        <p class="detail">
+          애플이 직접 만든 Mac용 칩이에요. 2020년 이후에 나온 Mac은 거의 다 Apple Silicon이에요.
+          확인하려면 Mac 좌측 상단 사과 아이콘 → "이 Mac에 관하여" → 칩 항목을 보면 돼요.
+          M1·M2·M3·M4 중 하나가 적혀 있으면 Apple Silicon이에요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>Intel <span class="pron">인텔</span></h3>
+        <p class="oneline">대표적인 PC 칩 제조사. 옛날 Mac도 이걸 썼음</p>
+        <p class="detail">
+          PC 쪽에선 가장 유명한 칩 회사예요. Windows PC면 보통 Intel이나 AMD라는 회사 칩을 써요.
+          Mac은 2020년 이전엔 Intel 칩을 썼는데, 그 이후로 <strong>Apple Silicon</strong>으로 바뀌었어요.
+          본인 Mac이 Intel이면 설치 파일도 Intel용(Universal 또는 Intel)을 받아야 해요.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Claude 계정 -->
+  <section>
+    <h2>Claude 계정 / 구독</h2>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>Claude Pro <span class="pron">클로드 프로</span></h3>
+        <p class="oneline">Claude의 유료 구독 등급</p>
+        <p class="detail">
+          Claude는 무료로도 쓸 수 있지만, <strong>이 스터디에서 본격적으로 쓰려면 Pro 구독이 거의 필수</strong>예요.
+          한 달에 일정 금액을 내고 Claude를 더 많이·더 빠르게 쓸 수 있어요.
+          Claude Code도 Pro 구독으로 로그인하면 바로 쓸 수 있어요.
+          가입은 <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a>에서요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>Anthropic Console <span class="pron">앤트로픽 콘솔</span></h3>
+        <p class="oneline">Claude API를 쓰는 개발자용 계정</p>
+        <p class="detail">
+          Pro 구독이 "Claude를 직접 채팅으로 쓰는 일반 사용자용"이라면,
+          Console은 "Claude를 자기 앱·서비스에 끼워 넣고 싶은 개발자용"이에요.
+          이 스터디에선 보통 <strong>Pro 구독으로 충분</strong>해요. 나중에 직접 앱 만들 일 생기면 그때 Console도 만들면 돼요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>gh <span class="pron">지에이치</span></h3>
+        <p class="oneline">GitHub CLI의 명령어 이름</p>
+        <p class="detail">
+          터미널에서 <code>gh</code>라고 치면 GitHub 작업을 할 수 있어요.
+          예: <code>gh repo clone</code> = "저장소 내려받기".
+          GitHub 웹사이트에서 마우스로 하던 일을 터미널에서 글자로 빠르게 할 수 있게 해주는 도구예요.
+          Claude Code가 GitHub 작업을 할 때 이 <code>gh</code>를 자주 써요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>Welcome to Claude Code <span class="pron">웰컴 투 클로드 코드</span></h3>
+        <p class="oneline">Claude Code를 처음 실행하면 뜨는 환영 화면</p>
+        <p class="detail">
+          터미널에서 <code>claude</code> 명령어를 치면 처음에 이 메시지가 뜨면서 시작돼요.
+          <strong>이 화면이 보이면 설치와 로그인이 잘 됐다는 신호</strong>예요.
+          그 다음부턴 채팅창이 활성화돼서 AI랑 대화하면서 작업할 수 있어요.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <a href="/onboarding/intro" class="back">
     ← 스터디 소개로 돌아가기
   </a>

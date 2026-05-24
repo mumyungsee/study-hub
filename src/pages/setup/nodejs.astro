@@ -250,6 +250,9 @@ npm -v</code></pre>
 </style>
 
 <script>
+  import { applyGlossaryTo } from '../../scripts/glossary-tooltip';
+  applyGlossaryTo('.page-body');
+
   document.querySelectorAll('.page-body pre').forEach((pre) => {
     const btn = document.createElement('button');
     btn.className = 'copy-btn';

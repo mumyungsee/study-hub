@@ -333,7 +333,11 @@ https://code.claude.com/docs/en/overview</code></pre>
   }
 </style>
 
+
 <script>
+  import { applyGlossaryTo } from '../../scripts/glossary-tooltip';
+  applyGlossaryTo('.page-body');
+
   // 코드 블록 복사 버튼 — TutorialPost와 동일 패턴
   document.querySelectorAll('.page-body pre').forEach((pre) => {
     const btn = document.createElement('button');

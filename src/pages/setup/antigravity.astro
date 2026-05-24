@@ -324,6 +324,9 @@ VS Code에서 한국어 언어팩(Korean Language Pack) 설치하는 법을
 </style>
 
 <script>
+  import { applyGlossaryTo } from '../../scripts/glossary-tooltip';
+  applyGlossaryTo('.page-body');
+
   // 코드 블록 복사 버튼 — TutorialPost와 동일 패턴
   document.querySelectorAll('.page-body pre').forEach((pre) => {
     const btn = document.createElement('button');
