@@ -256,7 +256,48 @@ const { title, description, chapter, prev, next } = Astro.props;
       { regex: /\bAntigravity\b/g, tip: '(이전 사용) Google이 만든 AI 작업 환경. 현재 스터디는 VS Code로 진행' },
       { regex: /Claude Code/g, tip: 'VS Code 안에서 파일 작업을 도와주는 AI 어시스턴트 (확장 또는 터미널 CLI)' },
       { regex: /\bClaude\b/g, tip: 'Anthropic이 만든 AI. 자연어로 대화하면서 작업을 함께 진행' },
-      { regex: /\bbkit\b/g, tip: 'Claude Code 작업 흐름을 체계적으로 잡아주는 설정 모음' },
+      { regex: /\bbkit\b/g, tip: 'Claude Code에 끼우는 플러그인. 새 스킬을 잔뜩 추가해서 작업을 체계적으로 잡아줌' },
+
+      // === AI 관련 ===
+      { regex: /\bAI\b/g, tip: '사람처럼 대화하고 일도 해주는 똑똑한 컴퓨터 프로그램. ChatGPT·Claude·Gemini 같은 게 모두 AI' },
+      { regex: /\bAnthropic\b/g, tip: 'Claude를 만든 회사. ChatGPT를 만든 OpenAI랑 같은 위치의 AI 회사' },
+      { regex: /\bOpus\b/g, tip: 'Claude의 최상위 모델. 가장 똑똑하지만 가장 비쌈' },
+      { regex: /\bSonnet\b/g, tip: 'Claude의 중간 모델. 속도·가격·성능 균형' },
+      { regex: /\bHaiku\b/g, tip: 'Claude의 경량 모델. 빠르고 저렴' },
+      { regex: /에이전트/g, tip: '스스로 판단해서 여러 단계 일을 진행하는 AI. 챗봇은 한 번 답하고 끝, 에이전트는 계속 일함' },
+      { regex: /\bAgent\b/g, tip: '스스로 판단해서 여러 단계 일을 진행하는 AI. 챗봇은 한 번 답하고 끝, 에이전트는 계속 일함' },
+      { regex: /스킬/g, tip: 'Claude Code의 명령어 묶음. /로 시작하는 게 다 스킬. bkit 같은 플러그인이 새 스킬을 추가함' },
+      { regex: /\bSkill\b/g, tip: 'Claude Code의 명령어 묶음. /로 시작하는 게 다 스킬. bkit 같은 플러그인이 새 스킬을 추가함' },
+      { regex: /\bPDCA\b/g, tip: '계획(Plan)→실행(Do)→점검(Check)→개선(Act) 한 바퀴. bkit이 이 순서로 작업을 잡아줌' },
+      { regex: /프롬프트/g, tip: 'AI에게 시키는 말. "이거 해줘"라고 입력하는 그 문장 자체' },
+      { regex: /\bPrompt\b/g, tip: 'AI에게 시키는 말. "이거 해줘"라고 입력하는 그 문장 자체' },
+      { regex: /컨텍스트/g, tip: 'AI가 한 대화 동안 기억하는 내용. 너무 길어지면 잊어버려서 새로 시작해야 함' },
+      { regex: /\bContext\b/g, tip: 'AI가 한 대화 동안 기억하는 내용. 너무 길어지면 잊어버려서 새로 시작해야 함' },
+
+      // === IT 일반 ===
+      { regex: /\bCLI\b/g, tip: '마우스 클릭 대신 글자(명령어)로 도구를 쓰는 방식. 터미널 안에서 동작' },
+      { regex: /\bUI\b/g, tip: '사용자가 보는 화면·버튼. "UI가 바뀌었다" = "보이는 화면이 통째로 바뀌었다"' },
+      { regex: /터미널/g, tip: '컴퓨터에 글자로 명령 내리는 검은 창. 해커 영화에서 보던 그거. VS Code 안에서 Ctrl+백틱으로 열림' },
+      { regex: /확장/g, tip: 'VS Code 같은 도구에 끼우는 추가 부품. 한글팩, AI 확장 같은 게 다 확장' },
+      { regex: /\bExtension\b/g, tip: 'VS Code 같은 도구에 끼우는 추가 부품. 한글팩, AI 확장 같은 게 다 확장' },
+      { regex: /플러그인/g, tip: '확장이랑 같은 뜻. 도구에 끼우는 추가 기능. bkit이 Claude Code의 플러그인' },
+      { regex: /\bPlugin\b/g, tip: '확장이랑 같은 뜻. 도구에 끼우는 추가 기능. bkit이 Claude Code의 플러그인' },
+      { regex: /마켓플레이스/g, tip: '확장·플러그인이 모여있는 가게. 거기서 골라서 설치' },
+      { regex: /\bMarketplace\b/g, tip: '확장·플러그인이 모여있는 가게. 거기서 골라서 설치' },
+      { regex: /\bPowerShell\b/g, tip: 'Windows의 터미널 종류. 검은 창에 `PS C:\\`로 시작하면 PowerShell' },
+      { regex: /\bPATH\b/g, tip: '컴퓨터가 명령어를 찾는 길 목록. 새 도구 깔면 이 목록에 추가됨. "PATH 갱신" = "새 도구 찾을 수 있게 길 업데이트"' },
+
+      // === 웹/개발 ===
+      { regex: /\bJavaScript\b/g, tip: '웹페이지를 움직이게 하는 프로그래밍 언어. 버튼 누르면 뭐가 뜨는 거, 다 JavaScript' },
+      { regex: /\bJS\b/g, tip: 'JavaScript의 줄임말. 웹페이지를 움직이게 하는 프로그래밍 언어' },
+      { regex: /\bNode\.js\b/g, tip: 'JavaScript를 내 컴퓨터에서 실행하게 해주는 도구. bkit hook도 이걸로 동작' },
+      { regex: /\bnpm\b/g, tip: 'Node.js의 부품 가게. 필요한 코드 묶음을 받아서 깔 때 씀' },
+      { regex: /\bHTML\b/g, tip: '웹페이지의 뼈대. "여기에 제목, 여기에 글" 같은 구조를 짜는 언어' },
+      { regex: /\bCSS\b/g, tip: '웹페이지의 옷. 색깔·크기·위치 같은 디자인을 입히는 언어' },
+      { regex: /\bAPI\b/g, tip: '외부 서비스랑 대화하는 약속. 날씨 API에 물어보면 날씨 알려주는 식' },
+      { regex: /\bfrontmatter\b/g, tip: '마크다운 파일 맨 위 ---로 감싼 정보. 제목·날짜·공개 여부 같은 "이 글에 대한 정보"' },
+      { regex: /\bhook\b/gi, tip: '"이런 일이 일어나면 자동으로 이걸 실행해" 같은 자동 동작 연결. 예: 파일 저장하면 자동으로 검사. bkit의 자동화가 이걸로 돌아감' },
+      { regex: /훅/g, tip: '"이런 일이 일어나면 자동으로 이걸 실행해" 같은 자동 동작 연결. 예: 파일 저장하면 자동으로 검사. bkit의 자동화가 이걸로 돌아감' },
     ];
 
     function applyGlossary(container) {
