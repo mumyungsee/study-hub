@@ -1,0 +1,267 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="종합 사례 — 라이프 위키 써보기 | AI 스터디 허브" showTOC={true}>
+  <article class="page-body">
+    <h1>종합 사례 — 라이프 위키 써보기</h1>
+
+    <blockquote class="intro">
+      <p><strong>이 페이지의 목표</strong> — 지금까지 배운 AI 활용법을 한 번에 써봅니다. 링크 하나를 AI한테 주는 것에서 시작해서, 일간 회고를 쓰고 블로그 초안까지 뽑아냅니다.</p>
+      <p>설명을 읽고 따라 하는 게 아니라, <strong>AI한테 물어보면서</strong> 진행합니다. 막히면 그냥 물어보세요. 그게 이 스터디의 핵심입니다.</p>
+    </blockquote>
+
+    <h2>전체 흐름</h2>
+    <ol class="flow">
+      <li>라이프 위키 레포 가져오기 — AI한테 링크 주기</li>
+      <li>일간 회고 써보기</li>
+      <li>소재에서 블로그 초안 뽑기</li>
+      <li>로컬에서 직접 확인하기</li>
+    </ol>
+
+    <blockquote class="info">
+      <p><strong>라이프 위키란?</strong> — 이 스터디에서 실습용으로 쓰는 개인 기록 레포입니다. 일간 회고, 블로그 글이 자동으로 정리되는 구조가 미리 만들어져 있어요. 처음부터 만들 필요 없이 복사해서 쓰면 됩니다.</p>
+    </blockquote>
+
+    <h2>1단계. 라이프 위키 가져오기</h2>
+
+    <p>Claude 채팅창에 이렇게 입력합니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">Claude한테 붙여넣기</div>
+      <pre><code>이 레포를 내 VS Code에 가져와서 쓸 수 있게 해줘.
+https://github.com/popup-studio-ai/life-wiki
+
+어떻게 하면 돼?</code></pre>
+    </div>
+
+    <p>Claude가 단계별로 안내해줍니다. 그대로 따라가면 됩니다.</p>
+
+    <details>
+      <summary>직접 하고 싶다면 — Fork & Clone</summary>
+      <ol>
+        <li>위 링크에서 <strong>Fork</strong> 버튼 클릭 → 내 GitHub에 복사됩니다.</li>
+        <li>내 레포 주소를 복사합니다. (예: <code>https://github.com/내아이디/life-wiki</code>)</li>
+        <li>VS Code 터미널에서 <code>git clone 복사한주소</code> 입력합니다.</li>
+        <li>VS Code에서 <strong>파일 → 폴더 열기</strong>로 클론된 폴더를 엽니다.</li>
+      </ol>
+      <p>Fork는 "남의 레포를 내 계정으로 복사한다"는 뜻입니다. Clone은 "그걸 내 컴퓨터로 내려받는다"는 뜻이고요. 이 두 단계가 끝나야 내 컴퓨터에서 수정할 수 있습니다.</p>
+    </details>
+
+    <hr />
+
+    <h2>2단계. 일간 회고 써보기</h2>
+
+    <p>레포가 열렸으면, Claude 채팅창에 이렇게 입력합니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">Claude한테 붙여넣기</div>
+      <pre><code>/project:daily</code></pre>
+    </div>
+
+    <p>Claude가 오늘 하루를 돌아보는 대화를 시작합니다. 자연스럽게 오늘 있었던 일을 이야기하면 됩니다.</p>
+
+    <p>대화가 끝나면 <code>journal/</code> 폴더에 파일이 생깁니다.</p>
+
+    <pre><code>journal/2026-05-26.md</code></pre>
+
+    <p>왼쪽 파일 탐색기에서 파일이 생긴 것을 확인합니다.</p>
+
+    <details>
+      <summary>슬래시 명령어가 뭔지 궁금하다면</summary>
+      <p><code>/project:daily</code>는 <strong>슬래시 명령어</strong>입니다. 매번 긴 요청을 입력하지 않아도 되게 자주 쓰는 지침을 짧게 저장해둔 것입니다.</p>
+      <p><code>.claude/commands/</code> 폴더 안의 <code>.md</code> 파일이 자동으로 슬래시 명령어로 등록됩니다. 파일 안에는 "이 명령어를 실행하면 이렇게 해줘"라는 지침이 적혀 있습니다.</p>
+      <p>이 레포에는 이미 다섯 가지 명령어가 들어 있습니다.</p>
+      <table>
+        <thead><tr><th>명령어</th><th>역할</th></tr></thead>
+        <tbody>
+          <tr><td><code>/project:daily</code></td><td>오늘 하루 회고 대화 → <code>journal/</code>에 저장</td></tr>
+          <tr><td><code>/project:blog</code></td><td>회고 소재에서 블로그 초안 작성</td></tr>
+          <tr><td><code>/project:weekly</code></td><td>최근 7일 일간 기록 → 주간 회고</td></tr>
+          <tr><td><code>/project:monthly</code></td><td>이번 달 주간 회고 → 월간 회고</td></tr>
+          <tr><td><code>/project:publish</code></td><td>변경 파일 커밋 → GitHub에 올리기</td></tr>
+        </tbody>
+      </table>
+    </details>
+
+    <details>
+      <summary>VS Code 화면이 낯설다면</summary>
+      <p>VS Code 화면은 네 영역으로 나뉩니다.</p>
+      <ul>
+        <li><strong>파일 탐색기</strong> (왼쪽): 열어놓은 폴더의 파일 목록</li>
+        <li><strong>에디터</strong> (가운데): 파일 내용을 직접 보고 수정하는 공간</li>
+        <li><strong>Claude 채팅창</strong> (오른쪽): 좌측 사이드바의 Claude 아이콘을 누르면 열림</li>
+        <li><strong>터미널</strong> (아래): <code>Ctrl + `</code> (백틱)로 열기. 명령어 결과가 표시됨</li>
+      </ul>
+      <p>일반 챗봇과 다른 점은, Claude가 답변만 하는 게 아니라 실제로 파일을 만들고 수정한다는 것입니다. 채팅창에서 요청하면 파일 탐색기에 결과가 바로 반영됩니다.</p>
+    </details>
+
+    <hr />
+
+    <h2>3단계. 블로그 초안 만들어보기</h2>
+
+    <p>회고 파일 안에 <code>## 소재 후보</code> 섹션이 있습니다. 마음에 드는 소재를 골라 초안을 요청합니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">Claude한테 붙여넣기</div>
+      <pre><code>/project:blog</code></pre>
+    </div>
+
+    <p>또는 직접 이렇게 요청해도 됩니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">Claude한테 붙여넣기</div>
+      <pre><code>오늘 회고의 소재 후보 중 [소재 이름]을 블로그 글로 써줘.</code></pre>
+    </div>
+
+    <p>초안이 생기면 <code>src/content/blog/</code> 폴더에 파일이 저장됩니다. 기본 상태는 <strong>초안</strong>입니다.</p>
+
+    <p>사이트에 올리려면 공개로 바꿉니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">Claude한테 붙여넣기</div>
+      <pre><code>방금 만든 블로그 글 상태를 공개로 바꿔줘.</code></pre>
+    </div>
+
+    <hr />
+
+    <h2>4단계. 로컬 미리보기로 확인하기</h2>
+
+    <p>배포 전에 내 컴퓨터에서 먼저 확인합니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">Claude한테 붙여넣기</div>
+      <pre><code>로컬 미리보기를 실행해줘.
+브라우저에서 어떻게 확인하면 되는지도 알려줘.</code></pre>
+    </div>
+
+    <p>Claude가 서버를 실행합니다. 브라우저에서 <code>http://localhost:4321</code>로 접속합니다.</p>
+    <p>블로그 목록에 방금 쓴 글이 올라와 있는지 확인합니다.</p>
+    <p>확인이 끝나면 종료합니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">Claude한테 붙여넣기</div>
+      <pre><code>로컬 미리보기 서버 종료해줘.</code></pre>
+    </div>
+
+    <details>
+      <summary>글이 사이트에 안 보인다면</summary>
+      <p><strong>상태를 공개로 바꿨는지</strong> 먼저 확인합니다.</p>
+      <div class="prompt-box">
+        <div class="prompt-label">Claude한테 붙여넣기</div>
+        <pre><code>src/content/blog/ 폴더에 있는 파일들의 상태 값을 보여줘.</code></pre>
+      </div>
+    </details>
+
+    <hr />
+
+    <blockquote class="success">
+      <p><strong>이번 사례에서 확인한 것</strong></p>
+      <ol>
+        <li>모르는 것은 AI한테 물어보면서 진행할 수 있다.</li>
+        <li>슬래시 명령어로 반복 작업을 줄일 수 있다.</li>
+        <li><code>journal/</code>에 쌓인 회고에서 블로그 글이 뽑힌다.</li>
+        <li>로컬 미리보기로 배포 전에 확인할 수 있다.</li>
+      </ol>
+    </blockquote>
+
+  </article>
+</Base>
+
+<script>
+  import { applyGlossaryTo } from '../../scripts/glossary-tooltip';
+  applyGlossaryTo('.page-body');
+
+  // 코드 블록 복사 버튼
+  document.querySelectorAll('pre').forEach((pre) => {
+    const btn = document.createElement('button');
+    btn.textContent = '복사';
+    btn.className = 'copy-btn';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      navigator.clipboard.writeText(code?.innerText ?? pre.innerText).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => (btn.textContent = '복사'), 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+</script>
+
+<style>
+  .page-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    line-height: 1.75;
+  }
+  h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.2rem; margin-bottom: 0.7rem; border-bottom: 1px solid var(--line); padding-bottom: 0.3rem; }
+  ol.flow { margin: 0.5rem 0 1.5rem; padding-left: 1.4rem; }
+  ol.flow li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+  details { margin: 1rem 0; border: 1px solid var(--line); border-radius: 6px; padding: 0.6rem 0.9rem; }
+  summary { cursor: pointer; font-weight: 600; font-size: 0.93rem; }
+  details[open] summary { margin-bottom: 0.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.7rem 0; }
+  th, td { border: 1px solid var(--line); padding: 0.4rem 0.7rem; text-align: left; }
+  th { background: var(--bg-alt, #f8f5f0); font-weight: 600; }
+  hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
+
+  blockquote.intro, blockquote.info, blockquote.warning, blockquote.success {
+    border-left: 3px solid;
+    padding: 0.8rem 1.1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.2rem 0;
+    font-size: 0.93rem;
+  }
+  blockquote.intro  { border-color: #8b7355; background: #faf6ef; }
+  blockquote.info   { border-color: #4a90d9; background: #f0f6ff; }
+  blockquote.warning{ border-color: #e07b39; background: #fff7f0; }
+  blockquote.success{ border-color: #5a9e6f; background: #f0faf4; }
+  blockquote p, blockquote li { margin: 0.3rem 0; }
+
+  .prompt-box {
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0 1rem;
+    position: relative;
+  }
+  .prompt-label {
+    font-size: 0.72rem;
+    color: #888;
+    margin-bottom: 0.4rem;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .prompt-box pre {
+    margin: 0;
+    background: transparent;
+    padding: 0;
+    color: #d4d0c8;
+    font-size: 0.88rem;
+  }
+  .prompt-box code {
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  /* 복사 버튼 */
+  pre { position: relative; }
+  .copy-btn {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: #2d2d2d;
+    color: #ccc;
+    cursor: pointer;
+  }
+  .copy-btn:hover { background: #3a3a3a; }
+</style>
