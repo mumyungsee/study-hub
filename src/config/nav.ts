@@ -3,7 +3,7 @@ export const SITE_TITLE = 'AI 스터디 허브';
 export const NAV_SECTIONS = [
   { label: '온보딩', href: '/onboarding/glossary/', key: 'onboarding' },
   { label: '환경 세팅', href: '/setup/vscode/', key: 'setup' },
-  { label: 'AI 메타스킬', href: '/meta-skills/case-life-wiki/', key: 'metaSkills' },
+  { label: 'AI 메타학습', href: '/meta-skills/case-life-wiki/', key: 'metaSkills' },
   { label: '튜토리얼', href: '/tutorial/', key: 'tutorial' },
   { label: '수강생 사례', href: '/gallery/', key: 'gallery' },
 ] as const;
