@@ -135,7 +135,9 @@ https://github.com/popup-studio-ai/life-wiki
 브라우저에서 어떻게 확인하면 되는지도 알려줘.</code></pre>
     </div>
 
-    <p>Claude가 서버를 실행합니다. 브라우저에서 <code>http://localhost:4321</code>로 접속합니다.</p>
+    <p>Claude가 서버를 실행하면서 접속 주소를 알려줍니다. 그 주소를 복사해서 브라우저 주소창에 붙여넣으면 됩니다.</p>
+    <p>주소는 보통 이런 형식입니다. (뒤 숫자는 다를 수 있어요)</p>
+    <pre><code>http://localhost:4321</code></pre>
     <p>블로그 목록에 방금 쓴 글이 올라와 있는지 확인합니다.</p>
     <p>확인이 끝나면 종료합니다.</p>
 
@@ -222,7 +224,8 @@ https://github.com/popup-studio-ai/life-wiki
   blockquote p, blockquote li { margin: 0.3rem 0; }
 
   .prompt-box {
-    background: #1e1e1e;
+    background: #f5f1ea;
+    border: 1px solid #e0d8cc;
     border-radius: 6px;
     padding: 0.8rem 1rem;
     margin: 0.7rem 0 1rem;
@@ -230,18 +233,20 @@ https://github.com/popup-studio-ai/life-wiki
   }
   .prompt-label {
     font-size: 0.72rem;
-    color: #888;
+    color: #8b7355;
     margin-bottom: 0.4rem;
     font-family: monospace;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    font-weight: 600;
   }
   .prompt-box pre {
     margin: 0;
     background: transparent;
     padding: 0;
-    color: #d4d0c8;
+    color: #2c2c2c;
     font-size: 0.88rem;
+    border: none;
   }
   .prompt-box code {
     background: transparent;
@@ -249,19 +254,30 @@ https://github.com/popup-studio-ai/life-wiki
     font-size: inherit;
   }
 
+  /* 일반 pre 코드블록도 미색으로 통일 */
+  pre {
+    background: #f5f1ea;
+    border: 1px solid #e0d8cc;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    color: #2c2c2c;
+    position: relative;
+  }
+
   /* 복사 버튼 */
-  pre { position: relative; }
   .copy-btn {
     position: absolute;
     top: 0.4rem;
     right: 0.4rem;
     font-size: 0.72rem;
     padding: 0.2rem 0.55rem;
-    border: 1px solid #555;
+    border: 1px solid #c8bfb0;
     border-radius: 4px;
-    background: #2d2d2d;
-    color: #ccc;
+    background: #ede8df;
+    color: #6b5a44;
     cursor: pointer;
   }
-  .copy-btn:hover { background: #3a3a3a; }
+  .copy-btn:hover { background: #e0d8cc; }
 </style>
