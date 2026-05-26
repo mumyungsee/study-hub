@@ -104,7 +104,7 @@ AI한테 "나에 대해 질문 5개 해줘"라고 하면, 그 답으로 CLAUDE.m
 
 ---
 
-*AI 스터디 허브 → [스터디 허브 링크 추가 예정]*
+*AI 스터디 허브 → [study-hub-eta-olive.vercel.app](https://study-hub-eta-olive.vercel.app/meta-skills/intro/)*
 
 ---
 
