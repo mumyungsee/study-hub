@@ -1,0 +1,195 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="방법 1. 막혔을 때 — 스크린샷·오류로 물어보기 | AI 스터디 허브" showTOC={true}>
+  <article class="page-body">
+    <h1>방법 1. 막혔을 때 — 스크린샷·오류로 물어보기</h1>
+
+    <blockquote class="intro">
+      <p><strong>핵심</strong> — 막혔을 때 "왜 안 돼요?"만 치면 AI도 모릅니다. 화면을 보여주고, 오류를 통째로 붙여넣으면 바로 해결됩니다.</p>
+    </blockquote>
+
+    <h2>왜 이게 중요한가요?</h2>
+
+    <p>처음 막히면 이렇게 치는 경우가 많아요.</p>
+
+    <div class="prompt-compare">
+      <div class="prompt-bad">
+        <div class="prompt-label">잘 안 되는 방법</div>
+        <pre><code>설치가 안 돼요. 왜 그럴까요?</code></pre>
+      </div>
+      <div class="prompt-good">
+        <div class="prompt-label">잘 되는 방법</div>
+        <pre><code>Node.js 설치하다가 막혔어요.
+아래 오류가 떴는데 어떻게 하면 돼요?
+
+[오류 내용 통째로 붙여넣기]</code></pre>
+      </div>
+    </div>
+
+    <p>AI는 내 화면을 볼 수 없습니다. 내가 보여주는 만큼만 알 수 있어요. <strong>많이 보여줄수록 정확하게 도와줍니다.</strong></p>
+
+    <hr />
+
+    <h2>방법 1. 오류 메시지 통째로 붙여넣기</h2>
+
+    <p>터미널이나 화면에 빨간 글씨, 오류 코드가 보이면 그냥 전체 복사해서 붙여넣습니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">이렇게 하세요</div>
+      <pre><code>이런 오류가 떴어요. 어떻게 하면 돼요?
+
+npm error code ENOENT
+npm error syscall open
+npm error path C:\Users\hong\project\package.json
+npm error errno -4058</code></pre>
+    </div>
+
+    <p class="hint">오류 내용이 길어도 괜찮습니다. 다 붙여넣는 게 잘라서 붙여넣는 것보다 낫습니다.</p>
+
+    <hr />
+
+    <h2>방법 2. 화면 캡처해서 첨부하기</h2>
+
+    <p>오류 메시지가 텍스트로 복사 안 될 때, 또는 화면 자체를 보여주고 싶을 때는 캡처해서 첨부합니다.</p>
+
+    <h3>캡처 방법</h3>
+
+    <details class="os-alt">
+      <summary>Windows</summary>
+      <ul>
+        <li><strong>Win + Shift + S</strong> → 드래그로 원하는 영역 선택 → 클립보드에 복사됨</li>
+        <li>Claude 채팅창에 <strong>Ctrl + V</strong>로 붙여넣기</li>
+      </ul>
+      <p class="hint">캡처 후 파일로 저장하지 않아도 됩니다. 클립보드에 바로 복사되니까 채팅창에 붙여넣기만 하면 돼요.</p>
+    </details>
+
+    <details class="os-alt">
+      <summary>Mac</summary>
+      <ul>
+        <li><strong>Cmd + Shift + 4</strong> → 드래그로 영역 선택 → 바탕화면에 파일로 저장됨</li>
+        <li>저장된 파일을 Claude 채팅창으로 드래그하거나, <strong>Cmd + V</strong>로 붙여넣기</li>
+      </ul>
+    </details>
+
+    <p>캡처 후 이렇게 붙여넣으면 됩니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">이렇게 하세요</div>
+      <pre><code>[캡처 이미지 첨부]
+
+이 화면에서 막혔어요. 다음에 뭘 해야 하나요?</code></pre>
+    </div>
+
+    <hr />
+
+    <h2>방법 3. 모르는 단어 나왔을 때</h2>
+
+    <p>설명을 읽다가 모르는 단어가 나오면 그냥 물어봅니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">이렇게 하세요</div>
+      <pre><code>"레포지토리"가 뭔지 모르겠어요.
+IT 모르는 사람한테 설명하듯 쉽게 풀어줘요.</code></pre>
+    </div>
+
+    <div class="prompt-box">
+      <div class="prompt-label">또는</div>
+      <pre><code>방금 설명에 "터미널"이라는 단어가 나왔는데,
+카페 직원한테 설명하듯 쉬운 비유로 풀어줘요.</code></pre>
+    </div>
+
+    <blockquote class="info">
+      <p><strong>팁</strong> — "초보자한테 설명하듯", "IT 모르는 사람한테", "카페 직원한테" 같은 말을 붙이면 AI가 훨씬 쉽게 설명합니다. 어렵게 설명하면 또 물어보면 됩니다.</p>
+    </blockquote>
+
+    <hr />
+
+    <h2>실제 대화 예시</h2>
+
+    <p>Node.js 설치 중 막힌 상황을 예로 들어볼게요.</p>
+
+    <table>
+      <thead>
+        <tr><th>사람</th><th>내용</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>나</td>
+          <td>Node.js 설치하다가 이런 게 떴어요. 어떻게 하면 돼요?<br /><code>[오류 메시지 붙여넣기]</code></td>
+        </tr>
+        <tr>
+          <td>AI</td>
+          <td>이 오류는 ○○ 때문에 나는 거예요. 이렇게 해보세요...</td>
+        </tr>
+        <tr>
+          <td>나</td>
+          <td>했는데 또 다른 게 떴어요.<br /><code>[새 오류 붙여넣기]</code></td>
+        </tr>
+        <tr>
+          <td>AI</td>
+          <td>이번엔 △△ 문제예요. ○○ 해보세요...</td>
+        </tr>
+        <tr>
+          <td>나</td>
+          <td>됐어요!</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>이게 전부입니다. 막히면 보여주고, 또 막히면 또 보여주는 것. 완벽하게 이해 안 해도 괜찮아요. AI가 길 안내해주는 GPS처럼 그때그때 알려줍니다.</p>
+
+    <hr />
+
+    <blockquote class="success">
+      <p><strong>정리</strong></p>
+      <ul>
+        <li>오류 메시지는 전체 복사해서 붙여넣기</li>
+        <li>화면이 이상하면 캡처해서 첨부</li>
+        <li>모르는 단어는 "쉽게 설명해줘"로 바로 해결</li>
+        <li>막혀도 괜찮습니다 — 보여주면 됩니다</li>
+      </ul>
+    </blockquote>
+
+    <h2>다음 단계</h2>
+    <div class="flow">
+      <ol>
+        <li><a href="/meta-skills/method-claude-md/">방법 2. 나만의 학습메이트 (CLAUDE.md)</a></li>
+      </ol>
+    </div>
+
+  </article>
+</Base>
+
+<script>
+  import { applyGlossaryTo } from '../../scripts/glossary-tooltip';
+  applyGlossaryTo('.page-body');
+
+  document.querySelectorAll('.page-body pre').forEach((pre) => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = '복사';
+    pre.appendChild(btn);
+
+    btn.addEventListener('click', async () => {
+      const code = pre.querySelector('code');
+      const text = code ? (code as HTMLElement).innerText : (pre as HTMLElement).innerText;
+      await navigator.clipboard.writeText(text);
+      btn.textContent = '복사됨';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = '복사';
+        btn.classList.remove('copied');
+      }, 1500);
+    });
+  });
+</script>
+
+<style>
+  /* 공용 스타일은 Base.astro에서 전역 관리 */
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.7rem 0; }
+  th, td { border: 1px solid var(--line); padding: 0.4rem 0.7rem; text-align: left; }
+  th { background: #f5f0e8; font-weight: 600; }
+</style>
