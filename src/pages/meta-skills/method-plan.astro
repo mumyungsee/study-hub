@@ -1,0 +1,127 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="방법 4. 계획서 받고 진행 | AI 스터디 허브" showTOC={true}>
+  <article class="page-body">
+    <h1>방법 4. 계획서 받고 진행</h1>
+
+    <blockquote class="intro">
+      <p><strong>핵심</strong> — "바로 만들지 말고 계획서 먼저"라고 하면, AI가 뭘 어떻게 할지 먼저 보여줍니다. 확인하고 나서 진행하면 실수가 줄고 신뢰가 생깁니다.</p>
+    </blockquote>
+
+    <h2>왜 필요한가요?</h2>
+
+    <p>AI한테 "만들어줘"라고 하면 바로 뭔가를 합니다. 빠르긴 한데, 원하는 방향이 아닐 때 되돌리기가 번거롭습니다.</p>
+
+    <p>"계획서 먼저"는 AI가 손을 대기 전에 <strong>무엇을, 어떤 순서로, 왜 그렇게 할지</strong>를 먼저 보여달라는 것입니다. 내가 확인하고 "좋아, 진행해"라고 해야 실제로 만들어줍니다.</p>
+
+    <hr />
+
+    <h2>기본 사용법</h2>
+
+    <div class="prompt-box">
+      <div class="prompt-label">이렇게 하세요</div>
+      <pre><code>라이프 위키에 독서 기록 기능 추가하고 싶어.
+바로 만들지 말고, 어떻게 할지 계획서 먼저 보여줘.</code></pre>
+    </div>
+
+    <p>AI가 계획서를 보여줍니다.</p>
+
+    <blockquote class="info">
+      <p><strong>AI 답변 예시</strong></p>
+      <p><strong>계획서 — 독서 기록 기능 추가</strong></p>
+      <p>1. <code>books/</code> 폴더 생성 — 책별 기록 파일 보관</p>
+      <p>2. <code>/project:book</code> 슬래시 명령어 추가 — "책 제목 + 한 줄 감상" 입력 대화</p>
+      <p>3. <code>src/content/books/</code> 컬렉션 추가 — 목록 페이지용</p>
+      <p>4. 독서 목록 페이지 생성 — 읽은 책 모아보기</p>
+      <p>예상 소요: 파일 4~5개 수정/생성</p>
+    </blockquote>
+
+    <p>내용을 확인합니다. 괜찮으면 진행 요청, 수정이 필요하면 그 자리에서 말합니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">확인 후 진행할 때</div>
+      <pre><code>좋아, 진행해줘.</code></pre>
+    </div>
+
+    <div class="prompt-box">
+      <div class="prompt-label">수정이 필요할 때</div>
+      <pre><code>목록 페이지는 나중에 해도 돼. 1~2번만 먼저 해줘.</code></pre>
+    </div>
+
+    <hr />
+
+    <h2>더 자세한 계획서가 필요할 때</h2>
+
+    <div class="prompt-box">
+      <div class="prompt-label">이렇게 하세요</div>
+      <pre><code>어떤 파일을 수정하는지, 왜 그렇게 하는지도 같이 설명해줘.</code></pre>
+    </div>
+
+    <hr />
+
+    <h2>bkit의 /pdca plan이 이걸 자동화한 거예요</h2>
+
+    <p>이 스터디 후반부에서 쓰는 <strong>bkit</strong> 플러그인의 <code>/pdca plan</code> 명령어는 "계획서 받고 진행하기"를 자동화한 것입니다.</p>
+
+    <p>명령어 하나로 계획 → 설계 → 구현 → 검증 → 보고 흐름이 만들어집니다. 지금 배우는 이 방법이 그 기반이에요.</p>
+
+    <blockquote class="info">
+      <p>지금 단계에서 bkit까지 알 필요는 없습니다. "계획서 받고 진행하기" 습관을 먼저 들이면, 나중에 bkit 쓸 때 훨씬 자연스럽게 이해됩니다.</p>
+    </blockquote>
+
+    <hr />
+
+    <blockquote class="success">
+      <p><strong>정리</strong></p>
+      <ul>
+        <li>"바로 만들지 말고 계획서 먼저" — 확인 후 진행</li>
+        <li>계획이 마음에 안 들면 수정 요청 → 다시 확인 → 진행</li>
+        <li>이 습관이 bkit /pdca plan의 기반</li>
+      </ul>
+    </blockquote>
+
+    <h2>메타스킬 4가지 정리</h2>
+
+    <div class="meta-summary">
+      <p>여기까지 AI 메타스킬 4가지를 배웠습니다.</p>
+      <ol>
+        <li><a href="/meta-skills/method-screenshot/">막혔을 때 — 스크린샷·오류로 물어보기</a></li>
+        <li><a href="/meta-skills/method-claude-md/">나만의 학습메이트 (CLAUDE.md)</a></li>
+        <li><a href="/meta-skills/method-interview/">인터뷰 + 보기 제시로 함께 설계</a></li>
+        <li>계획서 받고 진행 ← 지금 여기</li>
+      </ol>
+      <p class="muted">이 4가지는 도구가 바뀌어도 변하지 않습니다. Antigravity든 VS Code든, Claude든 다른 AI든 — 이 방법은 언제나 통합니다.</p>
+    </div>
+
+  </article>
+</Base>
+
+<script>
+  import { applyGlossaryTo } from '../../scripts/glossary-tooltip';
+  applyGlossaryTo('.page-body');
+
+  document.querySelectorAll('.page-body pre').forEach((pre) => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = '복사';
+    pre.appendChild(btn);
+
+    btn.addEventListener('click', async () => {
+      const code = pre.querySelector('code');
+      const text = code ? (code as HTMLElement).innerText : (pre as HTMLElement).innerText;
+      await navigator.clipboard.writeText(text);
+      btn.textContent = '복사됨';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = '복사';
+        btn.classList.remove('copied');
+      }, 1500);
+    });
+  });
+</script>
+
+<style>
+  /* 공용 스타일은 Base.astro에서 전역 관리 */
+</style>

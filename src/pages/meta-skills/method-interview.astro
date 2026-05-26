@@ -1,0 +1,166 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="방법 3. 인터뷰 + 보기 제시로 함께 설계 | AI 스터디 허브" showTOC={true}>
+  <article class="page-body">
+    <h1>방법 3. 인터뷰 + 보기 제시로 함께 설계</h1>
+
+    <blockquote class="intro">
+      <p><strong>핵심</strong> — "만들어줘"보다 "질문해줘"가 더 좋은 결과를 만듭니다. AI한테 내 상황을 먼저 물어보게 하고, 선택지를 보기로 받으면 원하는 걸 훨씬 빠르게 얻습니다.</p>
+    </blockquote>
+
+    <h2>왜 이게 필요한가요?</h2>
+
+    <p>"블로그 만들어줘"라고 하면 AI가 본인 판단대로 만듭니다. 마음에 안 들면 다시 요청하고, 또 마음에 안 들면 또 다시 — 이 과정이 길어집니다.</p>
+
+    <p>반대로 AI한테 먼저 <strong>내 상황을 물어보게</strong> 하면, AI가 원하는 걸 정확히 파악한 다음에 만들어줍니다.</p>
+
+    <hr />
+
+    <h2>방법 1. 먼저 질문하게 하기</h2>
+
+    <div class="prompt-box">
+      <div class="prompt-label">이렇게 하세요</div>
+      <pre><code>블로그를 만들려고 해.
+바로 만들지 말고, 먼저 내 상황을 파악할 수 있게 질문 5개 해줘.</code></pre>
+    </div>
+
+    <p>AI가 질문을 합니다. 대답하면 AI가 정확히 파악한 다음에 만들어줍니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">또는 — 더 짧게</div>
+      <pre><code>내 상황 물어보고 나서 만들어줘.</code></pre>
+    </div>
+
+    <hr />
+
+    <h2>방법 2. 보기로 선택지 받기</h2>
+
+    <p>뭘 원하는지 잘 모를 때, 또는 여러 방향 중에 고르고 싶을 때 씁니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">이렇게 하세요</div>
+      <pre><code>블로그 디자인 방향을 3가지 보기로 제시해줘.
+각각 어떤 느낌인지 설명도 붙여줘.</code></pre>
+    </div>
+
+    <p>AI가 이렇게 답합니다.</p>
+
+    <blockquote class="info">
+      <p><strong>AI 답변 예시</strong></p>
+      <p>1. 미니멀 — 흰 배경, 텍스트 중심. 글 자체에 집중하는 느낌</p>
+      <p>2. 따뜻한 — 베이지 계열, 손글씨 폰트. 개인 일기 같은 느낌</p>
+      <p>3. 모던 — 다크 모드, 깔끔한 카드 레이아웃. 포트폴리오 느낌</p>
+    </blockquote>
+
+    <p>골랐으면 그냥 번호만 답하면 됩니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">선택할 때</div>
+      <pre><code>2번으로 가줘.</code></pre>
+    </div>
+
+    <hr />
+
+    <h2>둘을 합치면</h2>
+
+    <p>질문 먼저 + 보기 선택을 같이 쓰면 더 강력합니다.</p>
+
+    <div class="prompt-box">
+      <div class="prompt-label">이렇게 하세요</div>
+      <pre><code>라이프 위키에 새 기능을 추가하고 싶어.
+먼저 내 상황 파악하게 질문 3개 해줘.
+그 다음에 방향을 3가지 보기로 제시해줘.</code></pre>
+    </div>
+
+    <p>AI와 대화하면서 설계가 완성되고, 그 다음에 만들어달라고 하면 됩니다.</p>
+
+    <hr />
+
+    <h2>실제 대화 흐름 예시</h2>
+
+    <table>
+      <thead>
+        <tr><th>사람</th><th>내용</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>나</td>
+          <td>라이프 위키에 독서 기록 기능 추가하고 싶어. 질문 먼저 해줘.</td>
+        </tr>
+        <tr>
+          <td>AI</td>
+          <td>1. 어떤 걸 기록하고 싶으세요? (책 제목, 날짜, 감상 등)<br/>2. 기존 일간 회고랑 연결되길 원하시나요?<br/>3. 나중에 책별로 모아보고 싶으신가요?</td>
+        </tr>
+        <tr>
+          <td>나</td>
+          <td>책 제목이랑 한 줄 감상만. 회고랑 연결은 나중에. 목록은 있으면 좋겠어.</td>
+        </tr>
+        <tr>
+          <td>AI</td>
+          <td>파악했습니다. 구현 방향 3가지 제시할게요...</td>
+        </tr>
+        <tr>
+          <td>나</td>
+          <td>2번으로 가줘.</td>
+        </tr>
+        <tr>
+          <td>AI</td>
+          <td>만들어드릴게요!</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <blockquote class="success">
+      <p><strong>정리</strong></p>
+      <ul>
+        <li>"질문 먼저 해줘" → AI가 내 상황 파악 후 작업</li>
+        <li>"보기 3가지로 제시해줘" → 선택지에서 고르면 됨</li>
+        <li>둘을 합치면 설계부터 구현까지 대화로 완성</li>
+      </ul>
+    </blockquote>
+
+    <h2>다음 단계</h2>
+    <div class="flow">
+      <ol>
+        <li><a href="/meta-skills/method-plan/">방법 4. 계획서 받고 진행</a></li>
+      </ol>
+    </div>
+
+  </article>
+</Base>
+
+<script>
+  import { applyGlossaryTo } from '../../scripts/glossary-tooltip';
+  applyGlossaryTo('.page-body');
+
+  document.querySelectorAll('.page-body pre').forEach((pre) => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = '복사';
+    pre.appendChild(btn);
+
+    btn.addEventListener('click', async () => {
+      const code = pre.querySelector('code');
+      const text = code ? (code as HTMLElement).innerText : (pre as HTMLElement).innerText;
+      await navigator.clipboard.writeText(text);
+      btn.textContent = '복사됨';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = '복사';
+        btn.classList.remove('copied');
+      }, 1500);
+    });
+  });
+</script>
+
+<style>
+  /* 공용 스타일은 Base.astro에서 전역 관리 */
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.7rem 0; }
+  th, td { border: 1px solid var(--line); padding: 0.4rem 0.7rem; text-align: left; }
+  th { background: #f5f0e8; font-weight: 600; }
+</style>
