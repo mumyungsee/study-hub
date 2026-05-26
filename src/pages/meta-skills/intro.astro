@@ -1,0 +1,110 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="들어가며 — AI랑 일하는 법 | AI 스터디 허브" showTOC={true}>
+  <article class="page-body">
+    <h1>들어가며 — AI랑 일하는 법</h1>
+
+    <blockquote class="intro">
+      <p><strong>이 스터디의 본질</strong> — 도구 사용법을 배우는 곳이 아니라, AI랑 같이 일하는 법을 배우는 곳입니다.</p>
+    </blockquote>
+
+    <h2>도구는 바뀝니다</h2>
+
+    <p>이 스터디가 시작됐을 때는 <strong>Antigravity</strong>라는 에디터를 썼습니다.</p>
+    <p>한 달 만에 UI가 통째로 바뀌어서, 기존 강의 화면과 실제 화면이 완전히 달라졌습니다.</p>
+    <p>그래서 <strong>VS Code</strong>로 갈아엎었습니다.</p>
+
+    <blockquote class="warning">
+      <p>강의 자료는 이렇게 낡아갑니다. 어느 에디터 버튼이 어디 있는지, 어떤 화면에서 무엇을 클릭하는지 — 이런 것들은 도구가 업데이트될 때마다 바뀝니다.</p>
+    </blockquote>
+
+    <p>반면 바뀌지 않는 것이 있습니다.</p>
+
+    <p><strong>"막히면 AI한테 보여주고 같이 해결한다"</strong>는 방식은 어떤 도구를 쓰든 똑같이 통합니다.</p>
+
+    <hr />
+
+    <h2>그래서 이 스터디가 가르치는 것</h2>
+
+    <div class="meta-summary">
+      <p><strong>AI 메타스킬</strong> — AI와 협업하는 기본기입니다.</p>
+      <ul>
+        <li>막혔을 때 어떻게 물어보는지</li>
+        <li>내 작업 방식을 AI한테 어떻게 알려주는지</li>
+        <li>원하는 결과를 어떻게 함께 설계하는지</li>
+        <li>바로 만들지 않고 계획부터 받는 방법</li>
+      </ul>
+      <p class="muted">도구(VS Code, Claude Code, bkit)는 지금 제일 잘 맞는 것들을 쓰는 것뿐입니다. 언제든 더 좋은 게 나오면 바뀔 수 있어요.</p>
+    </div>
+
+    <hr />
+
+    <h2>4주 학습 흐름</h2>
+
+    <p>이 스터디는 4주 동안 이렇게 흘러갑니다.</p>
+
+    <table>
+      <thead>
+        <tr><th>주차</th><th>무엇을 하나요</th><th>느낌</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1주차</strong></td>
+          <td>환경 세팅 + AI로 라이프 위키 직접 써보기</td>
+          <td>구경 + 감 잡기</td>
+        </tr>
+        <tr>
+          <td><strong>2주차</strong></td>
+          <td>AI 메타스킬 4가지 방법 익히기 + GitHub 가입</td>
+          <td>기술 익히기</td>
+        </tr>
+        <tr>
+          <td><strong>3주차</strong></td>
+          <td>내 라이프 위키 GitHub에 올리고 사이트로 배포하기</td>
+          <td>내 결과물 만들기</td>
+        </tr>
+        <tr>
+          <td><strong>4주차</strong></td>
+          <td>다른 재밌는 레포 가져와서 본격 응용</td>
+          <td>재밌는 응용</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote class="info">
+      <p><strong>포인트</strong> — 도구 설치는 1주차에 끝냅니다. GitHub 가입·로그인은 내 걸 올릴 때(3주차 직전)에 합니다. 먼저 결과를 맛보고, 필요해진 시점에 설치합니다.</p>
+    </blockquote>
+
+    <hr />
+
+    <h2>다음 단계</h2>
+
+    <p>먼저 <strong>종합 사례</strong>에서 AI랑 같이 일하는 느낌을 직접 경험해봅니다.</p>
+
+    <p>환경 세팅이 아직 안 됐다면 환경 세팅 먼저 하고 와도 됩니다.</p>
+
+    <div class="flow">
+      <ol>
+        <li><a href="/setup/vscode/">환경 세팅</a> — VS Code, Claude Code, Node.js, bkit 설치</li>
+        <li><a href="/meta-skills/case-life-wiki/">종합 사례 — 라이프 위키 써보기</a> — AI랑 일하는 느낌 먼저 경험</li>
+        <li>AI 메타스킬 방법 1~4 — 이 섹션 아래 페이지들</li>
+      </ol>
+    </div>
+
+  </article>
+</Base>
+
+<script>
+  import { applyGlossaryTo } from '../../scripts/glossary-tooltip';
+  applyGlossaryTo('.page-body');
+</script>
+
+<style>
+  /* 공용 스타일은 Base.astro에서 전역 관리 */
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.7rem 0; }
+  th, td { border: 1px solid var(--line); padding: 0.4rem 0.7rem; text-align: left; }
+  th { background: #f5f0e8; font-weight: 600; }
+</style>
