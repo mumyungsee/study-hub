@@ -52,13 +52,32 @@
 
 ## 파일 구조 규칙
 
+### 스타일 구조 — 핵심 원칙
+
+**공용 스타일은 `src/layouts/Base.astro`에만.** 각 페이지 `<style>`에 중복 정의 금지.
+
+| 클래스 | 위치 | 설명 |
+|---|---|---|
+| `.page-body h2/h3` | `Base.astro` | 섹션 구분선, 헤딩 색 |
+| `.flow` | `Base.astro` | 전체 흐름 박스 |
+| `blockquote.intro/warning/info/success` | `Base.astro` | 알림 박스 4종 |
+| `.os-alt` | `Base.astro` | OS 분기 details |
+| `.prompt-box`, `.prompt-label` | `Base.astro` | 복사용 프롬프트 박스 |
+| `.prompt-compare`, `.prompt-bad`, `.prompt-good` | `Base.astro` | 비교 박스 |
+| `.meta-summary` | `Base.astro` | 마무리 요약 박스 |
+| `.hint`, `.muted` | `Base.astro` | 보조 텍스트 |
+| `.copy-btn` | `Base.astro` | 코드블록 복사 버튼 |
+
+페이지별 `<style>`에는 **그 페이지에만 쓰는 것만** 작성.  
+새 공용 컴포넌트 필요 시 → `Base.astro`의 "공용 페이지 컴포넌트" 블록에 추가.
+
 ### 환경 세팅 (`src/pages/setup/*.astro`)
 
 - 각 페이지는 self-contained `.astro` 파일
-- 공유 클래스: `.page-body`, `blockquote.intro/warning/info/success`, `.prompt-box`
+- 공유 클래스: Base.astro에서 전역 관리 (위 표 참고)
 - 메뉴는 `src/components/Sidebar.astro`에 **하드코딩** (자동 생성 아님)
 - 새 페이지 추가 시 **3곳 동시 수정**:
-  1. `src/pages/setup/<이름>.astro` 신규
+  1. `src/pages/setup/<이름>.astro` 신규 (기존 setup 페이지에서 `<style>` 없이 복사 — 공용 스타일은 Base.astro 상속)
   2. `Sidebar.astro`에 메뉴 한 줄
   3. 인접 페이지의 "다음 단계" 링크 갱신
 
@@ -166,7 +185,21 @@
 - 옵션 제안할 때 최소 범위를 추천으로
 - 보류한 작업은 `docs/`에 계획서로 기록 (세션 끊겨도 이어갈 수 있게)
 
-### 5. 새 문서 함부로 만들지 않기
+### 5. docs/ 폴더 용도
+
+- **작업 계획서·아이디어 메모·학습 철학 메모만** 둠
+- 완료된 계획은 해당 파일 안에서 체크박스 `[x]` 처리 + 상단 현재 상태 업데이트
+- 새 `.md` 파일은 정말 필요할 때만 (현재 파일: `meta-skills-plan.md`, `improvement-ideas.md`, `learning-philosophy-notes.md`)
+- 회의록이나 블로그 초안 소재 등이 많이 쌓이면 그때 `docs/archive/` 만들어 이동
+
+### 6. 세션 끝낼 때 루틴 ("맥락 업데이트" 요청 시)
+
+1. `docs/meta-skills-plan.md` — 완료된 Phase 체크박스 `[x]`, 현재 상태 한 줄 업데이트
+2. `CLAUDE.md` — 규칙·방향 변경 있었으면 반영
+3. 메모리 파일 — 비자명한 결정·사용자 피드백 있었으면 저장
+4. `git commit + push`
+
+### 7. 새 문서 함부로 만들지 않기
 
 - `.md` 파일을 요청 전에 먼저 만들지 말 것
 - 채팅에서 충분히 논의 → 승인 후 작성
