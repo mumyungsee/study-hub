@@ -173,110 +173,136 @@ https://github.com/popup-studio-ai/life-wiki
   import { applyGlossaryTo } from '../../scripts/glossary-tooltip';
   applyGlossaryTo('.page-body');
 
-  // 코드 블록 복사 버튼
-  document.querySelectorAll('pre').forEach((pre) => {
+  document.querySelectorAll('.page-body pre').forEach((pre) => {
     const btn = document.createElement('button');
-    btn.textContent = '복사';
     btn.className = 'copy-btn';
-    btn.addEventListener('click', () => {
-      const code = pre.querySelector('code');
-      navigator.clipboard.writeText(code?.innerText ?? pre.innerText).then(() => {
-        btn.textContent = '복사됨';
-        setTimeout(() => (btn.textContent = '복사'), 1500);
-      });
-    });
-    pre.style.position = 'relative';
+    btn.textContent = '복사';
     pre.appendChild(btn);
+
+    btn.addEventListener('click', async () => {
+      const code = pre.querySelector('code');
+      const text = code ? (code as HTMLElement).innerText : (pre as HTMLElement).innerText;
+      await navigator.clipboard.writeText(text);
+      btn.textContent = '복사됨';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = '복사';
+        btn.classList.remove('copied');
+      }, 1500);
+    });
   });
 </script>
 
 <style>
-  .page-body {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-    line-height: 1.75;
+  /* 섹션 구분 */
+  .page-body h2 {
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+    margin-top: 3rem;
   }
-  h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
-  h2 { font-size: 1.2rem; margin-top: 2.2rem; margin-bottom: 0.7rem; border-bottom: 1px solid var(--line); padding-bottom: 0.3rem; }
-  ol.flow { margin: 0.5rem 0 1.5rem; padding-left: 1.4rem; }
-  ol.flow li { margin-bottom: 0.3rem; font-size: 0.95rem; }
-  details { margin: 1rem 0; border: 1px solid var(--line); border-radius: 6px; padding: 0.6rem 0.9rem; }
-  summary { cursor: pointer; font-weight: 600; font-size: 0.93rem; }
-  details[open] summary { margin-bottom: 0.5rem; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.7rem 0; }
-  th, td { border: 1px solid var(--line); padding: 0.4rem 0.7rem; text-align: left; }
-  th { background: var(--bg-alt, #f8f5f0); font-weight: 600; }
-  hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
+  .page-body h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 2rem;
+  }
 
-  blockquote.intro, blockquote.info, blockquote.warning, blockquote.success {
-    border-left: 3px solid;
-    padding: 0.8rem 1.1rem;
+  /* 전체 흐름 박스 */
+  .flow {
+    background: #faf7f1;
+    border-left: 4px solid var(--accent);
     border-radius: 0 6px 6px 0;
-    margin: 1.2rem 0;
-    font-size: 0.93rem;
+    padding: 1rem 1.25rem 1rem 2.5rem;
+    margin: 1rem 0;
   }
-  blockquote.intro  { border-color: #8b7355; background: #faf6ef; }
-  blockquote.info   { border-color: #4a90d9; background: #f0f6ff; }
-  blockquote.warning{ border-color: #e07b39; background: #fff7f0; }
-  blockquote.success{ border-color: #5a9e6f; background: #f0faf4; }
-  blockquote p, blockquote li { margin: 0.3rem 0; }
+  .flow li { margin: 0.4rem 0; line-height: 1.5; }
 
-  .prompt-box {
-    background: #f5f1ea;
-    border: 1px solid #e0d8cc;
-    border-radius: 6px;
-    padding: 0.8rem 1rem;
-    margin: 0.7rem 0 1rem;
-    position: relative;
+  /* blockquote 변형 */
+  blockquote.intro,
+  blockquote.warning,
+  blockquote.info,
+  blockquote.success {
+    padding: 0.8rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    color: var(--fg);
   }
-  .prompt-label {
-    font-size: 0.72rem;
-    color: #8b7355;
-    margin-bottom: 0.4rem;
-    font-family: monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+  blockquote.intro   { background: #f5f0e8; border-left-color: var(--accent); }
+  blockquote.warning { background: #fef6e7; border-left-color: #d6a13a; }
+  blockquote.info    { background: #f0f4f7; border-left-color: #6b8aa3; font-size: 0.94rem; }
+  blockquote.success { background: #eaf3ea; border-left-color: #5a8a5a; }
+
+  /* OS 분기 details */
+  .os-alt {
+    background: #faf8f2;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .os-alt > summary {
+    cursor: pointer;
     font-weight: 600;
+    color: var(--accent);
+    font-size: 0.95rem;
+  }
+  .os-alt[open] > summary { margin-bottom: 0.6rem; }
+
+  /* 복사용 프롬프트 박스 */
+  .prompt-box {
+    background: #f5f0e8;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
   }
   .prompt-box pre {
     margin: 0;
-    background: transparent;
-    padding: 0;
-    color: #2c2c2c;
-    font-size: 0.88rem;
-    border: none;
-  }
-  .prompt-box code {
-    background: transparent;
-    color: inherit;
-    font-size: inherit;
+    background: rgba(255, 255, 255, 0.7);
   }
 
-  /* 일반 pre 코드블록도 미색으로 통일 */
-  pre {
-    background: #f5f1ea;
-    border: 1px solid #e0d8cc;
-    border-radius: 6px;
-    padding: 0.8rem 1rem;
-    overflow-x: auto;
-    font-size: 0.88rem;
-    color: #2c2c2c;
-    position: relative;
+  .prompt-label {
+    margin: 0 0 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  /* 표 */
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.7rem 0; }
+  th, td { border: 1px solid var(--line); padding: 0.4rem 0.7rem; text-align: left; }
+  th { background: #f5f0e8; font-weight: 600; }
+
+  .hint {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
   }
 
   /* 복사 버튼 */
-  .copy-btn {
+  .page-body pre { position: relative; }
+  .page-body :global(.copy-btn) {
     position: absolute;
-    top: 0.4rem;
-    right: 0.4rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.2rem 0.6rem;
     font-size: 0.72rem;
-    padding: 0.2rem 0.55rem;
-    border: 1px solid #c8bfb0;
+    background: rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-    background: #ede8df;
-    color: #6b5a44;
     cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s;
+    color: inherit;
+    font-family: inherit;
   }
-  .copy-btn:hover { background: #e0d8cc; }
+  .page-body :global(pre:hover .copy-btn) { opacity: 1; }
+  .page-body :global(.copy-btn.copied) {
+    background: rgba(0, 160, 80, 0.12);
+    border-color: rgba(0, 160, 80, 0.3);
+    color: #0a7a40;
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .page-body h2 { padding-top: 1.5rem; margin-top: 2rem; }
+  }
 </style>
