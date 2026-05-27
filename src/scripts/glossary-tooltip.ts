@@ -54,6 +54,22 @@ export const glossaryTerms: GlossaryTerm[] = [
   { regex: /\bClaude\b/g, tip: 'Anthropic이 만든 AI. 자연어로 대화하면서 작업을 함께 진행' },
   { regex: /\bbkit\b/g, tip: 'Claude Code에 끼우는 플러그인. 새 스킬을 잔뜩 추가해서 작업을 체계적으로 잡아줌' },
 
+  // === AI 개념 (긴 이름부터) ===
+  { regex: /컨텍스트 윈도우/g, tip: 'AI가 한 대화에서 기억할 수 있는 최대 양. 이 한계를 넘으면 오래된 내용부터 잊어버림' },
+  { regex: /컨텍스트 엔지니어링/g, tip: 'AI가 일하는 환경 자체를 설계하는 것. 매번 설명하는 대신 CLAUDE.md 같은 파일로 환경이 대신 설명해주게 만드는 것' },
+  { regex: /인터뷰 방식/g, tip: 'AI한테 바로 만들지 말고 먼저 질문해달라고 요청하는 프롬프트 방법. 빠진 정보를 AI가 직접 물어봐서 채워줌' },
+  { regex: /하네스 엔지니어링/g, tip: 'AI 에이전트가 일하는 환경 전체를 설계하는 것. 여러 AI가 협업하는 멀티 에이전트 시스템을 만들 때 필요' },
+  { regex: /리버스 엔지니어링/g, tip: '결과물을 보고 거꾸로 "어떻게 만들었지?"를 뽑아내는 것. AI로 만든 결과물에서 프롬프트를 역으로 추출할 때 씀' },
+  { regex: /멀티 에이전트/g, tip: '여러 AI가 각자 역할을 나눠서 팀처럼 협업하는 구조' },
+  { regex: /\bCLAUDE\.md\b/g, tip: 'Claude가 대화 시작 전에 먼저 읽는 지침 파일. 글로벌(모든 프로젝트)과 로컬(이 프로젝트만) 두 종류' },
+  { regex: /\bFew-shot\b/g, tip: '말로 설명하는 대신 예시를 직접 보여주며 AI에게 시키는 방법. "이런 형식으로 해줘 (예시)"' },
+  { regex: /\bPlan mode\b/g, tip: 'Claude Code의 모드. 실행하기 전에 계획만 먼저 보여주고 승인을 받는 방식' },
+  { regex: /\bMVP\b/g, tip: '핵심 기능만 담은 첫 번째 버전. "일단 가장 중요한 것만 만들자"는 개념' },
+  { regex: /\bPRD\b/g, tip: '제품 기획서. MVP를 구체화해서 "무엇을, 왜, 어떻게 만들 건지" 정리한 문서' },
+  { regex: /\bLLM\b/g, tip: '대형 언어 모델. 엄청난 양의 텍스트를 학습해서 다음에 올 말을 예측하는 방식으로 동작하는 AI' },
+  { regex: /환각/g, tip: 'AI가 없는 사실을 자신 있게 말하는 현상. LLM은 정답을 찾는 게 아니라 그럴듯한 말을 생성하기 때문에 생김' },
+  { regex: /커맨드/g, tip: '스킬을 /daily처럼 짧게 호출하는 단축키. .claude/commands/ 폴더에 파일 하나 = 커맨드 하나' },
+
   // === AI 관련 ===
   { regex: /\bAI\b/g, tip: '사람처럼 대화하고 일도 해주는 똑똑한 컴퓨터 프로그램. ChatGPT·Claude·Gemini 같은 게 모두 AI' },
   { regex: /\bAnthropic\b/g, tip: 'Claude를 만든 회사. ChatGPT를 만든 OpenAI랑 같은 위치의 AI 회사' },
