@@ -29,12 +29,14 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>좋아요. 아이디어 잡기부터 배포까지, 실제 작업 흐름 순서로 만들어드릴게요.</p>
+      <p>좋아요. PDCA 흐름으로 만들어드릴게요 — 계획(Plan) → 실행(Do) → 점검(Check) → 마무리(Act) 순서로요.</p>
     </div>
 
     <p>지금 이 페이지가 그 결과예요. 이 프롬프트를 어떻게 뽑았는지는 마지막 장면에서 볼 수 있어요.</p>
 
     <hr />
+
+    <h2 class="pdca-label plan">Plan — 계획하기</h2>
 
     <h2>장면 1. 아이디어 잡기</h2>
 
@@ -52,7 +54,12 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>이거 바탕으로 계획서 만들어줘.</p>
+      <p>이거 바탕으로 계획서 만들어줘. 바로 작업하지 말고 Plan mode로 계획만 먼저 보여줘.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>(Plan mode) 이렇게 진행할 예정이에요. ① 기본 레이아웃 ② 날짜별 글 목록 ③ 글 작성 페이지. 진행할까요?</p>
     </div>
 
     <p>계획서가 나왔어요. 3번 기능이 마음에 안 들어요.</p>
@@ -62,9 +69,21 @@ import Base from '../../layouts/Base.astro';
       <p>3번은 별론데, 이 방향으로 바꿔줘.</p>
     </div>
 
-    <p>이게 <strong>프롬프트</strong>예요. 막연하게 시키면 막연한 결과가 나와요. AI가 먼저 물어보게 하는 게 <strong>인터뷰 방식</strong>, 예시를 보여주며 시키는 게 <strong>Few-shot 프롬프트</strong>. → <a href="/onboarding/glossary/">용어 정리</a></p>
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>수정했어요. 이대로 진행할까요?</p>
+    </div>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>응, 진행해줘.</p>
+    </div>
+
+    <p>이게 <strong>프롬프트</strong>예요. 막연하게 시키면 막연한 결과가 나와요. AI가 먼저 물어보게 하는 게 <strong>인터뷰 방식</strong>, 예시를 보여주며 시키는 게 <strong>Few-shot 프롬프트</strong>. <strong>Plan mode</strong>는 실행 전에 계획만 먼저 보여주는 모드예요. → <a href="/onboarding/glossary/">용어 정리</a></p>
 
     <hr />
+
+    <h2 class="pdca-label do">Do — 실행하기</h2>
 
     <h2>장면 2. 오픈소스 찾기</h2>
 
@@ -116,17 +135,12 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>이 레포 설명서예요. "이 코드가 뭔지, 어떻게 쓰는지" 적혀 있어요. <strong>마크다운</strong> 형식으로 쓰여 있어서 .md 확장자예요. # 으로 제목, **굵게** 같은 기호로 서식을 표현하는 텍스트 형식이에요.</p>
+      <p>이 레포 설명서예요. <strong>마크다운</strong> 형식으로 쓰여 있어서 .md 확장자예요. # 으로 제목, **굵게** 같은 기호로 서식을 표현하는 텍스트 형식이에요.</p>
     </div>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>이 레포 어떤 구조인지 분석해서 쉽게 설명해줘.</p>
-    </div>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>아까 내 계획에 맞춰서 이 레포 어떻게 활용할지 알려줘.</p>
+      <p>이 레포 구조 분석해서 쉽게 설명해줘. 아까 내 계획에 맞춰서 어떻게 활용할지도 알려줘.</p>
     </div>
 
     <p>오픈소스 쓸 때 <strong>라이선스</strong>도 확인해야 해요. <strong>MIT 라이선스</strong>가 가장 자유로워요. → <a href="/onboarding/glossary/">라이선스 종류</a></p>
@@ -153,13 +167,6 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>(매번) 나는 비개발자야. 어려운 용어 쉽게 설명해줘. 반말로 해줘.</p>
-    </div>
-
-    <p>매번 입력하는 게 귀찮아졌어요. 이걸 한 번만 써두면 안 될까요?</p>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
       <p>글로벌 CLAUDE.md 만들어줘. 나는 비개발자야, 어려운 용어 쉽게 설명해줘, 반말로 해줘 — 이 내용으로.</p>
     </div>
 
@@ -168,11 +175,9 @@ import Base from '../../layouts/Base.astro';
       <p>홈 폴더에 CLAUDE.md 만들었어요. 앞으로 모든 프로젝트에서 이 파일을 먼저 읽을게요.</p>
     </div>
 
-    <p>이번엔 이 프로젝트에만 쓸 지침도 만들었어요.</p>
-
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>로컬 CLAUDE.md 만들어줘. 내가 명시적으로 요청하지 않으면 파일 함부로 삭제하지 말고, 디자인 바꿀 땐 한 번에 다 바꾸지 말고 하나씩 확인받으면서 해줘.</p>
+      <p>로컬 CLAUDE.md도 만들어줘. 내가 명시적으로 요청하지 않으면 파일 함부로 삭제하지 말고, 디자인 바꿀 땐 하나씩 확인받으면서 해줘.</p>
     </div>
 
     <div class="dialogue ai-says">
@@ -184,9 +189,45 @@ import Base from '../../layouts/Base.astro';
 
     <hr />
 
-    <h2>장면 5. 뭔가 잘못됐다</h2>
+    <h2 class="pdca-label check">Check — 점검하기</h2>
 
-    <p>버튼 색깔을 바꿨더니 사이트가 하얗게 됐어요. 터미널에 빨간 글씨가 잔뜩 나와요. 민지가 드래그해서 복사했어요.</p>
+    <h2>장면 5. 계획대로 됐는지 확인</h2>
+
+    <p>어느 정도 작업이 됐어요. 로컬에서 확인해봐요.</p>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>로컬 서버 띄워서 확인할 수 있게 해줘.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>(로컬 서버 실행) 브라우저에서 <code>http://localhost:4321</code> 열어보세요.</p>
+    </div>
+
+    <p>민지가 브라우저를 열었어요. 잘 나와요. 그런데 계획서랑 비교해보니 빠진 게 있어요.</p>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>계획서 2번 항목이 아직 안 된 것 같아. 맞아?</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>맞아요. 날짜별 필터링 기능이 빠져 있어요. 지금 추가할까요?</p>
+    </div>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>응, 추가해줘. 근데 버튼 색깔을 바꿨더니 화면이 하얗게 됐어.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>오류 메시지 있으면 복사해서 붙여넣어줘요.</p>
+    </div>
+
+    <p>터미널에 빨간 글씨가 잔뜩 나와요. 민지가 드래그해서 복사했어요.</p>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
@@ -224,27 +265,9 @@ import Base from '../../layouts/Base.astro';
 
     <p>원래대로 돌아왔어요. 이게 <strong>Git</strong>이에요 — 저장 포인트(<strong>커밋</strong>)를 만들어두면 언제든 돌아갈 수 있어요. 원본은 두고 복사본에서 실험하는 게 <strong>브랜치</strong>예요. → <a href="/onboarding/glossary/">Git 더 알아보기</a></p>
 
-    <hr />
-
-    <h2>장면 6. 로컬에서 먼저 확인</h2>
-
-    <p>어느 정도 됐어요. 올리기 전에 내 컴퓨터에서 먼저 확인해요.</p>
-
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>로컬 서버 띄워서 확인할 수 있게 해줘.</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>(로컬 서버 실행) 브라우저에서 <code>http://localhost:4321</code> 열어보세요.</p>
-    </div>
-
-    <p>민지가 브라우저를 열었어요. 잘 나와요.</p>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>확인했어. 서버 꺼줘.</p>
+      <p>확인 끝났어. 서버 꺼줘.</p>
     </div>
 
     <div class="dialogue ai-says">
@@ -256,7 +279,23 @@ import Base from '../../layouts/Base.astro';
 
     <hr />
 
-    <h2>장면 7. 이제 올려보자</h2>
+    <h2 class="pdca-label act">Act — 마무리하기</h2>
+
+    <h2>장면 6. 계획 업데이트하고 배포</h2>
+
+    <p>점검이 끝났어요. 배포 전에 계획서를 현실에 맞게 업데이트해요.</p>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>작업하면서 바뀐 내용이 있어. 계획서 업데이트해줘.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>3번 기능 변경사항이랑 추가된 필터링 기능 반영했어요.</p>
+    </div>
+
+    <p>이제 올려볼게요.</p>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
@@ -265,7 +304,7 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>지금까지 변경사항 커밋하고 GitHub에 푸시하면 돼요. 커밋 메시지는 뭐로 할까요?</p>
+      <p>변경사항 커밋하고 GitHub에 푸시하면 돼요. 커밋 메시지는 뭐로 할까요?</p>
     </div>
 
     <div class="dialogue">
@@ -289,7 +328,7 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p><strong>배포</strong> 됐어요. 이제 이 주소로 누구나 볼 수 있어요. 앞으로는 작업 → 커밋 → 푸시하면 나머지는 자동이에요.</p>
+      <p><strong>배포</strong>됐어요. 이제 이 주소로 누구나 볼 수 있어요. 앞으로는 작업 → 커밋 → 푸시하면 나머지는 자동이에요.</p>
     </div>
 
     <div class="flow">
@@ -304,6 +343,24 @@ import Base from '../../layouts/Base.astro';
 
     <hr />
 
+    <h2>장면 7. 사례글 쓰기</h2>
+
+    <p>배포까지 끝났어요. 이 과정을 사례글로 남겨요.</p>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>지금까지 작업한 과정이랑 배운 것들을 사례글로 써줘. 회의록이랑 dev log 참고해서.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>회의록이랑 dev log 보니까 오픈소스 찾는 과정에서 환각 문제 겪은 것, CLAUDE.md로 해결한 것, CSS 오류 되돌린 것이 인상적인 포인트네요. 이걸 중심으로 써볼게요.</p>
+    </div>
+
+    <p>사례글이 나왔어요. 이게 PDCA 한 사이클이에요 — 계획하고, 실행하고, 점검하고, 마무리하는 것. 다음 작업은 이 사이클을 다시 돌리면 돼요.</p>
+
+    <hr />
+
     <h2>장면 8. 반복이 귀찮아졌다</h2>
 
     <p>매일 일간 회고 쓸 때마다 민지는 같은 말을 입력해요.</p>
@@ -315,22 +372,22 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>이거 매번 입력하기 귀찮아. 짧게 줄일 수 없어?</p>
+      <p>이거 매번 입력하기 귀찮아. 앞으로 계속 반복될 작업이나 스킬로 만들기 좋은 작업은 스킬로 만들어줘.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>스킬로 만들 수 있어요. 앞으로 반복될 작업이나 스킬로 만들기 좋은 작업 있으면 말해줘요.</p>
+      <p>일간 회고 스킬 만들었어요. 커맨드도 만들어드릴게요. <code>/daily</code> 치면 바로 실행돼요.</p>
     </div>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>이 일간 회고 작업 스킬로 만들어줘. 그리고 커맨드도 만들어줘. /daily 치면 바로 실행되게.</p>
+      <p>커맨드도 만들어줘. /daily 치면 실행되게.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>스킬 만들었어요. <code>.claude/commands/daily.md</code>에 커맨드도 등록했어요. 이제 <code>/daily</code> 치면 바로 실행돼요.</p>
+      <p><code>.claude/commands/daily.md</code>에 등록했어요.</p>
     </div>
 
     <p>이게 <strong>스킬</strong>이에요. Claude가 특정 작업을 수행하는 방법을 정의한 것. <strong>커맨드(슬래시 명령어)</strong>는 그 스킬을 <code>/daily</code>처럼 짧게 호출하는 단축키예요. 다른 사람이 만들어둔 스킬 묶음을 받아서 쓸 수도 있어요. → <a href="/setup/bkit/">bkit 설치</a></p>
@@ -371,7 +428,7 @@ import Base from '../../layouts/Base.astro';
 - 각 장면에서 [주인공]과 Claude가 실제로 대화하는 모습을 보여줘
 - 개념 설명은 그 흐름 속에서 자연스럽게 등장하게 해줘
 - 줄글 설명은 최소화하고, 웬만하면 대화로 묘사해줘
-- 장면 순서는 실제 작업 흐름(시작→문제→해결→완성) 순으로</code></pre>
+- 장면 순서는 PDCA 흐름(계획→실행→점검→마무리) 순으로</code></pre>
     </div>
 
     <p>대괄호 안만 바꾸면 다른 주제도 똑같이 만들 수 있어요. 이게 <strong>리버스 엔지니어링</strong>이에요 — 결과물을 보고 거꾸로 "어떻게 만들었지?"를 뽑아내는 것. AI 잘 쓰는 사람들이 자주 쓰는 방법이에요.</p>
@@ -384,14 +441,14 @@ import Base from '../../layouts/Base.astro';
         <thead><tr><th>장면</th><th>개념</th></tr></thead>
         <tbody>
           <tr><td>프롤로그</td><td>AI를 학습 메이트로 쓰기</td></tr>
-          <tr><td>장면 1</td><td>프롬프트, 인터뷰 방식, Few-shot</td></tr>
-          <tr><td>장면 2</td><td>환각, LLM, 오픈소스, 레포</td></tr>
-          <tr><td>장면 3</td><td>포크, 클론, 마크다운, 라이선스</td></tr>
-          <tr><td>장면 4</td><td>컨텍스트 윈도우, 컨텍스트, CLAUDE.md, 컨텍스트 엔지니어링</td></tr>
-          <tr><td>장면 5</td><td>Git, 커밋, 브랜치</td></tr>
-          <tr><td>장면 6</td><td>로컬, 로컬 서버</td></tr>
-          <tr><td>장면 7</td><td>푸시, 빌드, 배포</td></tr>
-          <tr><td>장면 8</td><td>스킬, hook, AI 에이전트, 멀티 에이전트, 하네스 엔지니어링</td></tr>
+          <tr><td>Plan — 장면 1</td><td>프롬프트, 인터뷰 방식, Few-shot, Plan mode</td></tr>
+          <tr><td>Do — 장면 2</td><td>환각, LLM, 오픈소스, 레포</td></tr>
+          <tr><td>Do — 장면 3</td><td>포크, 클론, 마크다운, 라이선스</td></tr>
+          <tr><td>Do — 장면 4</td><td>컨텍스트 윈도우, 컨텍스트, CLAUDE.md, 컨텍스트 엔지니어링</td></tr>
+          <tr><td>Check — 장면 5</td><td>로컬 서버, Git, 커밋, 브랜치</td></tr>
+          <tr><td>Act — 장면 6</td><td>계획 업데이트, 푸시, 빌드, 배포</td></tr>
+          <tr><td>Act — 장면 7</td><td>PDCA, 사례글</td></tr>
+          <tr><td>장면 8</td><td>스킬, 커맨드, hook, AI 에이전트, 멀티 에이전트, 하네스 엔지니어링</td></tr>
           <tr><td>에필로그</td><td>리버스 엔지니어링, 템플릿 프롬프트</td></tr>
         </tbody>
       </table>
@@ -417,6 +474,23 @@ import Base from '../../layouts/Base.astro';
     font-size: 0.97rem;
     line-height: 1.7;
   }
+
+  /* PDCA 라벨 */
+  .pdca-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+    margin-top: 2rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .pdca-label.plan  { background: #e8f0fe; color: #3b5bdb; }
+  .pdca-label.do    { background: #e6fcf5; color: #0ca678; }
+  .pdca-label.check { background: #fff3bf; color: #e67700; }
+  .pdca-label.act   { background: #ffe8e8; color: #c92a2a; }
 
   /* 대화 말풍선 */
   .dialogue {
