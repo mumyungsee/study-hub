@@ -320,20 +320,20 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>슬래시 명령어로 만들 수 있어요. <code>/daily</code> 치면 실행되게 해드릴게요.</p>
+      <p>스킬로 만들 수 있어요. 앞으로 반복될 작업이나 스킬로 만들기 좋은 작업 있으면 말해줘요.</p>
     </div>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>어떻게 만들어?</p>
+      <p>이 일간 회고 작업 스킬로 만들어줘. 그리고 커맨드도 만들어줘. /daily 치면 바로 실행되게.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p><code>.claude/commands/daily.md</code> 파일을 만들고 안에 지침을 쓰면 돼요. 파일 하나가 스킬 하나예요. 만들어드릴게요.</p>
+      <p>스킬 만들었어요. <code>.claude/commands/daily.md</code>에 커맨드도 등록했어요. 이제 <code>/daily</code> 치면 바로 실행돼요.</p>
     </div>
 
-    <p>이게 <strong>스킬(슬래시 명령어)</strong>이에요. 다른 사람이 만들어둔 스킬 묶음을 받아서 쓸 수도 있어요. → <a href="/setup/bkit/">bkit 설치</a></p>
+    <p>이게 <strong>스킬</strong>이에요. Claude가 특정 작업을 수행하는 방법을 정의한 것. <strong>커맨드(슬래시 명령어)</strong>는 그 스킬을 <code>/daily</code>처럼 짧게 호출하는 단축키예요. 다른 사람이 만들어둔 스킬 묶음을 받아서 쓸 수도 있어요. → <a href="/setup/bkit/">bkit 설치</a></p>
 
     <p><strong>hook</strong>은 한 발 더 — "파일 저장하면 자동으로 맞춤법 검사"처럼 어떤 일이 일어났을 때 다른 동작이 따라오게 연결하는 거예요.</p>
 
