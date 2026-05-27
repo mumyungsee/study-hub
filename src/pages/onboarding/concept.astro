@@ -353,25 +353,7 @@ import Base from '../../layouts/Base.astro';
 
     <hr />
 
-    <h2>장면 7. 사례글 쓰기</h2>
-
-    <p>배포까지 끝났어요. 이 과정을 사례글로 남겨요.</p>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>지금까지 작업한 과정이랑 배운 것들을 사례글로 써줘. 회의록이랑 dev log 참고해서.</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>회의록이랑 dev log 보니까 오픈소스 찾는 과정에서 환각 문제 겪은 것, CLAUDE.md로 해결한 것, CSS 오류 되돌린 것이 인상적인 포인트네요. 이걸 중심으로 써볼게요.</p>
-    </div>
-
-    <p>사례글이 나왔어요. 이게 PDCA 한 사이클이에요 — 계획하고, 실행하고, 점검하고, 마무리하는 것. 다음 작업은 이 사이클을 다시 돌리면 돼요.</p>
-
-    <hr />
-
-    <h2>장면 8. 반복이 귀찮아졌다</h2>
+    <h2>장면 7. 반복이 귀찮아졌다</h2>
 
     <p>매일 일간 회고 쓸 때마다 민지는 같은 말을 입력해요.</p>
 
@@ -387,17 +369,7 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>일간 회고 스킬 만들었어요. 커맨드도 만들어드릴게요. <code>/daily</code> 치면 바로 실행돼요.</p>
-    </div>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>커맨드도 만들어줘. /daily 치면 실행되게.</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p><code>.claude/commands/daily.md</code>에 등록했어요.</p>
+      <p>일간 회고 스킬 만들었어요. 커맨드도 등록했어요. <code>/daily</code> 치면 바로 실행돼요.</p>
     </div>
 
     <p>이게 <strong>스킬</strong>이에요. Claude가 특정 작업을 수행하는 방법을 정의한 것. <strong>커맨드(슬래시 명령어)</strong>는 그 스킬을 <code>/daily</code>처럼 짧게 호출하는 단축키예요. 다른 사람이 만들어둔 스킬 묶음을 받아서 쓸 수도 있어요. → <a href="/setup/bkit/">bkit 설치</a></p>
@@ -409,6 +381,36 @@ import Base from '../../layouts/Base.astro';
     <blockquote class="info">
       <p>지금 당장 목표는 아니에요. 바이브코딩이 익숙해지면 그쪽으로 가는 길이 자연스럽게 열려요.</p>
     </blockquote>
+
+    <hr />
+
+    <h2>장면 8. 사례글 쓰기</h2>
+
+    <p>배포까지 끝났어요. 이 과정을 사례글로 남겨요.</p>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>지금까지 작업한 과정이랑 배운 것들을 사례글로 써줘. 회의록이랑 dev log 참고해서. 쓰기 전에 나한테 인터뷰 먼저 해줘.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>몇 가지 물어볼게요. 이번 작업에서 가장 힘들었던 게 뭐예요? 예상 못 했던 부분이 있었나요?</p>
+    </div>
+
+    <p>민지가 답해요. 몇 번 주고받고 나서—</p>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>이걸 바탕으로 사례글 써줘.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>인터뷰 내용이랑 dev log 보니까 오픈소스 환각 문제, CLAUDE.md로 해결한 것, CSS 오류 되돌린 것이 인상적인 포인트네요. 이걸 중심으로 써볼게요.</p>
+    </div>
+
+    <p>사례글이 나왔어요. 이게 PDCA 한 사이클이에요 — 계획하고, 실행하고, 점검하고, 마무리하는 것. 다음 작업은 이 사이클을 다시 돌리면 돼요.</p>
 
     <hr />
 
@@ -457,8 +459,8 @@ import Base from '../../layouts/Base.astro';
           <tr><td>Do — 장면 4</td><td>컨텍스트 윈도우, 컨텍스트, CLAUDE.md, 컨텍스트 엔지니어링</td></tr>
           <tr><td>Check — 장면 5</td><td>로컬 서버, Git, 커밋, 브랜치</td></tr>
           <tr><td>Act — 장면 6</td><td>계획 업데이트, 푸시, 빌드, 배포</td></tr>
-          <tr><td>Act — 장면 7</td><td>PDCA, 사례글</td></tr>
-          <tr><td>장면 8</td><td>스킬, 커맨드, hook, AI 에이전트, 멀티 에이전트, 하네스 엔지니어링</td></tr>
+          <tr><td>Act — 장면 7</td><td>스킬, 커맨드, hook, AI 에이전트, 멀티 에이전트, 하네스 엔지니어링</td></tr>
+          <tr><td>장면 8</td><td>PDCA, 사례글</td></tr>
           <tr><td>에필로그</td><td>리버스 엔지니어링, 템플릿 프롬프트</td></tr>
         </tbody>
       </table>
