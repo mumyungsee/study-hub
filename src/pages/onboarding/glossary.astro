@@ -117,6 +117,19 @@ import Base from '../../layouts/Base.astro';
 
     <div class="term simple">
       <div class="term-body">
+        <h3>README.md <span class="pron">리드미 점 엠디</span></h3>
+        <p class="oneline">레포의 첫 페이지 설명서. 마크다운으로 작성돼요</p>
+        <p class="detail">
+          레포를 클론하면 보통 제일 먼저 보이는 파일이에요.
+          "이 프로젝트가 뭔지, 어떻게 쓰는지"를 설명해요.
+          GitHub에서 자동으로 예쁘게 렌더링돼서 보여줘요.
+          마크다운(<code>.md</code>) 형식이라 <code>#</code>으로 제목, <code>**굵게**</code>처럼 기호로 서식을 표현해요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
         <h3>CLAUDE.md <span class="pron">클로드 점 엠디</span></h3>
         <p class="oneline">Claude Code한테 미리 알려주는 "설명서" 파일</p>
         <p class="detail">
@@ -266,6 +279,72 @@ import Base from '../../layouts/Base.astro';
           <strong>Plan</strong>(계획) → <strong>Do</strong>(실행) → <strong>Check</strong>(점검) → <strong>Act</strong>(개선) 네 단계 사이클이에요.
           원래는 제조업·경영에서 쓰던 개념인데, bkit이 이걸 가져와서 AI 작업에 적용했어요.
           그래서 bkit의 핵심 명령어가 <code>/pdca plan</code>, <code>/pdca analyze</code> 같은 형태로 되어 있어요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>회의록</h3>
+        <p class="oneline">대화에서 나온 결정사항을 정리한 문서</p>
+        <p class="detail">
+          아이디어 잡기 대화가 끝나고 "지금까지 나눈 대화로 회의록 만들어줘"라고 하면
+          Claude가 핵심 내용만 정리해줘요. 다음 작업 때 맥락을 빠르게 복원하는 데 유용해요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>dev log <span class="pron">개발 일지</span></h3>
+        <p class="oneline">작업 중 결정사항·막혔던 것·해결법을 기록하는 일지</p>
+        <p class="detail">
+          작업이 끝날 때 "지금까지 대화한 거 바탕으로 dev log 작성해줘"라고 하면
+          Claude가 자동으로 정리해줘요. 사례글 쓸 때나 다음 작업 시작할 때 참고해요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>로컬 서버</h3>
+        <p class="oneline">내 컴퓨터 안에서만 돌아가는 미리보기 서버</p>
+        <p class="detail">
+          "로컬 서버 띄워줘"라고 하면 브라우저에서 <code>localhost:4321</code> 같은 주소로 미리볼 수 있어요.
+          인터넷엔 공개 안 된 상태라 나만 볼 수 있어요. 배포 전에 확인할 때 써요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>롤백 <span class="pron">Rollback</span></h3>
+        <p class="oneline">이전 상태로 되돌리는 것</p>
+        <p class="detail">
+          Git에서는 커밋 히스토리(<code>git log</code>)를 보고 원하는 시점으로 되돌릴 수 있어요.
+          "잘 되던 상태로 돌아가줘"라고 하면 Claude가 처리해줘요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>git log</h3>
+        <p class="oneline">지금까지 찍은 커밋 목록을 보여주는 Git 명령어</p>
+        <p class="detail">
+          "어디서 어디로 돌아가는지 먼저 보여줘"라고 하면 Claude가 git log를 실행해
+          커밋 히스토리를 보여줘요. 어느 시점으로 롤백할지 고를 수 있어요.
+        </p>
+      </div>
+    </div>
+
+    <div class="term simple">
+      <div class="term-body">
+        <h3>사례글</h3>
+        <p class="oneline">작업 과정과 배운 점을 정리한 글</p>
+        <p class="detail">
+          작업이 끝난 뒤 dev log를 참고해서 Claude와 인터뷰하며 써요.
+          내가 겪은 시행착오와 해결 과정을 담아서 다른 사람과 나눌 수 있어요.
         </p>
       </div>
     </div>

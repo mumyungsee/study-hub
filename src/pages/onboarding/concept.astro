@@ -7,8 +7,8 @@ import Base from '../../layouts/Base.astro';
     <h1>개념 정리 — 바이브코딩 세계</h1>
 
     <blockquote class="intro">
-      <p><strong>따라하기가 아니에요.</strong> 챗봇만 써본 민지가 일상 기록 웹사이트를 만들어가는 이야기예요. 그 흐름 속에서 바이브코딩에 필요한 개념들이 자연스럽게 등장해요.</p>
-      <p class="muted" style="margin-top:0.4rem; font-size:0.85rem;">굵게 표시된 단어에 마우스를 올리면 짧은 설명이 나와요. → <a href="/onboarding/glossary/">용어 정리</a></p>
+      <p>민지가 웹사이트를 만들어가는 시나리오로 바이브코딩 개념을 설명해요.</p>
+      <p class="muted" style="margin-top:0.3rem; font-size:0.85rem;">점선 단어에 마우스를 올리면 툴팁이 나오고, 자세한 설명은 링크로 연결돼요.</p>
     </blockquote>
 
     <hr />
@@ -17,15 +17,10 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>나는 바이브코딩을 처음 배우는 비개발자야. 바이브코딩을 하면서 만나게 되는 주요 개념들을 설명하는 페이지를 만들어줘. 딱딱한 용어 설명 말고, 비개발자인 민지가 일상 기록 웹사이트를 처음 만들어가는 시나리오 형식으로. 각 장면에서 민지와 Claude가 실제로 대화하는 모습을 보여주고, 그 흐름 속에서 개념이 자연스럽게 등장하게 해줘. 줄글 설명은 최소화하고, 웬만하면 대화로 묘사해줘.</p>
+      <p>나는 바이브코딩을 처음 배우는 비개발자야. 바이브코딩을 하면서 만나게 되는 주요 개념들을 설명하는 페이지를 만들어줘. 딱딱한 용어 설명 말고, 비개발자인 민지가 일상 기록 웹사이트를 처음 만들어가는 시나리오 형식으로.</p>
     </div>
 
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>좋아요. Plan → Do → Check → Act 흐름으로 만들게요.</p>
-    </div>
-
-    <p>지금 이 페이지가 그 결과예요. 이 프롬프트를 어떻게 뽑았는지는 마지막 장면에서 볼 수 있어요.</p>
+    <p>지금 이 페이지가 그 결과예요. 이 프롬프트를 어떻게 뽑았는지는 마지막에서 볼 수 있어요.</p>
 
     <hr />
 
@@ -45,6 +40,17 @@ import Base from '../../layouts/Base.astro';
       <p>지금까지 나눈 대화로 회의록 만들어줘.</p>
     </div>
 
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>회의록 만들었어요. 방향이 정리됐으니 다음 단계로 가볼까요?</p>
+    </div>
+
+    <p>막연하게 시키면 막연한 결과가 나와요. AI가 먼저 물어보게 하는 게 <strong>인터뷰 방식</strong>이에요. → <a href="/tutorial/appendix-04-prompting">부록 B. 프롬프트 잘 쓰는 법</a></p>
+
+    <hr />
+
+    <h2>장면 2. 계획 세우기</h2>
+
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
       <p>일단 간단하게 MVP만 먼저 만들어보고 싶어. MVP 기준으로 PRD 작성해줘.</p>
@@ -52,12 +58,12 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>MVP는 핵심 기능만 담은 첫 번째 버전이에요. PRD는 그걸 구체화한 기획서고요. 작성할게요.</p>
+      <p><strong>MVP</strong>는 핵심 기능만 담은 첫 번째 버전이에요. <strong>PRD</strong>는 그걸 구체화한 기획서고요. 작성할게요.</p>
     </div>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>이거 바탕으로 계획서 만들어줘. 바로 작업하지 말고 Plan mode로 계획만 먼저 보여줘.</p>
+      <p>이거 바탕으로 계획서 만들어줘. 바로 작업하지 말고 <strong>Plan mode</strong>로 계획만 먼저 보여줘.</p>
     </div>
 
     <div class="dialogue ai-says">
@@ -82,13 +88,11 @@ import Base from '../../layouts/Base.astro';
       <p>응, 진행해줘.</p>
     </div>
 
-    <p>이게 <strong>프롬프트</strong>예요. 막연하게 시키면 막연한 결과가 나와요. AI가 먼저 물어보게 하는 게 <strong>인터뷰 방식</strong>, 예시를 보여주며 시키는 게 <strong>Few-shot 프롬프트</strong>. <strong>Plan mode</strong>는 실행 전에 계획만 먼저 보여주는 모드예요. → <a href="/onboarding/glossary/">용어 정리</a></p>
-
     <hr />
 
     <h2 class="pdca-label do">Do — 실행하기</h2>
 
-    <h2>장면 2. 오픈소스 찾기</h2>
+    <h2>장면 3. 오픈소스 찾기</h2>
 
     <p>달력 기능이 필요한데 처음부터 만들긴 복잡해요.</p>
 
@@ -109,13 +113,13 @@ import Base from '../../layouts/Base.astro';
       <p>이거 없던데? 인터넷에서 직접 찾아봐.</p>
     </div>
 
-    <p>이게 <strong>환각(Hallucination)</strong>이에요. AI는 그럴듯한 말을 생성하는 <strong>LLM</strong>이라서 없는 정보를 자신 있게 말하기도 해요. 중요한 건 직접 확인하거나 "인터넷에서 찾아봐"라고 시키면 돼요. → <a href="/onboarding/glossary/">용어 정리</a></p>
+    <p>이게 <strong>환각</strong>이에요 — AI가 없는 정보를 자신 있게 말하는 것. 중요한 건 직접 확인하거나 "인터넷에서 찾아봐"라고 시키면 돼요.</p>
 
-    <p>Claude가 검색해서 몇 가지를 가져왔어요. 민지가 하나를 골랐어요. 전 세계 개발자들이 무료로 공개한 코드 묶음이 <strong>오픈소스</strong>, 그 하나하나를 <strong>레포(Repository)</strong>라고 해요.</p>
+    <p>Claude가 검색해서 몇 가지를 가져왔어요. 민지가 하나를 골랐어요.</p>
 
     <hr />
 
-    <h2>장면 3. 레포 가져오기</h2>
+    <h2>장면 4. 레포 가져오기</h2>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
@@ -124,79 +128,41 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>두 단계예요. 먼저 GitHub에서 Fork 버튼 눌러서 민지 계정으로 복사하고, 그다음 터미널에서 clone 명령어로 내 컴퓨터에 내려받으면 돼요.</p>
+      <p>두 단계예요. GitHub에서 <strong>Fork</strong> 버튼 눌러서 내 계정으로 복사하고, 터미널에서 <strong>clone</strong>으로 내려받으면 돼요.</p>
     </div>
 
-    <p><strong>포크(Fork)</strong> — 남의 레포를 내 GitHub 계정으로 복사. <strong>클론(Clone)</strong> — 그걸 내 컴퓨터로 내려받기. → <a href="/onboarding/glossary/">용어 정리</a></p>
-
-    <p>레포를 가져왔어요. 파일 탐색기에 <code>README.md</code>가 보여요.</p>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>이 README.md 파일이 뭐야?</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>이 레포 설명서예요. <strong>마크다운</strong> 형식으로 쓰여 있어서 .md 확장자예요. # 으로 제목, **굵게** 같은 기호로 서식을 표현하는 텍스트 형식이에요.</p>
-    </div>
+    <p>레포를 가져왔어요. 파일 탐색기에 README.md가 보여요 — 레포 설명서예요. <strong>마크다운</strong> 형식으로 쓰여 있어요. → <a href="/tutorial/appendix-06-markdown">부록 A. 마크다운이란</a></p>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
       <p>이 레포 구조 분석해서 쉽게 설명해줘. 아까 내 계획에 맞춰서 어떻게 활용할지도 알려줘.</p>
     </div>
 
-    <p>오픈소스 쓸 때 <strong>라이선스</strong>도 확인해야 해요. <strong>MIT 라이선스</strong>가 가장 자유로워요. → <a href="/onboarding/glossary/">라이선스 종류</a></p>
+    <p class="term-links">→ <strong>포크</strong> · <strong>클론</strong> · <strong>마크다운</strong> · <strong>라이선스</strong> 용어 정리</p>
 
     <hr />
 
-    <h2>장면 4. 작업하다 보니</h2>
+    <h2>장면 5. 커밋하기</h2>
 
-    <p>한참 대화를 주고받다가—</p>
+    <p>작업이 어느 정도 됐어요. 지금 상태를 저장해둬요.</p>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>아까 말했던 색깔로 바꿔줘.</p>
+      <p>지금까지 한 거 저장해줘. "기본 레이아웃 완성"으로.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>어떤 색깔을 말씀하시는 건가요?</p>
+      <p>커밋했어요. 이 시점으로 언제든 돌아올 수 있어요.</p>
     </div>
 
-    <p>10번 전에 말했는데 잊어버렸어요. 이게 <strong>컨텍스트 윈도우</strong>예요. AI가 기억할 수 있는 양이 정해져 있거든요. 지금 기억하는 것 전체를 <strong>컨텍스트</strong>라고 해요. 새 주제로 넘어갈 땐 <code>/clear</code>로 비우고 시작해요.</p>
-
-    <p>매번 새 대화마다 같은 말을 반복하는 것도 문제예요.</p>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>글로벌 CLAUDE.md 만들어줘. 나는 비개발자야, 어려운 용어 쉽게 설명해줘, 반말로 해줘 — 이 내용으로.</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>홈 폴더에 CLAUDE.md 만들었어요. 앞으로 모든 프로젝트에서 이 파일을 먼저 읽을게요.</p>
-    </div>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>로컬 CLAUDE.md도 만들어줘. 내가 명시적으로 요청하지 않으면 파일 함부로 삭제하지 말고, 디자인 바꿀 땐 하나씩 확인받으면서 해줘.</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>이 프로젝트 폴더에 CLAUDE.md 만들었어요. 여기서 작업할 때만 이 지침이 적용돼요.</p>
-    </div>
-
-    <p><strong>글로벌 CLAUDE.md</strong>는 "나"에 대한 설정 — 모든 프로젝트에서 항상 적용돼요. <strong>로컬 CLAUDE.md</strong>는 "이 프로젝트"에 대한 설정 — 이 폴더에서만 적용돼요. 이게 <strong>컨텍스트 엔지니어링</strong>이에요 — 매번 설명하는 대신 환경이 설명해주는 것. → <a href="/onboarding/glossary/">더 알아보기</a></p>
+    <p>이게 <strong>커밋</strong>이에요 — 작업 중간중간 "여기까지 완성" 저장 포인트를 찍어두는 것. <strong>Git</strong>이 이걸 관리해줘요.</p>
 
     <hr />
 
     <h2 class="pdca-label check">Check — 점검하기</h2>
 
-    <h2>장면 5. 계획대로 됐는지 확인</h2>
-
-    <p>어느 정도 작업이 됐어요. 로컬에서 확인해봐요.</p>
+    <h2>장면 6. 로컬에서 확인</h2>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
@@ -222,51 +188,29 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>응, 추가해줘. 근데 버튼 색깔을 바꿨더니 화면이 하얗게 됐어.</p>
+      <p>응, 추가해줘.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>오류 메시지 있으면 복사해서 붙여넣어줘요.</p>
+      <p>추가했어요. 확인해봐요.</p>
     </div>
 
-    <p>터미널에 빨간 글씨가 잔뜩 나와요. 민지가 드래그해서 복사했어요.</p>
+    <hr />
+
+    <h2>장면 7. 오류 수정</h2>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>(오류 메시지 붙여넣기) 이런 오류 났어. 고쳐줘.</p>
+      <p>근데 버튼 색깔도 좀 바꿔봐.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>이 부분 문법이 잘못됐어요. 고쳐볼게요.</p>
+      <p>바꿨어요.</p>
     </div>
 
-    <p>고쳐줬는데 여전히 하얘요. 민지가 화면을 캡처해서 채팅창에 붙여넣었어요.</p>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>(스크린샷 붙여넣기) 여전히 이래. 뭐가 문제야?</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>CSS 충돌 같아요. 다른 파일도 봐야 할 것 같아요.</p>
-    </div>
-
-    <p>그래도 안 돼요.</p>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>안 되네. 잘 되던 상태로 되돌려줘.</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>20분 전 커밋으로 돌아갈게요.</p>
-    </div>
-
-    <p>원래대로 돌아왔어요. 이게 <strong>Git</strong>이에요 — 저장 포인트(<strong>커밋</strong>)를 만들어두면 언제든 돌아갈 수 있어요. 원본은 두고 복사본에서 실험하는 게 <strong>브랜치</strong>예요. → <a href="/onboarding/glossary/">Git 더 알아보기</a></p>
+    <p>화면이 하얗게 됐어요. 오류 메시지를 붙여넣고, 스크린샷도 찍어서 보냈는데 그래도 안 고쳐져요. → <a href="/meta-skills/method-screenshot">스크린샷 찍는 법</a></p>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
@@ -278,66 +222,67 @@ import Base from '../../layouts/Base.astro';
       <p>(서버 종료) 껐어요.</p>
     </div>
 
-    <p>Claude는 대화만 하는 게 아니에요. 터미널 명령도 직접 실행해요. 지금은 민지 컴퓨터에서만 보여요. 이게 <strong>로컬</strong>이에요. 인터넷엔 아직 없어요.</p>
+    <hr />
+
+    <h2>장면 8. 안 되면 되돌리기</h2>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>그냥 아까 커밋한 데로 되돌려줘. 어디서 어디로 돌아가는지 먼저 보여줘.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <pre class="git-log">
+a3f9b12  (현재) 버튼 색 변경
+e7c4d01  기본 레이아웃 완성
+2b8a3f5  프로젝트 초기 설정</pre>
+      <p>어느 시점으로 돌아갈까요?</p>
+    </div>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>"기본 레이아웃 완성"으로 돌아가줘.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>e7c4d01 시점으로 돌아갔어요. 화면 확인해봐요.</p>
+    </div>
+
+    <p>원래대로 돌아왔어요. 이게 <strong>Git</strong>이에요 — 저장하고, 되돌리고, 실험하는 도구. → <a href="/tutorial/appendix-07-git-branches">부록 I. Git으로 버전 관리하는 법</a></p>
 
     <hr />
 
     <h2 class="pdca-label act">Act — 마무리하기</h2>
 
-    <h2>장면 6. 계획 업데이트하고 배포</h2>
+    <h2>장면 9. 배포하기</h2>
 
-    <p>점검이 끝났어요. 배포 전에 계획서를 현실에 맞게 업데이트해요.</p>
+    <p>점검이 끝났어요.</p>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>작업하면서 바뀐 내용이 있어. 계획서 업데이트해줘.</p>
+      <p>이제 인터넷에 올려줘.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>3번 기능 변경사항이랑 추가된 필터링 기능 반영했어요.</p>
-    </div>
-
-    <p>이제 올려볼게요.</p>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>이제 인터넷에 올리고 싶어.</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>변경사항 커밋하고 GitHub에 푸시하면 돼요. 커밋 메시지는 뭐로 할까요?</p>
-    </div>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>"첫 번째 버전"으로 해줘.</p>
-    </div>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p>커밋했어요. 푸시할게요.</p>
+      <p>커밋하고 푸시할게요.</p>
     </div>
 
     <p>푸시됐어요. Vercel 대시보드에 뭔가 돌아가기 시작했어요.</p>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>GitHub에 올라간 걸 Vercel이 감지해서 지금 <strong>빌드</strong>하고 있어요. 1~2분 걸려요.</p>
+      <p>GitHub에 올라간 걸 Vercel이 감지해서 <strong>빌드</strong> 중이에요. 1~2분 후 자동 <strong>배포</strong>돼요.</p>
     </div>
 
-    <p>초록불이 떴어요. ✓ Ready</p>
-
-    <div class="dialogue ai-says">
-      <span class="dialogue-label">Claude</span>
-      <p><strong>배포</strong>됐어요. 이제 이 주소로 누구나 볼 수 있어요. 앞으로는 작업 → 커밋 → 푸시하면 나머지는 자동이에요.</p>
-    </div>
+    <p>초록불이 떴어요. ✓ Ready. 이제 누구나 이 주소로 볼 수 있어요.</p>
 
     <div class="flow">
       <ol>
         <li>로컬 작업</li>
-        <li>커밋 — "여기까지 완성" 저장 포인트</li>
+        <li>커밋 — 저장 포인트</li>
         <li>푸시 — 내 컴퓨터 → GitHub</li>
         <li>빌드 — Vercel이 소스를 웹사이트 파일로 변환</li>
         <li>배포 — 인터넷에 공개 (자동)</li>
@@ -346,49 +291,86 @@ import Base from '../../layouts/Base.astro';
 
     <hr />
 
-    <h2>장면 7. 반복이 귀찮아졌다</h2>
+    <h2>장면 10. 작업 마무리 루틴</h2>
 
-    <p>매일 일간 회고 쓸 때마다 민지는 같은 말을 입력해요.</p>
-
-    <div class="dialogue">
-      <span class="dialogue-label">민지</span>
-      <p>(매번) 오늘 하루 돌아보는 대화 시작해줘. 끝나면 journal 폴더에 날짜 이름으로 저장해줘.</p>
-    </div>
+    <p>배포가 끝났어요. 민지는 이번 작업을 정리하고, 다음엔 더 편하게 하고 싶어요.</p>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>이거 매번 입력하기 귀찮아. 앞으로 계속 반복될 작업이나 스킬로 만들기 좋은 작업은 스킬로 만들어줘.</p>
+      <p>지금까지 대화한 거 바탕으로 dev log 작성해줘. 결정된 것들, 막혔던 것들 중심으로.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>일간 회고 스킬 만들었어요. 커맨드도 등록했어요. <code>/daily</code> 치면 바로 실행돼요.</p>
+      <p>dev log 작성했어요. 결정사항, 막혔던 것, 다음 할 일로 정리했어요.</p>
     </div>
 
-    <p>이게 <strong>스킬</strong>이에요. Claude가 특정 작업을 수행하는 방법을 정의한 것. <strong>커맨드(슬래시 명령어)</strong>는 그 스킬을 <code>/daily</code>처럼 짧게 호출하는 단축키예요. 다른 사람이 만들어둔 스킬 묶음을 받아서 쓸 수도 있어요. → <a href="/setup/bkit/">bkit 설치</a></p>
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>이번 작업하면서 반복되거나 귀찮았던 거 있으면 자동화 제안해줘. CLAUDE.md나 스킬로 만들 수 있는 것 위주로.</p>
+    </div>
 
-    <p><strong>hook</strong>은 한 발 더 — "파일 저장하면 자동으로 맞춤법 검사"처럼 어떤 일이 일어났을 때 다른 동작이 따라오게 연결하는 거예요.</p>
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>세 가지 제안이에요.</p>
+      <ol>
+        <li><strong>dev log 자동 작성</strong> — 매 작업 끝에 결정사항 정리 (CLAUDE.md 지침으로)</li>
+        <li><strong>일간 회고</strong> — 매일 반복되는 대화 패턴 (스킬로)</li>
+        <li><strong>커밋 메시지</strong> — 한국어로 한 줄 요약 (CLAUDE.md 지침으로)</li>
+      </ol>
+    </div>
 
-    <p>그 다음은 <strong>AI 에이전트</strong> — AI가 스스로 판단하고 여러 단계를 알아서 실행해요. 여러 AI가 팀처럼 협업하면 <strong>멀티 에이전트</strong>. 그 환경 전체를 설계하는 게 <strong>하네스 엔지니어링</strong>이에요.</p>
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>1번이랑 3번은 CLAUDE.md에 넣어줘. 2번은 스킬로 만들어줘.</p>
+    </div>
 
-    <blockquote class="info">
-      <p>지금 당장 목표는 아니에요. 바이브코딩이 익숙해지면 그쪽으로 가는 길이 자연스럽게 열려요.</p>
-    </blockquote>
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>CLAUDE.md 만들었어요.</p>
+      <pre class="code-block"># 민지의 CLAUDE.md
+
+## 나에 대해
+- 비개발자야. 어려운 용어는 쉽게 설명해줘.
+- 반말로 해줘.
+
+## 작업 규칙
+- 파일 삭제는 내가 명시적으로 요청할 때만.
+- 디자인 바꿀 땐 하나씩 확인받으면서 해줘.
+
+## 기록
+- 작업 끝나면 항상 dev log 업데이트해줘.
+- 커밋 메시지는 한국어로, 작업 내용 한 줄 요약으로.</pre>
+    </div>
+
+    <p><strong>CLAUDE.md</strong>는 AI한테 "나는 이렇게 일해줘"를 써두는 파일이에요. 매번 설명 안 해도 돼요. → <a href="/tutorial/appendix-03-claude-md">부록 C. CLAUDE.md 잘 쓰는 법</a></p>
+
+    <div class="dialogue">
+      <span class="dialogue-label">민지</span>
+      <p>일간 회고 스킬도 만들어줘. <code>/daily</code> 커맨드로.</p>
+    </div>
+
+    <div class="dialogue ai-says">
+      <span class="dialogue-label">Claude</span>
+      <p>스킬 만들었어요. <code>/daily</code> 치면 바로 실행돼요.</p>
+    </div>
+
+    <p><strong>스킬</strong>은 반복되는 작업을 짧은 커맨드로 호출할 수 있게 만든 것. 다른 사람이 만들어둔 스킬 묶음을 받아서 쓸 수도 있어요. → <a href="/setup/bkit/">bkit 설치</a> · <a href="/tutorial/appendix-05-skill-create">부록 D. 나만의 스킬 만들기</a></p>
 
     <hr />
 
-    <h2>장면 8. 사례글 쓰기</h2>
+    <h2>장면 11. 사례글 쓰기</h2>
 
     <p>배포까지 끝났어요. 이 과정을 사례글로 남겨요.</p>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>지금까지 작업한 과정이랑 배운 것들을 사례글로 써줘. 회의록이랑 dev log 참고해서. 쓰기 전에 나한테 인터뷰 먼저 해줘.</p>
+      <p>지금까지 작업한 과정이랑 배운 것들을 사례글로 써줘. dev log 참고해서. 쓰기 전에 나한테 인터뷰 먼저 해줘.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>몇 가지 물어볼게요. 이번 작업에서 가장 힘들었던 게 뭐예요? 예상 못 했던 부분이 있었나요?</p>
+      <p>몇 가지 물어볼게요. 이번 작업에서 가장 힘들었던 게 뭐예요?</p>
     </div>
 
     <p>민지가 답해요. 몇 번 주고받고 나서—</p>
@@ -400,43 +382,56 @@ import Base from '../../layouts/Base.astro';
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>인터뷰 내용이랑 dev log 보니까 오픈소스 환각 문제, CLAUDE.md로 해결한 것, CSS 오류 되돌린 것이 인상적인 포인트네요. 이걸 중심으로 써볼게요.</p>
+      <p>dev log 보니까 버튼 색 변경 오류 롤백 경험이 인상적인 포인트네요. 이걸 중심으로 써볼게요.</p>
     </div>
 
-    <p>사례글이 나왔어요. 이게 PDCA 한 사이클이에요 — 계획하고, 실행하고, 점검하고, 마무리하는 것. 다음 작업은 이 사이클을 다시 돌리면 돼요.</p>
+    <p>사례글이 나왔어요. 이게 <strong>PDCA</strong> 한 사이클이에요 — 계획하고, 실행하고, 점검하고, 마무리하는 것. 다음 작업은 이 사이클을 다시 돌리면 돼요.</p>
 
     <hr />
 
-    <h2>에필로그. 이 페이지를 만든 프롬프트</h2>
+    <h2>에필로그. 이 페이지를 직접 만들어보기</h2>
 
-    <p>이 페이지는 민지가 Claude한테 요청해서 나온 결과예요. 그 프롬프트를 역공학으로 뽑으면 이렇게 돼요.</p>
+    <p>여기까지 봤다면, 이런 페이지를 <strong>다른 주제로도 직접 만들 수 있어요.</strong> 비결은 이 페이지 자체를 Claude한테 예시로 주는 거예요.</p>
 
     <div class="dialogue">
       <span class="dialogue-label">민지</span>
-      <p>이 페이지를 만든 프롬프트를 역공학으로 뽑아줘. 나중에 내가 다른 개념 설명 페이지를 만들 때도 똑같이 쓸 수 있게.</p>
+      <p>이 페이지(주소 또는 내용)를 예시로 첨부할게. 이걸 만든 프롬프트를 <strong>리버스 엔지니어링</strong>으로 뽑아줘. 다른 주제로도 똑같은 형식과 완성도로 만들 수 있는 재사용 프롬프트로. 만들 때 필요하면 나한테 인터뷰도 하게 해줘.</p>
     </div>
 
     <div class="dialogue ai-says">
       <span class="dialogue-label">Claude</span>
-      <p>핵심 요소가 네 가지예요. ① 학습자 설정 ② 시나리오 주인공과 상황 ③ 대화 중심 형식 ④ 개념은 흐름 속에서 자연스럽게. 템플릿으로 만들면 이렇게 돼요.</p>
+      <p>이 페이지를 뜯어보니 핵심이 이래요. ① 예시를 첨부해 형식을 그대로 따르게 하기(Few-shot) ② 시나리오 대화 형식 ③ 장면을 잘게 쪼개기 ④ 설명은 최소화하고 툴팁·링크로 ⑤ 중간에 막히는 장면 넣기. 재사용 프롬프트로 만들면 이렇게 돼요.</p>
     </div>
 
     <div class="prompt-box">
-      <div class="prompt-label">개념 설명 페이지 만들기 — 템플릿 프롬프트</div>
-      <pre><code>나는 [대상]을 처음 배우는 비개발자야.
-[주제]를 하면서 만나게 되는 주요 개념들을 설명하는 페이지를 만들어줘.
+      <div class="prompt-label">개념 학습 시나리오 페이지 — 재사용 프롬프트</div>
+      <pre><code>[이 페이지의 주소나 내용을 예시로 첨부]
 
-딱딱한 용어 설명 말고,
-[주인공 이름]이 [구체적인 상황]을 처음 진행하는 시나리오 형식으로.
+위 페이지는 어떤 주제의 핵심 개념을 시나리오 대화로 익히게 만든 거야.
+나는 이것과 같은 형식·완성도로 [새 주제] 학습 페이지를 만들고 싶어.
 
-조건:
-- 각 장면에서 [주인공]과 Claude가 실제로 대화하는 모습을 보여줘
-- 개념 설명은 그 흐름 속에서 자연스럽게 등장하게 해줘
-- 줄글 설명은 최소화하고, 웬만하면 대화로 묘사해줘
-- 장면 순서는 PDCA 흐름(계획→실행→점검→마무리) 순으로</code></pre>
+너는 [새 주제] 전문가이자 위 페이지를 만든 사람이야.
+위 페이지의 구조·톤·설명 밀도·툴팁 사용 방식을 그대로 따라줘.
+
+나는 [새 주제]를 잘 몰라. 그러니 이건 네가 정해줘:
+- 초보자가 이 주제로 보통 뭘 하게 되는지, 어떤 순서로 진행되는지
+- 흔히 막히거나 실수하는 지점
+- 꼭 익혀야 할 핵심 개념들
+
+만들기 전에 필요하면 나한테 인터뷰해줘.
+(개념 목록을 먼저 보여주면 내가 보고 빼거나 추가할게.)
+
+형식:
+- 가상의 초보자 주인공과 도우미의 실제 대화 위주
+- 줄글 설명 최소화, 꼭 필요한 것만 대화 직후 한 줄
+- 한 장면에 새 개념은 최대 2개
+- 단순 용어는 툴팁, 더 자세한 건 링크로
+- 한 장면 = 하나의 행동으로 잘게 쪼갤 것
+- 중간에 막히거나 실수하는 장면을 최소 하나
+- 맨 끝에 장면별 개념 요약 테이블</code></pre>
     </div>
 
-    <p>대괄호 안만 바꾸면 다른 주제도 똑같이 만들 수 있어요. 이게 <strong>리버스 엔지니어링</strong>이에요 — 결과물을 보고 거꾸로 "어떻게 만들었지?"를 뽑아내는 것. AI 잘 쓰는 사람들이 자주 쓰는 방법이에요.</p>
+    <p>이게 <strong>리버스 엔지니어링</strong>이에요 — 완성된 결과물을 보고 거꾸로 "어떻게 만들었지?"를 뽑아내는 것. 잘 만든 결과물 하나만 있으면, 그걸 예시로 주고 다른 주제에도 똑같이 써먹을 수 있어요.</p>
 
     <hr />
 
@@ -445,16 +440,18 @@ import Base from '../../layouts/Base.astro';
       <table>
         <thead><tr><th>장면</th><th>개념</th></tr></thead>
         <tbody>
-          <tr><td>프롤로그</td><td>AI를 학습 메이트로 쓰기</td></tr>
-          <tr><td>Plan — 장면 1</td><td>프롬프트, 인터뷰 방식, Few-shot, MVP, PRD, Plan mode</td></tr>
-          <tr><td>Do — 장면 2</td><td>환각, LLM, 오픈소스, 레포</td></tr>
-          <tr><td>Do — 장면 3</td><td>포크, 클론, 마크다운, 라이선스</td></tr>
-          <tr><td>Do — 장면 4</td><td>컨텍스트 윈도우, 컨텍스트, CLAUDE.md, 컨텍스트 엔지니어링</td></tr>
-          <tr><td>Check — 장면 5</td><td>로컬 서버, Git, 커밋, 브랜치</td></tr>
-          <tr><td>Act — 장면 6</td><td>계획 업데이트, 푸시, 빌드, 배포</td></tr>
-          <tr><td>Act — 장면 7</td><td>스킬, 커맨드, hook, AI 에이전트, 멀티 에이전트, 하네스 엔지니어링</td></tr>
-          <tr><td>장면 8</td><td>PDCA, 사례글</td></tr>
-          <tr><td>에필로그</td><td>리버스 엔지니어링, 템플릿 프롬프트</td></tr>
+          <tr><td>Plan — 장면 1</td><td>인터뷰 방식, 회의록, 프롬프트</td></tr>
+          <tr><td>Plan — 장면 2</td><td>MVP, PRD, Plan mode</td></tr>
+          <tr><td>Do — 장면 3</td><td>환각, LLM, 오픈소스, 레포</td></tr>
+          <tr><td>Do — 장면 4</td><td>포크, 클론, README.md, 마크다운, 라이선스</td></tr>
+          <tr><td>Do — 장면 5</td><td>커밋, Git</td></tr>
+          <tr><td>Check — 장면 6</td><td>로컬 서버</td></tr>
+          <tr><td>Check — 장면 7</td><td>스크린샷</td></tr>
+          <tr><td>Check — 장면 8</td><td>git log, 롤백, 브랜치</td></tr>
+          <tr><td>Act — 장면 9</td><td>푸시, 빌드, 배포</td></tr>
+          <tr><td>Act — 장면 10</td><td>dev log, CLAUDE.md, 컨텍스트 엔지니어링, 스킬, 커맨드</td></tr>
+          <tr><td>Act — 장면 11</td><td>PDCA, 사례글</td></tr>
+          <tr><td>에필로그</td><td>리버스 엔지니어링, Few-shot, 재사용 프롬프트</td></tr>
         </tbody>
       </table>
     </div>
@@ -487,8 +484,6 @@ import Base from '../../layouts/Base.astro';
 </script>
 
 <style>
-  /* 공용 스타일은 Base.astro에서 전역 관리 */
-
   .character-intro {
     background: #f5f0e8;
     border-left: 4px solid var(--accent);
@@ -529,7 +524,7 @@ import Base from '../../layouts/Base.astro';
     color: var(--muted);
     letter-spacing: 0.05em;
   }
-  .dialogue p {
+  .dialogue p, .dialogue ol {
     margin: 0;
     padding: 0.7rem 1rem;
     border-radius: 10px;
@@ -539,10 +534,48 @@ import Base from '../../layouts/Base.astro';
     border-bottom-left-radius: 3px;
     max-width: 90%;
   }
-  .dialogue.ai-says p {
+  .dialogue ol {
+    padding-left: 2rem;
+  }
+  .dialogue.ai-says p,
+  .dialogue.ai-says ol {
     background: #fff;
     border: 1px solid var(--line);
     border-bottom-left-radius: 3px;
+  }
+
+  /* git log 블록 */
+  .dialogue .git-log {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    font-family: monospace;
+    font-size: 0.82rem;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    margin: 0.4rem 0;
+    white-space: pre;
+    line-height: 1.7;
+    max-width: 90%;
+  }
+
+  /* CLAUDE.md 코드블록 */
+  .dialogue .code-block {
+    background: #f8f8f8;
+    border: 1px solid var(--line);
+    font-family: monospace;
+    font-size: 0.82rem;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    margin: 0.4rem 0;
+    white-space: pre;
+    line-height: 1.7;
+    max-width: 90%;
+  }
+
+  /* 용어 링크 줄 */
+  .term-links {
+    font-size: 0.88rem;
+    color: var(--muted);
   }
 
   /* 표 */
