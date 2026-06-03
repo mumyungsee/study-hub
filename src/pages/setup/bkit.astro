@@ -37,12 +37,22 @@ import Base from '../../layouts/Base.astro';
 
     <p>버전 번호가 <code>2.1.78</code> 이상이면 OK. 더 낮으면 업데이트가 필요해요.</p>
 
+    <p>업데이트가 필요하다면 Claude Code 채팅창에서 이렇게 말하면 돼요.</p>
+
     <div class="prompt-box">
-      <p class="prompt-label">업데이트가 필요할 때 (터미널)</p>
-      <pre><code>claude update</code></pre>
+      <p class="prompt-label">복사용 프롬프트 (Claude Code 채팅창)</p>
+      <pre><code>Claude Code를 최신 버전으로 업데이트해줘</code></pre>
     </div>
 
-    <p class="hint">처음 설치했다면 보통 최신 버전이라 업데이트가 필요 없어요. 이전에 설치해두고 한참 안 썼다면 한 번 돌려두는 게 좋습니다.</p>
+    <p class="hint">처음 설치했다면 보통 최신 버전이라 업데이트가 필요 없어요. 이전에 설치해두고 한참 안 썼다면 한 번 시켜두는 게 좋습니다.</p>
+
+    <details class="os-alt">
+      <summary>직접 명령어로 하고 싶다면</summary>
+      <div class="prompt-box">
+        <p class="prompt-label">터미널에 직접 입력</p>
+        <pre><code>claude update</code></pre>
+      </div>
+    </details>
 
     <h2>STEP 2. bkit 설치</h2>
     <p>이제 Claude Code를 실행해서 채팅창에 명령어 두 줄을 입력합니다.</p>
@@ -116,7 +126,7 @@ cd C:\dev\my-project</code></pre>
     <p class="hint">튜토리얼 7장부터 실제로 써보면서 익히게 됩니다. 지금은 설치만 끝났는지 확인하면 OK.</p>
 
     <blockquote class="warning">
-      <p><strong>"Failed to load hooks" 에러가 뜬다면?</strong> 터미널에서 <code>claude update</code>로 Claude Code를 최신 버전으로 올린 다음 다시 시도하세요. bkit 공식 문서에서도 이 방법을 안내하고 있어요.</p>
+      <p><strong>"Failed to load hooks" 에러가 뜬다면?</strong> Claude Code 채팅창에서 "Claude Code 최신 버전으로 업데이트해줘"라고 말한 다음 다시 시도하세요.</p>
     </blockquote>
 
     <h2>STEP 4. (보너스) Agent Teams 활성화 — 시간이 남으면</h2>
