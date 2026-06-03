@@ -32,6 +32,19 @@ import Base from '../../layouts/Base.astro';
 
     <p class="hint">처음 설치했다면 보통 최신 버전이라 업데이트가 필요 없어요. 이전에 설치해두고 한참 안 썼다면 한 번 시켜두는 게 좋습니다.</p>
 
+    <details class="os-alt">
+      <summary>터미널 명령어로 직접 하고 싶다면</summary>
+      <p>VS Code 터미널(<code>Ctrl + `</code>)에서 직접 입력할 수도 있어요.</p>
+      <div class="prompt-box">
+        <p class="prompt-label">버전 확인 (터미널)</p>
+        <pre><code>claude --version</code></pre>
+      </div>
+      <div class="prompt-box">
+        <p class="prompt-label">업데이트 (터미널)</p>
+        <pre><code>claude update</code></pre>
+      </div>
+    </details>
+
     <h2>STEP 2. bkit 설치</h2>
     <p>이제 Claude Code를 실행해서 채팅창에 명령어 두 줄을 입력합니다.</p>
 
