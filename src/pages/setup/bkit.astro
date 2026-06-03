@@ -67,63 +67,40 @@ cd C:\dev\my-project</code></pre>
     </details>
 
     <h2>STEP 3. bkit 설치</h2>
-    <p>채팅창에 아래 명령어 두 줄을 순서대로 입력합니다.</p>
-
-    <h3>채팅창에 설치 명령어 입력</h3>
-    <p>아래 두 줄을 <strong>Claude Code 채팅창에 순서대로</strong> 입력합니다. 슬래시(<code>/</code>)부터 시작하는 게 핵심이에요.</p>
+    <p>Claude Code 채팅창에 아래 두 줄을 순서대로 입력해요. 슬래시(<code>/</code>)로 시작하는 게 핵심이에요.</p>
 
     <div class="prompt-box">
-      <p class="prompt-label">1단계 — 마켓플레이스 등록 (Claude Code 채팅창)</p>
+      <p class="prompt-label">1번 (Claude Code 채팅창)</p>
       <pre><code>/plugin marketplace add popup-studio-ai/bkit-claude-code</code></pre>
     </div>
 
-    <p>bkit이 어디에 있는지 Claude Code에게 알려주는 단계예요. "popup-studio-ai라는 곳에 bkit-claude-code라는 플러그인 저장소가 있어"라고 등록하는 거죠.</p>
-
     <div class="prompt-box">
-      <p class="prompt-label">2단계 — bkit 플러그인 설치 (Claude Code 채팅창)</p>
+      <p class="prompt-label">2번 (Claude Code 채팅창)</p>
       <pre><code>/plugin install bkit</code></pre>
     </div>
 
-    <p>방금 등록한 마켓플레이스에서 <code>bkit</code> 플러그인을 가져와 설치합니다. 몇 초 안에 끝나요.</p>
-
-    <h3>왜 명령어가 두 줄이에요? (메타학습 설명)</h3>
-    <p>Claude Code의 플러그인 시스템은 <strong>"먼저 어디서 가져올지 알려준 다음, 거기서 설치"</strong> 흐름이에요.</p>
-    <ul>
-      <li><strong>marketplace add</strong> — 플러그인이 모여있는 저장소(GitHub 레포)를 등록</li>
-      <li><strong>install</strong> — 등록한 저장소 안의 특정 플러그인을 설치</li>
-    </ul>
-    <p>한 번 마켓플레이스를 등록해두면 같은 곳에서 다른 플러그인을 받을 때는 <code>/plugin install</code>만 하면 돼요.</p>
+    <p class="hint">몇 초 안에 끝나요.</p>
 
 
     <h2>STEP 4. 설치 확인</h2>
-    <p>제대로 설치됐는지 명령어 하나로 확인합니다.</p>
+    <p>채팅창에 입력해보세요.</p>
 
     <div class="prompt-box">
       <p class="prompt-label">설치 확인 (Claude Code 채팅창)</p>
       <pre><code>/bkit</code></pre>
     </div>
 
-    <p>bkit이 제공하는 명령어 전체 목록이 쭉 떠요. <code>/pdca</code>, <code>/code-review</code>, <code>/starter init</code> 같은 게 보이면 성공!</p>
-
-    <p>가장 자주 쓰게 될 명령어는 이 두 개예요.</p>
-
-    <ul>
-      <li><code>/pdca plan &lt;기능명&gt;</code> — 만들고 싶은 기능을 인터뷰 → 계획 문서 자동 생성</li>
-      <li><code>/pdca analyze &lt;기능명&gt;</code> — 계획대로 구현됐는지 갭 분석 보고</li>
-    </ul>
-
-    <p class="hint">튜토리얼 7장부터 실제로 써보면서 익히게 됩니다. 지금은 설치만 끝났는지 확인하면 OK.</p>
+    <p>명령어 목록이 쭉 뜨면 성공이에요. <code>/pdca</code>, <code>/code-review</code> 같은 게 보이면 OK.</p>
+    <p class="hint">실제로 쓰는 법은 튜토리얼 7장부터 익히게 됩니다.</p>
 
     <blockquote class="warning">
       <p><strong>"Failed to load hooks" 에러가 뜬다면?</strong> Claude Code 채팅창에서 "Claude Code 최신 버전으로 업데이트해줘"라고 말한 다음 다시 시도하세요.</p>
     </blockquote>
 
     <h2>STEP 5. (보너스) Agent Teams 활성화 — 시간이 남으면</h2>
-    <p>bkit에는 <strong>여러 전문 AI 에이전트가 팀으로 협업</strong>하는 기능이 있어요. 프론트엔드 에이전트, 백엔드 에이전트, QA 에이전트가 동시에 일하면서 큰 프로젝트를 함께 처리합니다.</p>
+    <p>여러 AI 에이전트가 팀으로 협업하는 기능이에요. 지금 안 켜도 튜토리얼 진행에 문제없어요. 나중에 <code>/pdca team</code>을 쓰고 싶을 때 설정하면 됩니다.</p>
 
-    <p>이 기능을 쓰려면 환경변수 하나를 켜야 해요. <strong>지금 당장 안 켜도 튜토리얼 진행에 문제없습니다.</strong> 나중에 <code>/pdca team</code> 명령어를 쓰고 싶을 때 설정하면 돼요.</p>
-
-    <h3>먼저 AI에게 물어보세요</h3>
+    <h3>AI에게 물어보세요</h3>
 
     <div class="prompt-box">
       <p class="prompt-label">복사용 프롬프트 (VS Code 에이전트 패널)</p>
