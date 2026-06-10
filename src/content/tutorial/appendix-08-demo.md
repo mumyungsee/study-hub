@@ -43,7 +43,7 @@ status: 공개
 브라우저에서 강사 레포에 들어갑니다.
 
 ```txt
-[강사 레포 URL]
+https://github.com/mumyungsee/auto-llm-wiki
 ```
 
 오른쪽 위 **`Fork`** 버튼 → 내 계정 선택 → **`Create fork`**
