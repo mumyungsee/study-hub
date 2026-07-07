@@ -1,3 +1,15 @@
+---
+id: proj-studyhub-001
+title: AI 스터디 허브
+slug: study-hub
+created: 2026-05-06
+공개: true
+status: 진행중
+요약: 챗봇만 써본 비개발자가 AI랑 같이 일하는 법을 배우는 수업 자료 사이트
+외부링크: https://study-hub-eta-olive.vercel.app
+태그: [강의, 메타학습, 비개발자]
+---
+
 # AI 스터디 허브
 
 > 챗봇만 써본 비개발자가 AI랑 같이 일하는 법을 배우는 곳.
