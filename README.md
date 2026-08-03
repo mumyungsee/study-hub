@@ -4,7 +4,7 @@ title: 22기 커리큘럼 — AI 스터디 허브
 slug: study-hub
 created: 2026-05-06
 공개: true
-status: 운영
+status: 완성
 type: 프로젝트
 프로젝트: proj-lecture-biz-001
 요약: 챗봇만 써본 비개발자가 AI랑 같이 일하는 법을 배우는 수업 자료 사이트
@@ -101,6 +101,8 @@ npm run build    # 빌드 검증
 
 ---
 
+<!-- 이 아래는 내부 메모 (사이트엔 안 보임)
+
 ## 작업 가이드
 
 이 프로젝트에서 AI(Claude 등)와 작업할 때는 [`CLAUDE.md`](./CLAUDE.md) 참고.
@@ -110,3 +112,4 @@ npm run build    # 빌드 검증
 - `improvement-ideas.md` — 개선 아이디어
 - `learning-philosophy-notes.md` — 학습 철학 메모
 - `tutorial-progress.md` — 튜토리얼 진행 상태
+-->
